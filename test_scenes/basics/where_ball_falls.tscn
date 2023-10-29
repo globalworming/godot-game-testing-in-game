@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bygfbdd70dsu1"]
+
+[ext_resource type="Script" path="res://test_scenes/basics/where_ball_falls.gd" id="1_5ynub"]
+
+[node name="where_ball_falls" type="Node2D"]
+script = ExtResource("1_5ynub")

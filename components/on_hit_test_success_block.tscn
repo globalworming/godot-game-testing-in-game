@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://djgboj0jar52m"]
+
+[ext_resource type="Script" path="res://components/on_hit_test_success_block.gd" id="1_v1p8g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qh64l"]
+size = Vector2(32, 32)
+
+[node name="block" type="RigidBody2D"]
+freeze = true
+script = ExtResource("1_v1p8g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_qh64l")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(-8, 8, 0, 8, 8, 8, 8, -8, -8, -8)

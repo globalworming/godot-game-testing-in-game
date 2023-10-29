@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://cy6drw7rhi4gn"]
+
+[ext_resource type="Texture2D" uid="uid://dfnuxv0v57o4u" path="res://sprites/ball.png" id="1_1q8fd"]
+[ext_resource type="Script" path="res://components/ball.gd" id="1_5n781"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3yjoq"]
+atlas = ExtResource("1_1q8fd")
+region = Rect2(0, 0, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k83u1"]
+atlas = ExtResource("1_1q8fd")
+region = Rect2(10, 0, 10, 10)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ec854"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3yjoq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k83u1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_abfbg"]
+radius = 5.0
+
+[node name="ball" type="RigidBody2D"]
+continuous_cd = 1
+max_contacts_reported = 8
+contact_monitor = true
+script = ExtResource("1_5n781")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ec854")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_abfbg")

@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://dnbgcqa5yxpag"]
+
+[ext_resource type="PackedScene" uid="uid://dgwsl3tvuq55l" path="res://components/flipper.tscn" id="1_5rghx"]
+[ext_resource type="Script" path="res://test_scenes/basics/where_flipper_launches_ball.gd" id="1_bqvxs"]
+[ext_resource type="PackedScene" uid="uid://cy6drw7rhi4gn" path="res://components/ball.tscn" id="2_w35rq"]
+[ext_resource type="PackedScene" uid="uid://djgboj0jar52m" path="res://components/on_hit_test_success_block.tscn" id="4_f8vef"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5wnmq"]
+size = Vector2(616, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iqcdl"]
+size = Vector2(224, 616)
+
+[node name="where_flipper_launches_balls" type="Node2D"]
+position = Vector2(1112, -176)
+script = ExtResource("1_bqvxs")
+
+[node name="flipper" parent="." instance=ExtResource("1_5rghx")]
+position = Vector2(-688, 704)
+
+[node name="ball" parent="." instance=ExtResource("2_w35rq")]
+position = Vector2(-408, 640)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(-1184, 264)
+
+[node name="Polygon2D" type="Polygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(448, 64, 824, 104, 848, 584, 888, 584, 840, 48, 816, 16, 424, 48, 424, 576, 552, 576, 496, 496, 448, 472, 448, 416, 488, 384)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(248, 576, 552, 576, 496, 496, 448, 472, 448, 412.969, 488, 384, 448, -40, 248, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(556, 0)
+shape = SubResource("RectangleShape2D_5wnmq")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(960, 272)
+shape = SubResource("RectangleShape2D_iqcdl")
+
+[node name="block" parent="." instance=ExtResource("4_f8vef")]
+position = Vector2(-624, 392)

@@ -9,8 +9,5 @@ func _process(_delta):
 	pass
 	
 func _on_body_entered(body: Node):
-	if (body.is_in_group("block")):
-		print("collide: " + body.name)
-		body._ball_collision(self)
-		
-
+	if body.has_method("on_ball_collision"):
+		body.on_ball_collision(self)

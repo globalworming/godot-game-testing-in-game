@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dt7sh0qfrg5gx"]
+
+[ext_resource type="PackedScene" uid="uid://dgwsl3tvuq55l" path="res://components/flipper.tscn" id="1_2ib1r"]
+
+[node name="tmp" type="Node2D"]
+
+[node name="flipper" parent="." instance=ExtResource("1_2ib1r")]
+position = Vector2(576, 352)

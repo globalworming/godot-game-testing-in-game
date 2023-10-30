@@ -1,7 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://cy6drw7rhi4gn"]
+[gd_scene load_steps=8 format=3 uid="uid://cy6drw7rhi4gn"]
 
 [ext_resource type="Texture2D" uid="uid://dfnuxv0v57o4u" path="res://sprites/ball.png" id="1_1q8fd"]
 [ext_resource type="Script" path="res://components/ball.gd" id="1_5n781"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_7wvop"]
+bounce = 0.4
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3yjoq"]
 atlas = ExtResource("1_1q8fd")
@@ -26,15 +29,21 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_abfbg"]
-radius = 5.0
+radius = 24.0
 
 [node name="ball" type="RigidBody2D"]
-continuous_cd = 1
-max_contacts_reported = 8
+mass = 0.22
+inertia = 81.89
+physics_material_override = SubResource("PhysicsMaterial_7wvop")
+gravity_scale = 0.8
+continuous_cd = 2
+max_contacts_reported = 16
 contact_monitor = true
 script = ExtResource("1_5n781")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -7.15256e-07)
+scale = Vector2(4.8, 4.8)
 sprite_frames = SubResource("SpriteFrames_ec854")
 autoplay = "default"
 

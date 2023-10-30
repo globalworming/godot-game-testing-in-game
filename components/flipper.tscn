@@ -1,0 +1,86 @@
+[gd_scene load_steps=8 format=3 uid="uid://dgwsl3tvuq55l"]
+
+[ext_resource type="Script" path="res://components/flipper.gd" id="1_rxmlg"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8jfuj"]
+radius = 8.0
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_va2vu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bkc0l"]
+radius = 32.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_si2oq"]
+radius = 16.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ham1p"]
+normal = Vector2(1, 0)
+distance = -40.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_t1iq1"]
+
+[node name="flipper" type="Node2D"]
+
+[node name="paddle anchor" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="paddle anchor"]
+shape = SubResource("CircleShape2D_8jfuj")
+
+[node name="Polygon2D" type="Polygon2D" parent="paddle anchor"]
+color = Color(0.866667, 0, 0.254902, 1)
+polygon = PackedVector2Array(-4.00003, 6.92819, -6.92819, -4.00003, 4.00003, -6.92819, 6.92819, 4.00003)
+
+[node name="pin paddle ancor" type="PinJoint2D" parent="."]
+node_a = NodePath("../paddle anchor")
+node_b = NodePath("../paddle")
+bias = 0.9
+
+[node name="paddle" type="RigidBody2D" parent="."]
+collision_layer = 3
+collision_mask = 3
+mass = 10.0
+physics_material_override = SubResource("PhysicsMaterial_va2vu")
+gravity_scale = 0.0
+continuous_cd = 2
+max_contacts_reported = 16
+contact_monitor = true
+script = ExtResource("1_rxmlg")
+speed = 90.0
+
+[node name="collision_circle_big" type="CollisionShape2D" parent="paddle"]
+shape = SubResource("CircleShape2D_bkc0l")
+
+[node name="collisoin_circle_small" type="CollisionShape2D" parent="paddle"]
+position = Vector2(320, 0)
+shape = SubResource("CircleShape2D_si2oq")
+
+[node name="collision_area" type="CollisionPolygon2D" parent="paddle"]
+polygon = PackedVector2Array(0, -32, 320, -16, 320, 16, 0, 32)
+
+[node name="Polygon2D" type="Polygon2D" parent="paddle"]
+polygon = PackedVector2Array(0, -32, 320, -16, 328, -8, 336, 0, 328, 8, 320, 16, 0, 32, -8, 32, -24, 24, -32, 16, -32, 0, -32, -16, -24, -24, -8, -32)
+
+[node name="end block" type="StaticBody2D" parent="."]
+rotation = 0.785397
+collision_layer = 2
+collision_mask = 2
+
+[node name="Polygon2D" type="Polygon2D" parent="end block"]
+position = Vector2(-40, 0)
+color = Color(0.866667, 0, 0.254902, 1)
+polygon = PackedVector2Array(-4.00003, 6.92819, -6.92819, -4.00003, 4.00003, -6.92819, 6.92819, 4.00003)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="end block"]
+shape = SubResource("WorldBoundaryShape2D_ham1p")
+
+[node name="start block" type="StaticBody2D" parent="."]
+position = Vector2(0, 40)
+collision_layer = 2
+collision_mask = 2
+
+[node name="Polygon2D" type="Polygon2D" parent="start block"]
+color = Color(0.866667, 0, 0.254902, 1)
+polygon = PackedVector2Array(-4.00003, 6.92819, -6.92819, -4.00003, 4.00003, -6.92819, 6.92819, 4.00003)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="start block"]
+shape = SubResource("WorldBoundaryShape2D_t1iq1")

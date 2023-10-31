@@ -1,0 +1,22 @@
+[gd_scene load_steps=6 format=3 uid="uid://b0qo0flxs4wyj"]
+
+[ext_resource type="Script" path="res://test_scenes/basics/where_ball_falls_between_opened_flippers.gd" id="1_1sgnq"]
+[ext_resource type="PackedScene" uid="uid://c4t6p3yr1417a" path="res://components/flipper/flipper_right.tscn" id="1_d1n34"]
+[ext_resource type="PackedScene" uid="uid://dgwsl3tvuq55l" path="res://components/flipper/flipper_left.tscn" id="2_73io1"]
+[ext_resource type="PackedScene" uid="uid://cy6drw7rhi4gn" path="res://components/ball/ball.tscn" id="3_ijxiv"]
+[ext_resource type="PackedScene" uid="uid://djgboj0jar52m" path="res://components/test/on_hit_test_success_block.tscn" id="4_sebgs"]
+
+[node name="where_ball_falls_between_opened_flippers" type="Node2D"]
+script = ExtResource("1_1sgnq")
+
+[node name="flipper" parent="." instance=ExtResource("1_d1n34")]
+position = Vector2(872, 520)
+
+[node name="flipper2" parent="." instance=ExtResource("2_73io1")]
+position = Vector2(192, 520)
+
+[node name="ball" parent="." instance=ExtResource("3_ijxiv")]
+position = Vector2(536, 272)
+
+[node name="on hit test success block" parent="." instance=ExtResource("4_sebgs")]
+position = Vector2(528, 568)

@@ -2,6 +2,7 @@ extends RigidBody2D
 
 func _ready():
 	body_entered.connect(_on_body_entered)
+	add_to_group(name)
 	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

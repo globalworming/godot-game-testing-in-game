@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://q1mu1qhtguxi"]
+
+[ext_resource type="Script" path="res://components/test/on_ball_enter_press_input.gd" id="1_ngjpa"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_m4jpo"]
+
+[node name="on_ball_enter_press_input" type="Area2D"]
+script = ExtResource("1_ngjpa")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color(0.324026, 0.530399, 0.510165, 1)
+polygon = PackedVector2Array(-8, -8, 8, -8, 8, 16, -8, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("SegmentShape2D_m4jpo")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

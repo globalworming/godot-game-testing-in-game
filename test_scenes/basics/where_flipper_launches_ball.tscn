@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://dnbgcqa5yxpag"]
 
-[ext_resource type="PackedScene" uid="uid://dgwsl3tvuq55l" path="res://components/flipper.tscn" id="1_5rghx"]
+[ext_resource type="PackedScene" uid="uid://dgwsl3tvuq55l" path="res://components/flipper/flipper_left.tscn" id="1_5rghx"]
 [ext_resource type="Script" path="res://test_scenes/basics/where_flipper_launches_ball.gd" id="1_bqvxs"]
-[ext_resource type="PackedScene" uid="uid://cy6drw7rhi4gn" path="res://components/ball.tscn" id="2_w35rq"]
-[ext_resource type="PackedScene" uid="uid://djgboj0jar52m" path="res://components/on_hit_test_success_block.tscn" id="4_f8vef"]
+[ext_resource type="PackedScene" uid="uid://cy6drw7rhi4gn" path="res://components/ball/ball.tscn" id="2_w35rq"]
+[ext_resource type="PackedScene" uid="uid://djgboj0jar52m" path="res://components/test/on_hit_test_success_block.tscn" id="4_f8vef"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5wnmq"]
 size = Vector2(616, 128)
@@ -12,7 +12,7 @@ size = Vector2(616, 128)
 size = Vector2(224, 616)
 
 [node name="where_flipper_launches_balls" type="Node2D"]
-position = Vector2(1112, -176)
+position = Vector2(1752, 200)
 script = ExtResource("1_bqvxs")
 
 [node name="flipper" parent="." instance=ExtResource("1_5rghx")]

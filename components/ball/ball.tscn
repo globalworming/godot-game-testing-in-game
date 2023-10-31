@@ -1,17 +1,17 @@
 [gd_scene load_steps=8 format=3 uid="uid://cy6drw7rhi4gn"]
 
-[ext_resource type="Texture2D" uid="uid://dfnuxv0v57o4u" path="res://sprites/ball.png" id="1_1q8fd"]
-[ext_resource type="Script" path="res://components/ball.gd" id="1_5n781"]
+[ext_resource type="Script" path="res://components/ball/ball.gd" id="1_fuql8"]
+[ext_resource type="Texture2D" uid="uid://dfnuxv0v57o4u" path="res://sprites/ball.png" id="2_qsq1o"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_7wvop"]
 bounce = 0.4
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3yjoq"]
-atlas = ExtResource("1_1q8fd")
+atlas = ExtResource("2_qsq1o")
 region = Rect2(0, 0, 10, 10)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k83u1"]
-atlas = ExtResource("1_1q8fd")
+atlas = ExtResource("2_qsq1o")
 region = Rect2(10, 0, 10, 10)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ec854"]
@@ -39,7 +39,7 @@ gravity_scale = 0.8
 continuous_cd = 2
 max_contacts_reported = 16
 contact_monitor = true
-script = ExtResource("1_5n781")
+script = ExtResource("1_fuql8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -7.15256e-07)

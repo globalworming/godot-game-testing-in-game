@@ -1,0 +1,61 @@
+[gd_scene load_steps=5 format=3 uid="uid://c4t6p3yr1417a"]
+
+[ext_resource type="PackedScene" uid="uid://cm5r4tyfdxsrw" path="res://components/flipper/paddle.tscn" id="1_mps3b"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8jfuj"]
+radius = 8.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ham1p"]
+normal = Vector2(2.80979e-08, -1)
+distance = 1.07896e-05
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_t1iq1"]
+normal = Vector2(-8.74228e-08, 1)
+
+[node name="flipper" type="Node2D"]
+rotation = -3.14159
+
+[node name="paddle anchor" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="paddle anchor"]
+shape = SubResource("CircleShape2D_8jfuj")
+
+[node name="Polygon2D" type="Polygon2D" parent="paddle anchor"]
+color = Color(0.866667, 0, 0.254902, 1)
+polygon = PackedVector2Array(-4.00003, 6.92819, -6.92819, -4.00003, 4.00003, -6.92819, 6.92819, 4.00003)
+
+[node name="pin paddle ancor" type="PinJoint2D" parent="."]
+node_a = NodePath("../paddle anchor")
+node_b = NodePath("../paddle")
+bias = 0.9
+
+[node name="paddle" parent="." instance=ExtResource("1_mps3b")]
+input_action = "move_right"
+left_flipper = false
+
+[node name="end block" type="StaticBody2D" parent="."]
+position = Vector2(-32, 32)
+rotation = 0.785398
+collision_layer = 2
+collision_mask = 2
+
+[node name="Polygon2D" type="Polygon2D" parent="end block"]
+position = Vector2(3.8147e-06, -7.62939e-06)
+color = Color(0.866667, 0, 0.254902, 1)
+polygon = PackedVector2Array(-4.00003, 6.92819, -6.92819, -4.00003, 4.00003, -6.92819, 6.92819, 4.00003)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="end block"]
+position = Vector2(3.8147e-06, -7.62939e-06)
+shape = SubResource("WorldBoundaryShape2D_ham1p")
+
+[node name="start block" type="StaticBody2D" parent="."]
+position = Vector2(3.49691e-06, -40)
+collision_layer = 2
+collision_mask = 2
+
+[node name="Polygon2D" type="Polygon2D" parent="start block"]
+color = Color(0.866667, 0, 0.254902, 1)
+polygon = PackedVector2Array(-4.00003, 6.92819, -6.92819, -4.00003, 4.00003, -6.92819, 6.92819, 4.00003)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="start block"]
+shape = SubResource("WorldBoundaryShape2D_t1iq1")

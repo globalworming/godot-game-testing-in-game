@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://blwilsxucddoo"]
+
+[ext_resource type="PackedScene" uid="uid://dgwsl3tvuq55l" path="res://components/flipper/flipper_left.tscn" id="1_ggdmp"]
+[ext_resource type="PackedScene" uid="uid://cy6drw7rhi4gn" path="res://components/ball/ball.tscn" id="2_c5121"]
+[ext_resource type="PackedScene" uid="uid://q1mu1qhtguxi" path="res://components/test/on_ball_enter_press_input.tscn" id="3_nt85y"]
+[ext_resource type="Texture2D" uid="uid://drc5ci8h5u66e" path="res://assets/drawing.svg" id="4_1qpum"]
+[ext_resource type="PackedScene" uid="uid://djgboj0jar52m" path="res://components/test/on_hit_test_success_block.tscn" id="5_0q1lm"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_nor1k"]
+friction = 0.0
+
+[node name="where_ball_loops_on_table_boundary" type="Node2D"]
+
+[node name="flipper" parent="." instance=ExtResource("1_ggdmp")]
+position = Vector2(104, 960)
+rotation = 1.5708
+
+[node name="ball" parent="." instance=ExtResource("2_c5121")]
+position = Vector2(152, 1232)
+
+[node name="on_ball_enter_press_input" parent="." instance=ExtResource("3_nt85y")]
+position = Vector2(136, 1264)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+physics_material_override = SubResource("PhysicsMaterial_nor1k")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(1, -15)
+polygon = PackedVector2Array(80, 1312, 152, 1312, 399, 1311, 647, 1303, 871, 1287, 1159, 1255, 1311, 1231, 1479, 1199, 1607, 1167, 1695, 1143, 1791, 1111, 1855, 1087, 1919, 1063, 2023, 1015, 2119, 959, 2223, 887, 2311, 799, 2367, 727, 2399, 663, 2423, 591, 2431, 519, 2431, 495, 2423, 447, 2415, 415, 2399, 367, 2367, 303, 2327, 247, 2263, 183, 2215, 143, 2111, 79, 2015, 39, 1935, 15, 1791, -9, 1615, -9, 1543, -1, 1455, 15, 1343, 47, 1151, 135, 1047, 199, 943, 303, 847, 431, 767, 567, 352, -80, 2488, -72, 2464, 1464, 40, 1456)
+
+[node name="Drawing" type="Sprite2D" parent="."]
+position = Vector2(1288, 656)
+scale = Vector2(1.42917, 1.32593)
+texture = ExtResource("4_1qpum")
+
+[node name="on hit test success block" parent="." instance=ExtResource("5_0q1lm")]
+position = Vector2(824, 560)

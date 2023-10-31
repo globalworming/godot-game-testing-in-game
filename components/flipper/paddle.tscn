@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://cm5r4tyfdxsrw"]
+
+[ext_resource type="Script" path="res://components/flipper/flipper.gd" id="1_0lk88"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_va2vu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bkc0l"]
+radius = 32.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_si2oq"]
+radius = 16.0
+
+[node name="paddle" type="RigidBody2D"]
+collision_layer = 3
+collision_mask = 3
+mass = 10.0
+physics_material_override = SubResource("PhysicsMaterial_va2vu")
+gravity_scale = 0.0
+continuous_cd = 2
+max_contacts_reported = 16
+contact_monitor = true
+script = ExtResource("1_0lk88")
+
+[node name="collision_circle_big" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_bkc0l")
+
+[node name="collisoin_circle_small" type="CollisionShape2D" parent="."]
+position = Vector2(320, 0)
+shape = SubResource("CircleShape2D_si2oq")
+
+[node name="collision_area" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(0, -32, 320, -16, 320, 16, 0, 32)
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(0, -32, 320, -16, 328, -8, 336, 0, 328, 8, 320, 16, 0, 32, -8, 32, -24, 24, -32, 16, -32, 0, -32, -16, -24, -24, -8, -32)

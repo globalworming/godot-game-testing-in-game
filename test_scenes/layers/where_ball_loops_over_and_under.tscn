@@ -1,0 +1,113 @@
+[gd_scene load_steps=15 format=3 uid="uid://bmqpriq7ce60e"]
+
+[ext_resource type="Texture2D" uid="uid://d0gdl70pgh553" path="res://assets/loop.svg" id="1_83fd8"]
+[ext_resource type="PackedScene" uid="uid://cy6drw7rhi4gn" path="res://components/ball/ball.tscn" id="2_ehu7x"]
+[ext_resource type="PackedScene" uid="uid://c4t6p3yr1417a" path="res://components/flipper/flipper_right.tscn" id="3_8m4ij"]
+[ext_resource type="Script" path="res://test_scenes/layers/display_z.gd" id="3_eyo6s"]
+[ext_resource type="PackedScene" uid="uid://q1mu1qhtguxi" path="res://components/test/on_ball_enter_press_input.tscn" id="4_heg54"]
+[ext_resource type="PhysicsMaterial" uid="uid://dxf5cx15n75hb" path="res://materials/no_bounce_no_friction.tres" id="5_e3epk"]
+[ext_resource type="Script" path="res://test_scenes/layers/move_ball_to_z0.gd" id="6_hsyfo"]
+[ext_resource type="Script" path="res://test_scenes/layers/move_ball_to_z1.gd" id="7_tmtx3"]
+[ext_resource type="Script" path="res://test_scenes/layers/move_ball_to_z0_2.gd" id="9_v5kr7"]
+[ext_resource type="PackedScene" uid="uid://djgboj0jar52m" path="res://components/test/on_hit_test_success_block.tscn" id="10_i7hwp"]
+[ext_resource type="PackedScene" uid="uid://dgwsl3tvuq55l" path="res://components/flipper/flipper_left.tscn" id="10_w5oey"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oirj2"]
+size = Vector2(135.765, 84.8527)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_665sx"]
+size = Vector2(124.451, 45.2549)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ngal1"]
+size = Vector2(96.1665, 87.3762)
+
+[node name="where_ball_loops_over_and_under" type="Node2D"]
+
+[node name="Loop" type="Sprite2D" parent="."]
+position = Vector2(1032, 600)
+texture = ExtResource("1_83fd8")
+
+[node name="ball" parent="." instance=ExtResource("2_ehu7x")]
+position = Vector2(1376, 960)
+
+[node name="Label" type="Label" parent="ball"]
+offset_left = -16.0
+offset_top = -48.0
+offset_right = 24.0
+offset_bottom = -22.0
+scale = Vector2(4.0543, 3.87991)
+text = "test"
+script = ExtResource("3_eyo6s")
+
+[node name="flipper" parent="." instance=ExtResource("3_8m4ij")]
+position = Vector2(1512, 832)
+rotation = -4.18879
+
+[node name="flipper2" parent="." instance=ExtResource("10_w5oey")]
+position = Vector2(328, 1176)
+rotation = 0.785397
+
+[node name="on_ball_enter_press_input" parent="." instance=ExtResource("4_heg54")]
+position = Vector2(1320, 1056)
+input_action = "move_right"
+
+[node name="z0" type="StaticBody2D" parent="."]
+physics_material_override = ExtResource("5_e3epk")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="z0"]
+polygon = PackedVector2Array(792, 976, 816, 968, 912, 920, 1120, 752, 1184, 672, 1192, 688, 1096, 800, 1152, 832, 1144, 848, 1080, 816, 992, 888, 1104, 976, 1096, 984, 976, 896, 880, 952, 800, 984)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="z0"]
+polygon = PackedVector2Array(800, 896, 912, 824, 1008, 744, 1064, 688, 1104, 640, 992, 744, 904, 816, 792, 888)
+
+[node name="z1" type="StaticBody2D" parent="."]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="z1"]
+polygon = PackedVector2Array(1016, 904, 880, 792, 784, 680, 704, 560, 672, 448, 672, 384, 696, 304, 736, 256, 816, 192, 944, 128, 1048, 104, 1104, 96, 1168, 104, 1216, 128, 1264, 176, 1296, 248, 1312, 336, 1296, 464, 1248, 568, 1200, 648, 1168, 696, 1120, 752, 1128, 768, 1184, 704, 1232, 632, 1304, 488, 1328, 344, 1320, 240, 1256, 120, 1120, 64, 888, 112, 680, 256, 640, 376, 664, 544, 784, 720, 904, 840, 992, 904)
+
+[node name="move_ball_to_z0" type="Area2D" parent="."]
+position = Vector2(1112, 896)
+script = ExtResource("6_hsyfo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="move_ball_to_z0"]
+position = Vector2(17.9999, 17.9999)
+rotation = -0.785397
+shape = SubResource("RectangleShape2D_oirj2")
+
+[node name="move_ball_to_z1" type="Area2D" parent="."]
+position = Vector2(1056, 872)
+script = ExtResource("7_tmtx3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="move_ball_to_z1"]
+position = Vector2(12, 3.99994)
+rotation = -0.785397
+shape = SubResource("RectangleShape2D_665sx")
+
+[node name="move_ball_to_z0_2" type="Area2D" parent="."]
+position = Vector2(1128, 680)
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("9_v5kr7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="move_ball_to_z0_2"]
+position = Vector2(-4.89209, 7.10791)
+rotation = -0.785398
+shape = SubResource("RectangleShape2D_ngal1")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+z_index = 1
+position = Vector2(920, 752)
+color = Color(0.305882, 0.305882, 0.305882, 1)
+polygon = PackedVector2Array(112, 168, 134.485, 132.667, 4, 21, -56, 3, -56, -48, -7, -31, -1.05978, -19.367, 17, 16, 142.675, 119.796, 168, 80, 74, 10, 72, 5, 64, -1, 48, -8, -24, -72, -64, -120, -120, -200, -136, -256, -152, -320, -128, -416, 0, -528, 112, -568, 136, -640, 24, -616, -64, -576, -160, -504, -216, -432, -240, -312, -216, -216, -96, -32, -16, 56, -6, 68, -2, 73)
+
+[node name="on hit test success block" parent="." instance=ExtResource("10_i7hwp")]
+position = Vector2(944, 528)
+
+[node name="on_ball_enter_press_input2" parent="." instance=ExtResource("4_heg54")]
+position = Vector2(488, 1162)
+
+[connection signal="body_entered" from="move_ball_to_z0" to="move_ball_to_z0" method="_on_body_entered"]
+[connection signal="body_entered" from="move_ball_to_z1" to="move_ball_to_z1" method="_on_body_entered"]
+[connection signal="body_entered" from="move_ball_to_z0_2" to="move_ball_to_z0_2" method="_on_body_entered"]

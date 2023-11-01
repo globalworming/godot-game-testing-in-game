@@ -1,6 +1,5 @@
 extends Area2D
 
-@export var input_action: String = "move_left"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -8,10 +7,11 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
 	pass
+
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("ball"):
-		Input.action_press(input_action)
-	pass # Replace with function body.
+		body.move_to_z0()	
+	

@@ -28,11 +28,13 @@ node_b = NodePath("../paddle")
 bias = 0.9
 
 [node name="paddle" parent="." instance=ExtResource("1_6j8vm")]
+collision_layer = 33
+collision_mask = 33
 
 [node name="end block" type="StaticBody2D" parent="."]
 rotation = 0.785397
-collision_layer = 2
-collision_mask = 2
+collision_layer = 32
+collision_mask = 32
 
 [node name="Polygon2D" type="Polygon2D" parent="end block"]
 position = Vector2(-40, 0)
@@ -44,8 +46,8 @@ shape = SubResource("WorldBoundaryShape2D_ham1p")
 
 [node name="start block" type="StaticBody2D" parent="."]
 position = Vector2(0, 40)
-collision_layer = 2
-collision_mask = 2
+collision_layer = 32
+collision_mask = 32
 
 [node name="Polygon2D" type="Polygon2D" parent="start block"]
 color = Color(0.866667, 0, 0.254902, 1)

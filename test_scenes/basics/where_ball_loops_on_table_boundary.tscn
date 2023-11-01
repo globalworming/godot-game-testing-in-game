@@ -4,10 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://cy6drw7rhi4gn" path="res://components/ball/ball.tscn" id="2_c5121"]
 [ext_resource type="PackedScene" uid="uid://q1mu1qhtguxi" path="res://components/test/on_ball_enter_press_input.tscn" id="3_nt85y"]
 [ext_resource type="Texture2D" uid="uid://drc5ci8h5u66e" path="res://assets/drawing.svg" id="4_1qpum"]
+[ext_resource type="PhysicsMaterial" uid="uid://dxf5cx15n75hb" path="res://materials/no_bounce_no_friction.tres" id="4_g3sy2"]
 [ext_resource type="PackedScene" uid="uid://djgboj0jar52m" path="res://components/test/on_hit_test_success_block.tscn" id="5_0q1lm"]
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_nor1k"]
-friction = 0.0
 
 [node name="where_ball_loops_on_table_boundary" type="Node2D"]
 
@@ -22,7 +20,7 @@ position = Vector2(152, 1232)
 position = Vector2(136, 1264)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-physics_material_override = SubResource("PhysicsMaterial_nor1k")
+physics_material_override = ExtResource("4_g3sy2")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 position = Vector2(1, -15)

@@ -8,6 +8,7 @@ func _ready():
 	TestStatus.test_success.connect(_test_success)
 	var dirs = Files.list_dirs("res://test_scenes")
 	tests = list_tests(dirs)
+	tests.sort()
 	next()
 
 func _test_success(): 

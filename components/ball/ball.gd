@@ -14,13 +14,11 @@ func _on_body_entered(body: Node):
 		body.on_ball_collision(self)
 
 func move_to_z0():
-	print("move to z0")
 	collision_layer = 1
 	collision_mask = 1
 	z_index = 0
 	
 func move_to_z1():
-	print("move to z1")	
 	collision_layer = 4
 	collision_mask = 4
 	z_index = 4

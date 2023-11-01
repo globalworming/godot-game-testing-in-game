@@ -10,6 +10,7 @@ func _process(_delta):
 	pass
 	
 func _on_body_entered(body: Node):
+	#print("collide with %s" % body.name)
 	if body.has_method("on_ball_collision"):
 		body.on_ball_collision(self)
 

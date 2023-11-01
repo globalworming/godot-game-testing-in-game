@@ -1,16 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://dt7sh0qfrg5gx"]
+[gd_scene load_steps=5 format=3 uid="uid://dt7sh0qfrg5gx"]
 
 [ext_resource type="PackedScene" uid="uid://dgwsl3tvuq55l" path="res://components/flipper/flipper_left.tscn" id="1_2ib1r"]
 [ext_resource type="PackedScene" uid="uid://q1mu1qhtguxi" path="res://components/test/on_ball_enter_press_input.tscn" id="2_vkv4p"]
 [ext_resource type="PackedScene" uid="uid://cy6drw7rhi4gn" path="res://components/ball/ball.tscn" id="3_1ec47"]
+[ext_resource type="PackedScene" uid="uid://i4tw8e6bgbqk" path="res://components/creatures/big_creature.tscn" id="4_nesb8"]
 
 [node name="tmp" type="Node2D"]
 
 [node name="flipper" parent="." instance=ExtResource("1_2ib1r")]
-position = Vector2(80, 552)
+position = Vector2(456, 944)
 
 [node name="on_ball_enter_press_input" parent="." instance=ExtResource("2_vkv4p")]
-position = Vector2(392, 512)
+position = Vector2(744, 904)
 
 [node name="ball" parent="." instance=ExtResource("3_1ec47")]
-position = Vector2(392, 376)
+position = Vector2(760, 896)
+
+[node name="big_creature" parent="." instance=ExtResource("4_nesb8")]
+position = Vector2(600, 480)

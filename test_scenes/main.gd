@@ -18,6 +18,7 @@ func next():
 	var _next = tests.pop_front();
 	if _next != null: 
 		print("run test " + _next)
+		Statistics.reset()
 		if next_test != null: 
 			call_deferred("remove_child", next_test)
 		next_test = load(_next).instantiate()

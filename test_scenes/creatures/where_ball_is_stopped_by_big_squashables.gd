@@ -7,7 +7,5 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	Input.action_press("move_left")
-	Input.action_press("move_right")
+func _process(delta: float) -> void:
 	pass

@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://b4lgvfkqiqx72"]
+
+[ext_resource type="PackedScene" uid="uid://cy6drw7rhi4gn" path="res://components/ball/ball.tscn" id="3_ddjoj"]
+[ext_resource type="PackedScene" uid="uid://cq6r1jcjy0qc2" path="res://components/creatures/small_creature.tscn" id="4_i6w1r"]
+[ext_resource type="PackedScene" uid="uid://djgboj0jar52m" path="res://components/test/on_hit_test_success_block.tscn" id="4_xr3gb"]
+[ext_resource type="PackedScene" uid="uid://i4tw8e6bgbqk" path="res://components/creatures/big_creature.tscn" id="5_d51d2"]
+
+[node name="where_ball_is_stopped_by_big_squashables" type="Node2D"]
+
+[node name="ball" parent="." instance=ExtResource("3_ddjoj")]
+position = Vector2(1049, 448)
+
+[node name="on hit test success block" parent="." instance=ExtResource("4_xr3gb")]
+position = Vector2(897, 1034)
+
+[node name="small_creature" parent="." instance=ExtResource("4_i6w1r")]
+position = Vector2(1066, 738)
+
+[node name="big_creature" parent="." instance=ExtResource("5_d51d2")]
+position = Vector2(1114, 920)
+mass = 2.0

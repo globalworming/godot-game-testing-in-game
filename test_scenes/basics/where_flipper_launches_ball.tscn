@@ -39,4 +39,4 @@ position = Vector2(960, 272)
 shape = SubResource("RectangleShape2D_iqcdl")
 
 [node name="block" parent="." instance=ExtResource("4_f8vef")]
-position = Vector2(-624, 392)
+position = Vector2(-424, 424)

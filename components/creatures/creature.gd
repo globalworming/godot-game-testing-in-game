@@ -26,15 +26,14 @@ func _on_ball_in_vicinity(ball: RigidBody2D) -> void:
 
 		
 func squash():
-	if squashed: pass
+	if squashed: return
 	squashed = true
 	$body/Puddle.visible = true
 	$body/Creature.visible = false
 	body.set_deferred("freeze", true)
 	collider.set_deferred("disabled", true)
 	squasher.set_deferred("disabled", true)
-	Statistics.creatures_squashed += 1
-	
+	Statistics.creatures_squashed += 1	
 
 func _process(_delta: float) -> void:
 	if health <= 0:

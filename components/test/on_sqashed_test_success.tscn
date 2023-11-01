@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://w8ba7jncpcna"]
+
+[ext_resource type="Script" path="res://components/test/on_sqashed_test_success.gd" id="1_76p78"]
+[ext_resource type="PackedScene" uid="uid://qu3ajd2iq8xm" path="res://components/test/shows_statistics.tscn" id="1_l5t21"]
+[ext_resource type="Script" path="res://components/test/to_squash.gd" id="3_5qraa"]
+[ext_resource type="LabelSettings" uid="uid://cne24tsnve2y2" path="res://label_settings/some_setting.tres" id="3_xnvsg"]
+
+[node name="on_sqashed_test_success" type="Node2D"]
+script = ExtResource("1_76p78")
+
+[node name="shows_statistics" parent="." instance=ExtResource("1_l5t21")]
+offset_left = 0.0
+offset_top = 128.0
+offset_right = 286.0
+offset_bottom = 194.0
+scale = Vector2(1.76179, 1.84913)
+label_settings = ExtResource("3_xnvsg")
+
+[node name="to_squash" type="Label" parent="."]
+offset_right = 48.0
+offset_bottom = 26.0
+scale = Vector2(2.03708, 1.86488)
+text = "to kill:"
+label_settings = ExtResource("3_xnvsg")
+script = ExtResource("3_5qraa")

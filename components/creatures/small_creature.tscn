@@ -21,6 +21,7 @@ radius = 7.0
 script = ExtResource("1_84po6")
 
 [node name="body" type="RigidBody2D" parent="."]
+inertia = 0.1
 physics_material_override = SubResource("PhysicsMaterial_fk3ao")
 gravity_scale = 0.0
 continuous_cd = 2
@@ -30,7 +31,6 @@ script = ExtResource("4_8toip")
 
 [node name="collision" type="CollisionPolygon2D" parent="body"]
 polygon = PackedVector2Array(-23, -10, -22, 21, -18, 23, 0, 29, 18, 23, 23, 20, 23, -10, 17, -22, 8, -27, -1, -29, -9, -27, -19, -21)
-disabled = true
 
 [node name="Creature" type="Sprite2D" parent="body"]
 scale = Vector2(0.2, 0.2)

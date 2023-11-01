@@ -11,7 +11,7 @@ func _ready():
 	tests.sort()
 	next()
 
-func _test_success(): 
+func _test_success():
 	next()
 
 func next(): 

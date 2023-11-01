@@ -25,14 +25,10 @@ func _physics_process(_delta: float) -> void:
 	if Input.is_action_just_pressed(input_action):
 		constant_torque = 0		
 		add_constant_torque(100000 * speed * (-1 if left_flipper else 1))
-		#$extended_collision.disabled = false
-		pass
 	
 	if Input.is_action_just_released(input_action):
 		constant_torque = 0
 		add_constant_torque(100000 * speed * (1 if left_flipper else -1))
-		#$extended_collision.disabled = false
-		pass
 	
 	if left_flipper: 
 		if (rotation_degrees > -30) && (rotation_degrees < -15):

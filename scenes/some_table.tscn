@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://bjmbblr5a20j5"]
+
+[ext_resource type="PackedScene" uid="uid://dgwsl3tvuq55l" path="res://components/flipper/flipper_left.tscn" id="1_n2frj"]
+[ext_resource type="PackedScene" uid="uid://c4t6p3yr1417a" path="res://components/flipper/flipper_right.tscn" id="2_6boj6"]
+[ext_resource type="PackedScene" uid="uid://cy6drw7rhi4gn" path="res://components/ball/ball.tscn" id="3_crngo"]
+
+[node name="some_table" type="Node2D"]
+
+[node name="flipper2" parent="." instance=ExtResource("2_6boj6")]
+position = Vector2(1568, 1792)
+rotation = -3.66519
+
+[node name="ball" parent="." instance=ExtResource("3_crngo")]
+position = Vector2(1072, 1552)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(1672, 1784, 1584, 1736, 2104, 1464, 2384, 408, 224, 720, 896, 1744, 768, 1776, 1120, 2088, 1232, 1928, 1352, 2096, 1640, 2168, 200, 2152, 24, 1024, 0, 368, 904, -16, 1760, 0, 2752, 56, 2528, 1672, 1816, 2168, 1312, 2024)
+
+[node name="flipper" parent="." instance=ExtResource("1_n2frj")]
+position = Vector2(872, 1792)
+rotation = 0.523599

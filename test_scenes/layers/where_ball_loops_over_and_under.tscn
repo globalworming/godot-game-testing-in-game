@@ -44,7 +44,7 @@ position = Vector2(1512, 832)
 rotation = -4.18879
 
 [node name="flipper2" parent="." instance=ExtResource("10_w5oey")]
-position = Vector2(328, 1176)
+position = Vector2(296, 1152)
 rotation = 0.785397
 
 [node name="on_ball_enter_press_input" parent="." instance=ExtResource("4_heg54")]
@@ -106,7 +106,7 @@ polygon = PackedVector2Array(112, 168, 184, 224, 232, 104, 168, 80, 74, 10, 72, 
 position = Vector2(944, 528)
 
 [node name="on_ball_enter_press_input2" parent="." instance=ExtResource("4_heg54")]
-position = Vector2(488, 1162)
+position = Vector2(424, 1152)
 
 [connection signal="body_entered" from="move_ball_to_z0" to="move_ball_to_z0" method="_on_body_entered"]
 [connection signal="body_entered" from="move_ball_to_z1" to="move_ball_to_z1" method="_on_body_entered"]

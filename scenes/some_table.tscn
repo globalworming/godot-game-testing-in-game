@@ -16,7 +16,7 @@ position = Vector2(1072, 1552)
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PackedVector2Array(1672, 1784, 1584, 1736, 2104, 1464, 2384, 408, 224, 720, 896, 1744, 768, 1776, 1120, 2088, 1232, 1928, 1352, 2096, 1640, 2168, 200, 2152, 24, 1024, 0, 368, 904, -16, 1760, 0, 2752, 56, 2528, 1672, 1816, 2168, 1312, 2024)
+polygon = PackedVector2Array(1672, 1784, 1584, 1736, 2104, 1464, 2384, 408, 224, 720, 896, 1744, 768, 1776, 1120, 2088, 1232, 1928, 1352, 2096, 1640, 2168, 200, 2152, 24, 1024, 0, 368, 904, -16, 1760, 0, 2752, 56, 2528, 1672, 1816, 2168, 1376, 2088)
 
 [node name="flipper" parent="." instance=ExtResource("1_n2frj")]
 position = Vector2(872, 1792)

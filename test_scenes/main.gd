@@ -80,12 +80,9 @@ func find_number_of_instances() -> int:
 	return 0
 
 func adjust_screen():
+	get_window().mode = Window.MODE_WINDOWED
 	var size = DisplayServer.window_get_size() * 0.5
-	var window = get_window();
-	window.size = size
 	DisplayServer.window_set_max_size(size)
-	window.mode = Window.MODE_WINDOWED 
-	window.position = Vector2i(500, 500)
 	if (my_instance_number == 1):
 		DisplayServer.window_set_position(Vector2i(0,0))
 	if (my_instance_number == 2):

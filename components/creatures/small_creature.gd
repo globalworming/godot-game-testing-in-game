@@ -16,25 +16,6 @@ func _ready() -> void:
 		node_to_follow = PathFollow2D.new()
 		node_to_follow.loop = false
 		route_to_follow.add_child(node_to_follow)
-	
-
-func _on_ball_in_vicinity(_ball: RigidBody2D) -> void:
-	#var ball_mass = ball.mass
-	#var my_mass = body.mass
-	##print("""
-	##my mass %f
-	##ball mass %f
-	##""" % [my_mass, ball_mass])
-	#var am_i_sqashable = ball_mass * 5 > my_mass
-	#if am_i_sqashable: 
-	#	collider.set_deferred("disabled", true)
-	#	squasher.set_deferred("disabled", false)
-	#else:
-	#	collider.set_deferred("disabled", false)
-	#	squasher.set_deferred("disabled", true)
-	pass
-
-
 		
 func squash():
 	if squashed: return
@@ -43,6 +24,7 @@ func squash():
 	$body/Creature.visible = false
 	body.set_deferred("freeze", true)
 	squasher.set_deferred("disabled", true)
+	collider.set_deferred("disabled", true)
 	Statistics.creatures_squashed += 1	
 	await get_tree().create_timer(1).timeout
 	get_parent().remove_child(self)
@@ -73,15 +55,15 @@ func rotate_to_follow_node(delta):
 	var target_rotation = body.global_position.angle_to_point(node_to_follow.global_position) -PI / 2
 	var difference = fmod(target_rotation - body.rotation, PI)
 	
-	#if (abs(difference) < deg_to_rad(15) ): 
-	#	body.lock_rotation = true
-	#else:		
-	#	body.lock_rotation = false
+	if (abs(difference) < deg_to_rad(15) ): 
+		body.lock_rotation = true
+	else:		
+		body.lock_rotation = false
 		
-	#if (difference > 0):
-	#	body.apply_torque(20) 
-	#if (difference < 0):
-	#	body.apply_torque(-20) 
+	if (difference > 0):
+		body.apply_torque(40) 
+	if (difference < 0):
+		body.apply_torque(-40) 
 				
 	if (abs(difference) > PI/4):
 		body.apply_central_force((body.global_position - node_to_follow.global_position).normalized() * delta * 20000) 	

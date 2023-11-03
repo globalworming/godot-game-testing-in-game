@@ -8,11 +8,12 @@
 script = ExtResource("1_6u3bh")
 
 [node name="Flagpole" type="Sprite2D" parent="."]
-position = Vector2(3, -8)
-scale = Vector2(0.0465426, 0.0465426)
+position = Vector2(24, -52)
+scale = Vector2(0.32658, 0.32658)
 texture = ExtResource("2_blrih")
 
 [node name="Circle" type="Sprite2D" parent="."]
-position = Vector2(-0.132237, -32.1322)
-scale = Vector2(0.0535432, 0.0535432)
+position = Vector2(3.8147e-06, -175)
+rotation = -0.785397
+scale = Vector2(0.297913, 0.297913)
 texture = ExtResource("3_ijsf1")

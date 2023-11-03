@@ -1,7 +1,7 @@
 extends RigidBody2D
 
 @export var input_action: String = "move_left"
-@export var speed: float = 200
+@export var speed: float = 1000
 @export var left_flipper = true
 
 # Called when the node enters the scene tree for the first time.

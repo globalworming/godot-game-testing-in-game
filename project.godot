@@ -57,4 +57,11 @@ move_down={
 [layer_names]
 
 2d_physics/layer_2="right_paddle_bounds"
+2d_physics/layer_5="small_creature"
 2d_physics/layer_6="left_paddle_bounds"
+
+[physics]
+
+common/physics_ticks_per_second=120
+common/max_physics_steps_per_frame=16
+2d/physics_engine="GodotPhysics2D"

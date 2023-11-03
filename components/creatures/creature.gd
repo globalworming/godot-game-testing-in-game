@@ -18,20 +18,21 @@ func _ready() -> void:
 		route_to_follow.add_child(node_to_follow)
 	
 
-func _on_ball_in_vicinity(ball: RigidBody2D) -> void:
-	var ball_mass = ball.mass
-	var my_mass = body.mass
-	#print("""
-	#my mass %f
-	#ball mass %f
-	#""" % [my_mass, ball_mass])
-	var am_i_sqashable = ball_mass * 5 > my_mass
-	if am_i_sqashable: 
-		collider.set_deferred("disabled", true)
-		squasher.set_deferred("disabled", false)
-	else:
-		collider.set_deferred("disabled", false)
-		squasher.set_deferred("disabled", true)
+func _on_ball_in_vicinity(_ball: RigidBody2D) -> void:
+	#var ball_mass = ball.mass
+	#var my_mass = body.mass
+	##print("""
+	##my mass %f
+	##ball mass %f
+	##""" % [my_mass, ball_mass])
+	#var am_i_sqashable = ball_mass * 5 > my_mass
+	#if am_i_sqashable: 
+	#	collider.set_deferred("disabled", true)
+	#	squasher.set_deferred("disabled", false)
+	#else:
+	#	collider.set_deferred("disabled", false)
+	#	squasher.set_deferred("disabled", true)
+	pass
 
 
 		
@@ -44,14 +45,16 @@ func squash():
 	collider.set_deferred("disabled", true)
 	squasher.set_deferred("disabled", true)
 	Statistics.creatures_squashed += 1	
+	await get_tree().create_timer(1).timeout
+	get_parent().remove_child(self)
 
 func _process(_delta: float) -> void:
 	if health <= 0:
 		squash()
-		
-func _physics_process(_delta: float) -> void:
 	if (route != null):
 		advance_route(_delta)		
+		
+#func _physics_process(_delta: float) -> void:
 		
 func advance_route(delta):
 	var distance_to_follow_node = body.global_position.distance_to(node_to_follow.global_position)

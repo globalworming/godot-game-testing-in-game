@@ -12,15 +12,17 @@ bounce = 0.26
 absorbent = true
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ptrud"]
-radius = 90.0056
+radius = 270.599
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2mfcv"]
-radius = 8.06226
+radius = 83.0
 
 [node name="small_creature" type="Node2D"]
 script = ExtResource("1_84po6")
 
 [node name="body" type="RigidBody2D" parent="."]
+collision_layer = 16
+collision_mask = 16
 inertia = 0.1
 physics_material_override = SubResource("PhysicsMaterial_fk3ao")
 gravity_scale = 0.0
@@ -42,18 +44,17 @@ scale = Vector2(0.129661, 0.121895)
 texture = ExtResource("2_8xtc7")
 
 [node name="vicinity" type="Area2D" parent="body"]
+visible = false
 script = ExtResource("5_t8ain")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="body/vicinity"]
 shape = SubResource("CircleShape2D_ptrud")
 
 [node name="squash_area" type="Area2D" parent="body"]
-position = Vector2(1, 6)
+priority = 1
 script = ExtResource("4_x10x7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="body/squash_area"]
-position = Vector2(-1, 0)
 shape = SubResource("CircleShape2D_2mfcv")
 
-[connection signal="body_entered" from="body/vicinity" to="body/vicinity" method="_on_body_entered"]
 [connection signal="body_entered" from="body/squash_area" to="body/squash_area" method="_on_body_entered"]

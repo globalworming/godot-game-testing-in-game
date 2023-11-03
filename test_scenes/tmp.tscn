@@ -1,20 +1,80 @@
-[gd_scene load_steps=5 format=3 uid="uid://dt7sh0qfrg5gx"]
+[gd_scene load_steps=9 format=3 uid="uid://dt7sh0qfrg5gx"]
 
 [ext_resource type="PackedScene" uid="uid://dgwsl3tvuq55l" path="res://components/flipper/flipper_left.tscn" id="1_2ib1r"]
-[ext_resource type="PackedScene" uid="uid://q1mu1qhtguxi" path="res://components/test/on_ball_enter_press_input.tscn" id="2_vkv4p"]
+[ext_resource type="PackedScene" uid="uid://c4t6p3yr1417a" path="res://components/flipper/flipper_right.tscn" id="2_p5ibw"]
 [ext_resource type="PackedScene" uid="uid://cy6drw7rhi4gn" path="res://components/ball/ball.tscn" id="3_1ec47"]
-[ext_resource type="PackedScene" uid="uid://i4tw8e6bgbqk" path="res://components/creatures/big_creature.tscn" id="4_nesb8"]
+[ext_resource type="PackedScene" uid="uid://bwyqjm6xsud0c" path="res://components/creatures/spawner.tscn" id="4_j8trm"]
+[ext_resource type="PackedScene" uid="uid://qu3ajd2iq8xm" path="res://components/test/success_triggers/shows_statistics.tscn" id="5_0j0fk"]
+[ext_resource type="LabelSettings" uid="uid://cne24tsnve2y2" path="res://label_settings/some_setting.tres" id="6_ussp1"]
+
+[sub_resource type="Curve2D" id="Curve2D_jpip5"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1120, 352, 0, 0, 0, 0, 1528, 384, -265.723, -151.361, 265.723, 151.361, 2968, 384, 0, 0, 0, 0, 2992, 776, 0, 0, 0, 0, 1416, 752, -934.388, -512.579, 934.388, 512.579, 1240, 1032, 0, 0, 0, 0, 2000, 1496)
+}
+point_count = 7
+
+[sub_resource type="Curve2D" id="Curve2D_w8jwf"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -448, -712, -511.114, -48.9591, 511.114, 48.9591, 728, 848, -20.9763, 191.783, 20.9763, -191.783, 2000, 288, 0, 0, 0, 0, 1616, -512)
+}
+point_count = 4
 
 [node name="tmp" type="Node2D"]
-
-[node name="flipper" parent="." instance=ExtResource("1_2ib1r")]
-position = Vector2(456, 944)
-
-[node name="on_ball_enter_press_input" parent="." instance=ExtResource("2_vkv4p")]
-position = Vector2(744, 904)
 
 [node name="ball" parent="." instance=ExtResource("3_1ec47")]
 position = Vector2(760, 896)
 
-[node name="big_creature" parent="." instance=ExtResource("4_nesb8")]
-position = Vector2(600, 480)
+[node name="ball2" parent="." instance=ExtResource("3_1ec47")]
+position = Vector2(1152, 632)
+
+[node name="ball3" parent="." instance=ExtResource("3_1ec47")]
+position = Vector2(2456, 1136)
+
+[node name="ball4" parent="." instance=ExtResource("3_1ec47")]
+position = Vector2(2848, 872)
+
+[node name="flipper" parent="." instance=ExtResource("2_p5ibw")]
+position = Vector2(2344, 1976)
+rotation = -3.40339
+
+[node name="flipper2" parent="." instance=ExtResource("1_2ib1r")]
+position = Vector2(1624, 1976)
+rotation = 0.261799
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(1600, 1936, 1584, 1960, 1576, 1992, 1608, 2024, 1968, 2160, 1984, 2064, 2008, 2160, 1976, 2216, 1360, 2240, 56, 2112, 56, 32, 3800, 56, 3800, 1710.32, 3800, 2136, 2032, 2208, 2032, 2160, 2352, 2016, 2392, 2000, 2392, 1960, 2368, 1936, 2624, 1808, 2856, 1600, 3016, 1336, 3224, 752, 3288, 256, 3288, 136, 272, 144, 320, 240, 392, 344, 480, 512, 592, 880, 808, 1296, 1016, 1608, 1240, 1792, 1384, 1872)
+
+[node name="Polygon2D" type="Polygon2D" parent="StaticBody2D"]
+color = Color(0.478431, 0.478431, 0.478431, 1)
+polygon = PackedVector2Array(1600, 1936, 1584, 1960, 1576, 1992, 1592, 2008, 1976, 2104, 1984, 2064, 1992, 2104, 2024, 2280, -280, 2216, -296, -200, 4080, -224, 3952, 2256, 1952, 2280, 1984, 2104, 2352, 2024, 2392, 2000, 2392, 1968, 2376, 1928, 2624, 1808, 2864, 1600, 3224, 768, 3288, 160, 272, 144, 344, 272, 464, 480, 576, 872, 752, 1168, 928, 1472, 1224, 1792, 1424, 1888)
+
+[node name="Node2D2" type="Node2D" parent="."]
+
+[node name="spawner" parent="Node2D2" instance=ExtResource("4_j8trm")]
+position = Vector2(1072, 312)
+rate = 30.0
+_creature = "res://components/creatures/big_creature.tscn"
+
+[node name="path" type="Path2D" parent="Node2D2"]
+curve = SubResource("Curve2D_jpip5")
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="spawner" parent="Node2D" instance=ExtResource("4_j8trm")]
+position = Vector2(392, 296)
+rate = 300.0
+spawn_mass = 1
+
+[node name="path" type="Path2D" parent="Node2D"]
+position = Vector2(928, 1032)
+curve = SubResource("Curve2D_w8jwf")
+
+[node name="shows_statistics" parent="." instance=ExtResource("5_0j0fk")]
+offset_left = 2664.0
+offset_top = 1832.0
+offset_right = 2950.0
+offset_bottom = 1898.0
+scale = Vector2(1.44328, 1.66403)
+label_settings = ExtResource("6_ussp1")

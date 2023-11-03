@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://i4tw8e6bgbqk" path="res://components/creatures/big_creature.tscn" id="1_bi8tt"]
 [ext_resource type="PackedScene" uid="uid://cy6drw7rhi4gn" path="res://components/ball/ball.tscn" id="2_vpg11"]
-[ext_resource type="PackedScene" uid="uid://gl3wmjtbhmr6" path="res://components/test/success_triggers/on_damage_test_succes.tscn" id="3_f4250"]
+[ext_resource type="PackedScene" path="res://components/test/success_triggers/on_damage_test_succes.tscn" id="3_f4250"]
 
 [node name="where_balls_do_damage" type="Node2D"]
 

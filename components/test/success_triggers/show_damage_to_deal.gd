@@ -7,7 +7,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	text = """
-	damaage %d/%d
-	""" %   [get_parent().damage_to_deal, Statistics.damage_dealt]
+	damage %d/%d
+	""" %   [Statistics.damage_dealt, get_parent().damage_to_deal]

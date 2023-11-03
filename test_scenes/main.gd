@@ -36,6 +36,10 @@ func next():
 		if next_test != null: 
 			call_deferred("remove_child", next_test)
 		next_test = load(_next).instantiate()
+		var label = Label.new()
+		label.text = _next
+		label.label_settings = load("res://label_settings/some_other_setting.tres")
+		next_test.add_child(label)
 		call_deferred("add_child", next_test)
 	else:
 		get_tree().quit(0)

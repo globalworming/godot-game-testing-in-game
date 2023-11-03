@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://cm5r4tyfdxsrw"]
 
-[ext_resource type="Script" path="res://components/flipper/flipper.gd" id="1_0lk88"]
+[ext_resource type="Script" path="res://components/flipper/paddle.gd" id="1_wjdyc"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_va2vu"]
 
@@ -22,7 +22,8 @@ physics_material_override = SubResource("PhysicsMaterial_va2vu")
 gravity_scale = 0.0
 continuous_cd = 2
 max_contacts_reported = 16
-script = ExtResource("1_0lk88")
+contact_monitor = true
+script = ExtResource("1_wjdyc")
 
 [node name="collision_circle_big" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_bkc0l")
@@ -42,3 +43,5 @@ position = Vector2(216, 0)
 rotation = -1.57079
 shape = SubResource("CapsuleShape2D_1uxdd")
 disabled = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

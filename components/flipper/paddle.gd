@@ -41,4 +41,8 @@ func _physics_process(_delta: float) -> void:
 		else:
 			$extended_collision.disabled = true
 			
-		
+func _on_body_entered(body: Node):
+	#print("collide with %s" % body.name)
+	if body.has_method("on_paddle_collision"):
+		body.on_paddle_collision(self)
+

@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://gl3wmjtbhmr6"]
+
+[ext_resource type="Script" path="res://components/test/success_triggers/on_damage_test_succes.gd" id="1_yon7r"]
+[ext_resource type="PackedScene" uid="uid://qu3ajd2iq8xm" path="res://components/test/success_triggers/shows_statistics.tscn" id="2_dg13k"]
+[ext_resource type="LabelSettings" uid="uid://cne24tsnve2y2" path="res://label_settings/some_setting.tres" id="3_3nrcp"]
+[ext_resource type="Script" path="res://components/show_damage_to_deal.gd" id="4_y3m4s"]
+
+[node name="on_damage_test_succes" type="Node2D"]
+script = ExtResource("1_yon7r")
+
+[node name="shows_statistics" parent="." instance=ExtResource("2_dg13k")]
+offset_left = -144.0
+offset_top = 64.0
+offset_right = 142.0
+offset_bottom = 130.0
+scale = Vector2(1.09094, 0.969793)
+label_settings = ExtResource("3_3nrcp")
+
+[node name="show_damage_to_deal" type="Label" parent="."]
+offset_left = -72.0
+offset_right = 88.0
+offset_bottom = 66.0
+text = "danage"
+label_settings = ExtResource("3_3nrcp")
+script = ExtResource("4_y3m4s")

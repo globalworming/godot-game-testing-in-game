@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dgwsl3tvuq55l" path="res://components/flipper/flipper_left.tscn" id="1_5rghx"]
 [ext_resource type="PackedScene" uid="uid://cy6drw7rhi4gn" path="res://components/ball/ball.tscn" id="2_w35rq"]
 [ext_resource type="PackedScene" uid="uid://q1mu1qhtguxi" path="res://components/test/on_ball_enter_press_input.tscn" id="4_dy70n"]
-[ext_resource type="PackedScene" uid="uid://djgboj0jar52m" path="res://components/test/on_hit_test_success_block.tscn" id="4_f8vef"]
+[ext_resource type="PackedScene" uid="uid://djgboj0jar52m" path="res://components/test/success_triggers/on_hit_test_success_block.tscn" id="4_f8vef"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5wnmq"]
 size = Vector2(616, 128)

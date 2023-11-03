@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://qu3ajd2iq8xm"]
 
-[ext_resource type="Script" path="res://components/test/shows_statistics.gd" id="1_v8i0t"]
+[ext_resource type="Script" path="res://components/test/success_triggers/shows_statistics.gd" id="1_o3g06"]
 
 [node name="shows_statistics" type="Label"]
 offset_left = 1201.0
@@ -9,4 +9,4 @@ offset_right = 1302.0
 offset_bottom = 727.0
 scale = Vector2(1.18934, 1.37125)
 text = "squashed = 0"
-script = ExtResource("1_v8i0t")
+script = ExtResource("1_o3g06")

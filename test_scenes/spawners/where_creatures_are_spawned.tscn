@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://bdyac7x7emml1"]
+
+[ext_resource type="PackedScene" uid="uid://bwyqjm6xsud0c" path="res://components/creatures/spawner.tscn" id="1_gccf7"]
+[ext_resource type="PackedScene" uid="uid://ov6g7ycvj5cc" path="res://components/test/success_triggers/on_number_of_creatures_in_area_success.tscn" id="2_w1gjt"]
+
+[sub_resource type="Curve2D" id="Curve2D_y6818"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 720, 832, 0, 0, 0, 0, 1040, 1160, 0, 0, 0, 0, 1216, 856)
+}
+point_count = 3
+
+[node name="where_creatures_are_spawned" type="Node2D"]
+
+[node name="path" type="Path2D" parent="."]
+curve = SubResource("Curve2D_y6818")
+
+[node name="spawner" parent="." instance=ExtResource("1_gccf7")]
+position = Vector2(680, 800)
+scale = Vector2(11.96, 11.96)
+route = NodePath("../path")
+
+[node name="on_number_of_creatures_in_area_success" parent="." instance=ExtResource("2_w1gjt")]
+position = Vector2(1200, 952)

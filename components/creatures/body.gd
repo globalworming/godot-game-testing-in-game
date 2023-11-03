@@ -1,6 +1,7 @@
 extends RigidBody2D
 
 @onready var creature = get_parent()
+@onready var sprite = $Creature
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

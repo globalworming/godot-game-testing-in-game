@@ -12,16 +12,15 @@ size = Vector2(616, 128)
 size = Vector2(224, 616)
 
 [node name="where_flipper_launches_balls" type="Node2D"]
-position = Vector2(1752, 200)
 
 [node name="flipper" parent="." instance=ExtResource("1_5rghx")]
-position = Vector2(-688, 704)
+position = Vector2(1856, 1128)
 
 [node name="ball" parent="." instance=ExtResource("2_w35rq")]
-position = Vector2(-408, 576)
+position = Vector2(2136, 1000)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(-1184, 264)
+position = Vector2(1360, 688)
 
 [node name="Polygon2D" type="Polygon2D" parent="StaticBody2D"]
 polygon = PackedVector2Array(448, 64, 824, 104, 848, 584, 888, 584, 840, 48, 816, 16, 424, 48, 424, 576, 552, 576, 496, 496, 448, 472, 448, 416, 488, 384)
@@ -38,7 +37,7 @@ position = Vector2(960, 272)
 shape = SubResource("RectangleShape2D_iqcdl")
 
 [node name="block" parent="." instance=ExtResource("4_f8vef")]
-position = Vector2(-424, 424)
+position = Vector2(2120, 848)
 
 [node name="on_ball_enter_press_input" parent="." instance=ExtResource("4_dy70n")]
-position = Vector2(-408, 672)
+position = Vector2(2136, 1096)

@@ -42,7 +42,6 @@ func squash():
 	$body/Puddle.visible = true
 	$body/Creature.visible = false
 	body.set_deferred("freeze", true)
-	collider.set_deferred("disabled", true)
 	squasher.set_deferred("disabled", true)
 	Statistics.creatures_squashed += 1	
 	await get_tree().create_timer(1).timeout
@@ -74,15 +73,15 @@ func rotate_to_follow_node(delta):
 	var target_rotation = body.global_position.angle_to_point(node_to_follow.global_position) -PI / 2
 	var difference = fmod(target_rotation - body.rotation, PI)
 	
-	if (abs(difference) < deg_to_rad(15) ): 
-		body.lock_rotation = true
-	else:		
-		body.lock_rotation = false
+	#if (abs(difference) < deg_to_rad(15) ): 
+	#	body.lock_rotation = true
+	#else:		
+	#	body.lock_rotation = false
 		
-	if (difference > 0):
-		body.apply_torque(20) 
-	if (difference < 0):
-		body.apply_torque(-20) 
+	#if (difference > 0):
+	#	body.apply_torque(20) 
+	#if (difference < 0):
+	#	body.apply_torque(-20) 
 				
 	if (abs(difference) > PI/4):
 		body.apply_central_force((body.global_position - node_to_follow.global_position).normalized() * delta * 20000) 	

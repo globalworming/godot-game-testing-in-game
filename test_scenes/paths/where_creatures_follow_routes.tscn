@@ -6,9 +6,9 @@
 
 [sub_resource type="Curve2D" id="Curve2D_kxrt1"]
 _data = {
-"points": PackedVector2Array(-47.1461, 3.17839, 47.1461, -3.17839, -320, 288, -49.265, 3.70812, 49.265, -3.70812, -200, 472, 603.087, -49.63, -603.087, 49.63, 64, 184, 0, 0, 0, 0, 272, 488)
+"points": PackedVector2Array(-47.1461, 3.17839, 47.1461, -3.17839, -320, 288, 386.65, 108.69, -386.65, -108.69, 40, 192, 0, 0, 0, 0, 272, 488)
 }
-point_count = 4
+point_count = 3
 
 [node name="where_creatures_follow_routes" type="Node2D"]
 

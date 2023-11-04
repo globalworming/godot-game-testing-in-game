@@ -1,9 +1,10 @@
 extends Node2D
 
 
-@onready var body = $body
-@onready var collider = $body/collision
-@onready var squasher = $body/squash_area/CollisionShape2D
+@onready var body = $big_creature_body
+@onready var collider = $big_creature_body/collision
+@onready var puddle = $big_creature_body/Puddle
+@onready var sprite = $big_creature_body/Creature
 @export_range(0.0, 1000.0) var mass: float = 1.0
 @export var health: float = 20.0
 @export_node_path("Path2D") var route
@@ -16,34 +17,14 @@ func _ready() -> void:
 		node_to_follow = PathFollow2D.new()
 		node_to_follow.loop = false
 		route_to_follow.add_child(node_to_follow)
-	
-
-func _on_ball_in_vicinity(_ball: RigidBody2D) -> void:
-	#var ball_mass = ball.mass
-	#var my_mass = body.mass
-	##print("""
-	##my mass %f
-	##ball mass %f
-	##""" % [my_mass, ball_mass])
-	#var am_i_sqashable = ball_mass * 5 > my_mass
-	#if am_i_sqashable: 
-	#	collider.set_deferred("disabled", true)
-	#	squasher.set_deferred("disabled", false)
-	#else:
-	#	collider.set_deferred("disabled", false)
-	#	squasher.set_deferred("disabled", true)
-	pass
-
-
 		
 func squash():
 	if squashed: return
 	squashed = true
-	$body/Puddle.visible = true
-	$body/Creature.visible = false
+	puddle.visible = true
+	sprite.visible = false
 	body.set_deferred("freeze", true)
 	collider.set_deferred("disabled", true)
-	squasher.set_deferred("disabled", true)
 	Statistics.creatures_squashed += 1	
 	await get_tree().create_timer(1).timeout
 	get_parent().remove_child(self)
@@ -53,9 +34,7 @@ func _process(_delta: float) -> void:
 		squash()
 	if (route != null):
 		advance_route(_delta)		
-		
-#func _physics_process(_delta: float) -> void:
-		
+				
 func advance_route(delta):
 	var distance_to_follow_node = body.global_position.distance_to(node_to_follow.global_position)
 	

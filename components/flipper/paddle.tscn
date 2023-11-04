@@ -16,8 +16,8 @@ height = 240.0
 
 [node name="paddle" type="RigidBody2D"]
 collision_layer = 3
-collision_mask = 3
-mass = 10.0
+collision_mask = 19
+mass = 17.31
 physics_material_override = SubResource("PhysicsMaterial_va2vu")
 gravity_scale = 0.0
 continuous_cd = 2

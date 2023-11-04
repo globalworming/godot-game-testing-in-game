@@ -15,7 +15,7 @@ point_count = 7
 
 [sub_resource type="Curve2D" id="Curve2D_w8jwf"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -448, -712, -511.114, -48.9591, 511.114, 48.9591, 728, 848, -20.9763, 191.783, 20.9763, -191.783, 2000, 288, 0, 0, 0, 0, 1616, -512)
+"points": PackedVector2Array(0, 0, 0, 0, -448, -712, -511.114, -48.9591, 511.114, 48.9591, 984, 800, -20.9763, 191.783, 20.9763, -191.783, 2000, 288, 0, 0, 0, 0, 1616, -512)
 }
 point_count = 4
 
@@ -23,15 +23,6 @@ point_count = 4
 
 [node name="ball" parent="." instance=ExtResource("3_1ec47")]
 position = Vector2(760, 896)
-
-[node name="ball2" parent="." instance=ExtResource("3_1ec47")]
-position = Vector2(1152, 632)
-
-[node name="ball3" parent="." instance=ExtResource("3_1ec47")]
-position = Vector2(2456, 1136)
-
-[node name="ball4" parent="." instance=ExtResource("3_1ec47")]
-position = Vector2(2848, 872)
 
 [node name="flipper" parent="." instance=ExtResource("2_p5ibw")]
 position = Vector2(2344, 1976)
@@ -65,7 +56,6 @@ curve = SubResource("Curve2D_jpip5")
 [node name="spawner" parent="Node2D" instance=ExtResource("4_j8trm")]
 position = Vector2(392, 296)
 rate = 300.0
-spawn_mass = 1
 
 [node name="path" type="Path2D" parent="Node2D"]
 position = Vector2(928, 1032)

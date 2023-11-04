@@ -1,11 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://i4tw8e6bgbqk"]
+[gd_scene load_steps=7 format=3 uid="uid://i4tw8e6bgbqk"]
 
 [ext_resource type="Script" path="res://components/creatures/creature.gd" id="1_sxdp8"]
+[ext_resource type="Script" path="res://components/creatures/big_creature_body.gd" id="2_k4kp5"]
 [ext_resource type="Texture2D" uid="uid://q12jabyyb8jb" path="res://assets/puddle.png" id="2_xpqel"]
 [ext_resource type="Texture2D" uid="uid://dbrshei0flsce" path="res://assets/big_creature.png" id="3_nh4wn"]
-[ext_resource type="Script" path="res://components/creatures/body.gd" id="4_gdq4v"]
-[ext_resource type="Script" path="res://components/creatures/squash_area.gd" id="5_sstg8"]
-[ext_resource type="Script" path="res://components/creatures/vicinity.gd" id="6_dvugv"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_fk3ao"]
 bounce = 0.26
@@ -14,48 +12,27 @@ absorbent = true
 [sub_resource type="CircleShape2D" id="CircleShape2D_o4s8i"]
 radius = 127.252
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ptrud"]
-radius = 297.082
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_2mfcv"]
-radius = 94.0851
-
 [node name="big_creature" type="Node2D"]
 script = ExtResource("1_sxdp8")
+mass = 3.0
 
-[node name="body" type="RigidBody2D" parent="."]
+[node name="big_creature_body" type="RigidBody2D" parent="."]
 physics_material_override = SubResource("PhysicsMaterial_fk3ao")
 gravity_scale = 0.0
 continuous_cd = 2
 linear_damp = 1.0
 angular_damp = 1.0
-script = ExtResource("4_gdq4v")
+script = ExtResource("2_k4kp5")
 
-[node name="collision" type="CollisionShape2D" parent="body"]
+[node name="collision" type="CollisionShape2D" parent="big_creature_body"]
 shape = SubResource("CircleShape2D_o4s8i")
 
-[node name="Creature" type="Sprite2D" parent="body"]
+[node name="Creature" type="Sprite2D" parent="big_creature_body"]
 position = Vector2(1, 37)
 texture = ExtResource("3_nh4wn")
 
-[node name="Puddle" type="Sprite2D" parent="body"]
+[node name="Puddle" type="Sprite2D" parent="big_creature_body"]
 visible = false
 position = Vector2(1, 8)
 scale = Vector2(0.76, 0.713)
 texture = ExtResource("2_xpqel")
-
-[node name="vicinity" type="Area2D" parent="body"]
-script = ExtResource("6_dvugv")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="body/vicinity"]
-shape = SubResource("CircleShape2D_ptrud")
-
-[node name="squash_area" type="Area2D" parent="body"]
-position = Vector2(1, 6)
-script = ExtResource("5_sstg8")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="body/squash_area"]
-shape = SubResource("CircleShape2D_2mfcv")
-
-[connection signal="body_entered" from="body/vicinity" to="body/vicinity" method="_on_body_entered"]
-[connection signal="body_entered" from="body/squash_area" to="body/squash_area" method="_on_body_entered"]

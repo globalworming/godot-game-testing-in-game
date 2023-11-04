@@ -1,16 +1,17 @@
-[gd_scene load_steps=8 format=3 uid="uid://cq6r1jcjy0qc2"]
+[gd_scene load_steps=9 format=3 uid="uid://cq6r1jcjy0qc2"]
 
 [ext_resource type="Script" path="res://components/creatures/small_creature.gd" id="1_awwyp"]
 [ext_resource type="PhysicsMaterial" uid="uid://dxf5cx15n75hb" path="res://materials/no_bounce_no_friction.tres" id="2_6fvfd"]
 [ext_resource type="Texture2D" uid="uid://q12jabyyb8jb" path="res://assets/puddle.png" id="2_8xtc7"]
 [ext_resource type="Texture2D" uid="uid://hv4o836wib6" path="res://assets/creature.png" id="3_4fasq"]
+[ext_resource type="Script" path="res://components/creatures/small_creature_body.gd" id="3_t72pu"]
 [ext_resource type="Script" path="res://components/creatures/squash_area.gd" id="4_x10x7"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_xrkbl"]
-radius = 44.0454
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_2mfcv"]
-radius = 83.0
+radius = 41.1947
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xrkbl"]
+radius = 15.0333
 
 [node name="small_creature" type="Node2D"]
 script = ExtResource("1_awwyp")
@@ -22,10 +23,18 @@ inertia = 1.0
 physics_material_override = ExtResource("2_6fvfd")
 gravity_scale = 0.0
 continuous_cd = 2
-max_contacts_reported = 16
+max_contacts_reported = 8
 contact_monitor = true
 linear_damp = 1.0
 angular_damp = 1.0
+script = ExtResource("3_t72pu")
+
+[node name="squash_area" type="Area2D" parent="body"]
+priority = 17
+script = ExtResource("4_x10x7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="body/squash_area"]
+shape = SubResource("CircleShape2D_2mfcv")
 
 [node name="collision" type="CollisionShape2D" parent="body"]
 shape = SubResource("CircleShape2D_xrkbl")
@@ -39,11 +48,5 @@ position = Vector2(1, 8)
 scale = Vector2(0.129661, 0.121895)
 texture = ExtResource("2_8xtc7")
 
-[node name="squash_area" type="Area2D" parent="body"]
-priority = 1
-script = ExtResource("4_x10x7")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="body/squash_area"]
-shape = SubResource("CircleShape2D_2mfcv")
-
 [connection signal="body_entered" from="body/squash_area" to="body/squash_area" method="_on_body_entered"]
+[connection signal="body_exited" from="body/squash_area" to="body/squash_area" method="_on_body_entered"]

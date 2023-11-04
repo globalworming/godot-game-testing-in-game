@@ -33,9 +33,7 @@ func _process(_delta: float) -> void:
 	if health <= 0:
 		squash()
 	if (route != null):
-		advance_route(_delta)		
-		
-#func _physics_process(_delta: float) -> void:
+		advance_route(_delta)
 		
 func advance_route(delta):
 	var distance_to_follow_node = body.global_position.distance_to(node_to_follow.global_position)
@@ -61,11 +59,9 @@ func rotate_to_follow_node(delta):
 		body.lock_rotation = false
 		
 	if (difference > 0):
-		body.apply_torque(40) 
+		body.apply_torque(100) 
 	if (difference < 0):
-		body.apply_torque(-40) 
+		body.apply_torque(-100) 
 				
 	if (abs(difference) > PI/4):
-		body.apply_central_force((body.global_position - node_to_follow.global_position).normalized() * delta * 20000) 	
-				
-	
+		body.apply_central_force((body.global_position - node_to_follow.global_position).normalized() * delta * 20000) 

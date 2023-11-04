@@ -1,7 +1,6 @@
 extends Node2D
 
 @export var rate = 150.0
-@export var spawn_mass = 3
 @export_file("*creature.tscn") var _creature = "res://components/creatures/small_creature.tscn"
 @onready var creature = load(_creature)
 var timer = Timer.new()
@@ -26,5 +25,4 @@ func spawn():
 	var to_spawn = creature.instantiate()
 	to_spawn.route = NodePath("../../" + route.get_name(route.get_name_count() - 1))
 	add_child(to_spawn)
-	to_spawn.body.mass = spawn_mass
 	pass

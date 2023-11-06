@@ -1,10 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://cq6r1jcjy0qc2"]
+[gd_scene load_steps=7 format=3 uid="uid://cq6r1jcjy0qc2"]
 
 [ext_resource type="Script" path="res://components/creatures/small_creature.gd" id="1_awwyp"]
 [ext_resource type="PhysicsMaterial" uid="uid://dxf5cx15n75hb" path="res://materials/no_bounce_no_friction.tres" id="2_6fvfd"]
 [ext_resource type="Texture2D" uid="uid://q12jabyyb8jb" path="res://assets/puddle.png" id="2_8xtc7"]
 [ext_resource type="Texture2D" uid="uid://hv4o836wib6" path="res://assets/creature.png" id="3_4fasq"]
-[ext_resource type="Script" path="res://components/creatures/small_creature_body.gd" id="3_t72pu"]
 [ext_resource type="Script" path="res://components/creatures/squash_area.gd" id="4_x10x7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2mfcv"]
@@ -24,7 +23,6 @@ max_contacts_reported = 8
 contact_monitor = true
 linear_damp = 1.0
 angular_damp = 1.0
-script = ExtResource("3_t72pu")
 
 [node name="squash_area" type="Area2D" parent="body"]
 priority = 17

@@ -28,8 +28,6 @@ func squash():
 	get_parent().remove_child(self)
 
 func _process(_delta: float) -> void:
-	if health <= 0:
-		squash()
 	if (route != null):
 		advance_route(_delta)
 		

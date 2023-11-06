@@ -10,7 +10,7 @@ radius = 24.0
 
 [node name="ball" type="RigidBody2D"]
 mass = 0.22
-inertia = 81.89
+inertia = 80.0
 physics_material_override = SubResource("PhysicsMaterial_7wvop")
 gravity_scale = 0.8
 continuous_cd = 2

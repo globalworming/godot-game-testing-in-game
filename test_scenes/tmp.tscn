@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dt7sh0qfrg5gx"]
+[gd_scene load_steps=10 format=3 uid="uid://dt7sh0qfrg5gx"]
 
 [ext_resource type="PackedScene" uid="uid://dgwsl3tvuq55l" path="res://components/flipper/flipper_left.tscn" id="1_2ib1r"]
 [ext_resource type="PackedScene" uid="uid://c4t6p3yr1417a" path="res://components/flipper/flipper_right.tscn" id="2_p5ibw"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bwyqjm6xsud0c" path="res://components/creatures/spawner.tscn" id="4_j8trm"]
 [ext_resource type="PackedScene" uid="uid://qu3ajd2iq8xm" path="res://components/test/success_triggers/shows_statistics.tscn" id="5_0j0fk"]
 [ext_resource type="LabelSettings" uid="uid://cne24tsnve2y2" path="res://label_settings/some_setting.tres" id="6_ussp1"]
+[ext_resource type="PackedScene" uid="uid://cq6r1jcjy0qc2" path="res://components/creatures/small_creature.tscn" id="7_ygnkm"]
 
 [sub_resource type="Curve2D" id="Curve2D_jpip5"]
 _data = {
@@ -22,7 +23,7 @@ point_count = 4
 [node name="tmp" type="Node2D"]
 
 [node name="ball" parent="." instance=ExtResource("3_1ec47")]
-position = Vector2(760, 896)
+position = Vector2(1712, 1072)
 
 [node name="flipper" parent="." instance=ExtResource("2_p5ibw")]
 position = Vector2(2344, 1976)
@@ -55,7 +56,7 @@ curve = SubResource("Curve2D_jpip5")
 
 [node name="spawner" parent="Node2D" instance=ExtResource("4_j8trm")]
 position = Vector2(392, 296)
-rate = 300.0
+rate = 500.0
 
 [node name="path" type="Path2D" parent="Node2D"]
 position = Vector2(928, 1032)
@@ -68,3 +69,18 @@ offset_right = 2950.0
 offset_bottom = 1898.0
 scale = Vector2(1.44328, 1.66403)
 label_settings = ExtResource("6_ussp1")
+
+[node name="ball2" parent="." instance=ExtResource("3_1ec47")]
+position = Vector2(1816, 960)
+
+[node name="ball3" parent="." instance=ExtResource("3_1ec47")]
+position = Vector2(1912, 864)
+
+[node name="small_creature" parent="." instance=ExtResource("7_ygnkm")]
+position = Vector2(1720, 1168)
+
+[node name="small_creature2" parent="." instance=ExtResource("7_ygnkm")]
+position = Vector2(1816, 1168)
+
+[node name="small_creature3" parent="." instance=ExtResource("7_ygnkm")]
+position = Vector2(1912, 1168)

@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cq6r1jcjy0qc2" path="res://components/creatures/small_creature.tscn" id="1_riou7"]
 [ext_resource type="PackedScene" uid="uid://cy6drw7rhi4gn" path="res://components/ball/ball.tscn" id="2_0s818"]
-[ext_resource type="PackedScene" uid="uid://w8ba7jncpcna" path="res://components/test/on_sqashed_test_success.tscn" id="4_vpnj3"]
+[ext_resource type="PackedScene" uid="uid://w8ba7jncpcna" path="res://components/test/success_triggers/on_sqashed_test_success.tscn" id="4_vpnj3"]
 
 [node name="where_ball_rolls_over_small_squashables" type="Node2D"]
 

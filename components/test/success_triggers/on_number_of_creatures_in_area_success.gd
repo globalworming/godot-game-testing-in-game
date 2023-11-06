@@ -9,6 +9,6 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	var creatures = get_overlapping_bodies().size()
+	var creatures = get_overlapping_areas().size()
 	$Label.text = "creatures %d/%d" % [creatures, creatures_required]
 	if (creatures >= creatures_required): TestStatus.test_success.emit()

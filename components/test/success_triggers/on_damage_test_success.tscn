@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://df6o1y51kcw1x"]
+[gd_scene load_steps=2 format=3 uid="uid://qkclh0pcnr72"]
 
 [ext_resource type="Script" path="res://components/test/success_triggers/on_damage_test_success.gd" id="1_gdu1m"]
 

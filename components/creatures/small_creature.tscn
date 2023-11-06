@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cq6r1jcjy0qc2"]
+[gd_scene load_steps=8 format=3 uid="uid://cq6r1jcjy0qc2"]
 
 [ext_resource type="Script" path="res://components/creatures/small_creature.gd" id="1_awwyp"]
 [ext_resource type="PhysicsMaterial" uid="uid://dxf5cx15n75hb" path="res://materials/no_bounce_no_friction.tres" id="2_6fvfd"]
@@ -9,9 +9,6 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2mfcv"]
 radius = 41.1947
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_xrkbl"]
-radius = 15.0333
 
 [node name="small_creature" type="Node2D"]
 script = ExtResource("1_awwyp")
@@ -35,9 +32,6 @@ script = ExtResource("4_x10x7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="body/squash_area"]
 shape = SubResource("CircleShape2D_2mfcv")
-
-[node name="collision" type="CollisionShape2D" parent="body"]
-shape = SubResource("CircleShape2D_xrkbl")
 
 [node name="Creature" type="Sprite2D" parent="body"]
 texture = ExtResource("3_4fasq")

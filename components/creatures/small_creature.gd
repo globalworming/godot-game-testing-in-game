@@ -2,7 +2,6 @@ extends Node2D
 
 
 @onready var body = $body
-@onready var collider = $body/collision
 @onready var squasher = $body/squash_area/CollisionShape2D
 @export_range(0.0, 1000.0) var mass: float = 1.0
 @export var health: float = 20.0
@@ -24,7 +23,6 @@ func squash():
 	$body/Creature.visible = false
 	body.set_deferred("freeze", true)
 	squasher.set_deferred("disabled", true)
-	collider.set_deferred("disabled", true)
 	Statistics.creatures_squashed += 1	
 	await get_tree().create_timer(1).timeout
 	get_parent().remove_child(self)

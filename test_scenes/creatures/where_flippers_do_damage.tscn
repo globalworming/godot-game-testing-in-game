@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://i4tw8e6bgbqk" path="res://components/creatures/big_creature.tscn" id="2_v3m2o"]
 [ext_resource type="PackedScene" uid="uid://cy6drw7rhi4gn" path="res://components/ball/ball.tscn" id="3_of88r"]
-[ext_resource type="PackedScene" uid="uid://gl3wmjtbhmr6" path="res://components/test/success_triggers/on_damage_test_succes.tscn" id="4_k12di"]
 [ext_resource type="PackedScene" uid="uid://dgwsl3tvuq55l" path="res://components/flipper/flipper_left.tscn" id="5_qxgyc"]
+[ext_resource type="PackedScene" uid="uid://pp3brdjxrg03" path="res://components/test/success_triggers/on_damage_test_success.tscn" id="6_qudyn"]
 [ext_resource type="PackedScene" uid="uid://c4t6p3yr1417a" path="res://components/flipper/flipper_right.tscn" id="6_wq2o1"]
 [ext_resource type="PackedScene" uid="uid://q1mu1qhtguxi" path="res://components/test/on_ball_enter_press_input.tscn" id="7_101f3"]
 
@@ -17,10 +17,6 @@ health = 50.0
 [node name="ball" parent="." instance=ExtResource("3_of88r")]
 position = Vector2(2248, 664)
 rotation = -0.261799
-
-[node name="on_damage_test_succes" parent="." instance=ExtResource("4_k12di")]
-position = Vector2(1808, 576)
-damage_to_deal = 50
 
 [node name="flipper" parent="." instance=ExtResource("5_qxgyc")]
 position = Vector2(888, 928)
@@ -36,3 +32,6 @@ position = Vector2(2240, 736)
 [node name="on_ball_enter_press_input2" parent="." instance=ExtResource("7_101f3")]
 position = Vector2(2248, 1096)
 input_action = "move_right"
+
+[node name="on_damage_test_succes" parent="." instance=ExtResource("6_qudyn")]
+position = Vector2(760, 480)

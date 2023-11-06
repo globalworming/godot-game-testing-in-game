@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://b74wl2mwppu43"]
+
+[ext_resource type="Script" path="res://test_scenes/layers/move_ball_to_z1.gd" id="1_oc4c3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_amv4h"]
+radius = 64.0
+
+[node name="move_ball_to_z1" type="Area2D"]
+script = ExtResource("1_oc4c3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_amv4h")
+debug_color = Color(0.2, 0.54902, 0.87451, 0.419608)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -5,10 +5,10 @@ func _ready():
 	add_to_group("ball")
 	pass
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
-	pass
-	
+func _physics_process(delta: float) -> void:
+	if (linear_velocity.length() > linear_velocity.limit_length(5000).length()):
+		set_linear_velocity(linear_velocity.limit_length(5000))
+
 func _on_body_entered(body: Node):
 	#print("collide with %s" % body.name)
 	if body.has_method("on_ball_collision"):

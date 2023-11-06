@@ -29,7 +29,7 @@ bias = 0.9
 
 [node name="paddle" parent="." instance=ExtResource("1_6j8vm")]
 collision_layer = 33
-collision_mask = 49
+collision_mask = 48
 
 [node name="end block" type="StaticBody2D" parent="."]
 rotation = 0.785397

@@ -30,6 +30,7 @@ node_b = NodePath("../paddle")
 bias = 0.9
 
 [node name="paddle" parent="." instance=ExtResource("1_mps3b")]
+collision_mask = 18
 input_action = "move_right"
 left_flipper = false
 

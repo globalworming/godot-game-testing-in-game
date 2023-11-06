@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://c3rsgklrawomo"]
+
+[ext_resource type="PackedScene" uid="uid://cq6r1jcjy0qc2" path="res://components/creatures/small_creature.tscn" id="1_wqjfh"]
+[ext_resource type="PackedScene" uid="uid://dgwsl3tvuq55l" path="res://components/flipper/flipper_left.tscn" id="2_wkhio"]
+[ext_resource type="PackedScene" uid="uid://w8ba7jncpcna" path="res://components/test/success_triggers/on_sqashed_test_success.tscn" id="3_6b8ne"]
+
+[sub_resource type="Curve2D" id="Curve2D_jpk1r"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 408, 240, -67, -29, 67, 29, 480, 248, 0, 0, 0, 0, 560, 240)
+}
+point_count = 3
+
+[node name="where_flippers_squash" type="Node2D"]
+
+[node name="small_creature" parent="." instance=ExtResource("1_wqjfh")]
+position = Vector2(184, 536)
+route = NodePath("../Path2D")
+
+[node name="small_creature2" parent="." instance=ExtResource("1_wqjfh")]
+position = Vector2(176, 432)
+route = NodePath("../Path2D")
+
+[node name="small_creature3" parent="." instance=ExtResource("1_wqjfh")]
+position = Vector2(184, 312)
+route = NodePath("../Path2D")
+
+[node name="Path2D" type="Path2D" parent="."]
+position = Vector2(-192, 184)
+curve = SubResource("Curve2D_jpk1r")
+
+[node name="flipper" parent="." instance=ExtResource("2_wkhio")]
+position = Vector2(400, 648)
+rotation = -1.8326
+
+[node name="on_sqashed_test_success" parent="." instance=ExtResource("3_6b8ne")]
+position = Vector2(664, 248)
+to_squash = 3

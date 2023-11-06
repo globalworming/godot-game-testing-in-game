@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://0ulbaickvhem"]
+
+[ext_resource type="Script" path="res://test_scenes/layers/move_ball_to_z0.gd" id="1_eai85"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7yv06"]
+radius = 62.482
+
+[node name="move_ball_to_z0" type="Area2D"]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("1_eai85")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_7yv06")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

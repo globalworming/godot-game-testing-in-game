@@ -6,13 +6,16 @@ func _ready():
 	body_entered.connect(_on_body_entered)
 	add_to_group("ball")
 	trail = Line2D.new()
-	trail.width = 1
-	trail.antialiased = true
+	trail.width = 48
+	trail.antialiased = false
+	trail.gradient = Gradient.new()
+	trail.gradient.colors = PackedColorArray([Color(0, 0, 1, .05), Color( .7, .7, 1, .1)])
+
 	get_parent().call_deferred("add_child", trail)
 	pass
 
 func _process(_delta: float) -> void:
-	trail.add_point(global_position)	
+	trail.add_point(global_position)
 
 func _physics_process(_delta: float) -> void:
 	if (linear_velocity.length() > linear_velocity.limit_length(5000).length()):

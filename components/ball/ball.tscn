@@ -3,14 +3,13 @@
 [ext_resource type="Script" path="res://components/ball/ball.gd" id="1_fuql8"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_7wvop"]
-friction = 0.1
+friction = 0.0
+bounce = 0.15
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_abfbg"]
 radius = 24.0
 
 [node name="ball" type="RigidBody2D"]
-mass = 0.22
-inertia = 80.0
 physics_material_override = SubResource("PhysicsMaterial_7wvop")
 gravity_scale = 0.8
 continuous_cd = 2

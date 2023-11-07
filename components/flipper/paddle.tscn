@@ -1,18 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://cm5r4tyfdxsrw"]
+[gd_scene load_steps=3 format=3 uid="uid://cm5r4tyfdxsrw"]
 
 [ext_resource type="Script" path="res://components/flipper/paddle.gd" id="1_wjdyc"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_va2vu"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_bkc0l"]
-radius = 32.0
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_si2oq"]
-radius = 16.0
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1uxdd"]
-radius = 56.0
-height = 240.0
 
 [node name="paddle" type="RigidBody2D"]
 collision_layer = 3
@@ -25,23 +15,10 @@ max_contacts_reported = 16
 contact_monitor = true
 script = ExtResource("1_wjdyc")
 
-[node name="collision_circle_big" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_bkc0l")
-
-[node name="collisoin_circle_small" type="CollisionShape2D" parent="."]
-position = Vector2(320, 0)
-shape = SubResource("CircleShape2D_si2oq")
+[node name="collision_area" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(0, -32, 64, -32, 128, -30, 168, -28, 227, -25, 272, -22, 287, -21, 296, -20, 310, -18, 316, -17, 324, -15, 329, -13, 332, -11, 334, -8, 335, -5, 336, 0, 335, 5, 334, 8, 332, 11, 329, 13, 324, 15, 316, 17, 310, 18, 296, 20, 287, 21, 272, 22, 227, 25, 168, 28, 128, 30, 64, 32, 0, 32)
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
-polygon = PackedVector2Array(0, -32, 320, -16, 328, -8, 336, 0, 328, 8, 320, 16, 0, 32, -8, 32, -24, 24, -32, 16, -32, 0, -32, -16, -24, -24, -8, -32)
-
-[node name="collision_area" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(0, -32, 320, -16, 320, 16, 0, 32)
-
-[node name="extended_collision" type="CollisionShape2D" parent="."]
-position = Vector2(216, 0)
-rotation = -1.57079
-shape = SubResource("CapsuleShape2D_1uxdd")
-disabled = true
+polygon = PackedVector2Array(0, -32, 64, -32, 128, -30, 188, -27, 227, -25, 256, -23, 273, -22, 286, -21, 296, -20, 310, -18, 316, -17, 320, -16, 324, -15, 329, -13, 332, -11, 334, -8, 335, -5, 336, 0, 335, 5, 334, 8, 332, 11, 329, 13, 324, 15, 320, 16, 316, 17, 310, 18, 296, 20, 286, 21, 274, 22, 256, 23, 227, 25, 188, 27, 128, 30, 64, 32, 0, 32, -8, 32, -24, 24, -32, 16, -32, 0, -32, -16, -24, -24, -8, -32)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

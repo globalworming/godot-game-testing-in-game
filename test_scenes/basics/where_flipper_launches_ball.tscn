@@ -17,7 +17,7 @@ size = Vector2(224, 616)
 position = Vector2(1856, 1128)
 
 [node name="ball" parent="." instance=ExtResource("2_w35rq")]
-position = Vector2(2136, 1000)
+position = Vector2(2136, 1040)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(1360, 688)
@@ -37,7 +37,7 @@ position = Vector2(960, 272)
 shape = SubResource("RectangleShape2D_iqcdl")
 
 [node name="block" parent="." instance=ExtResource("4_f8vef")]
-position = Vector2(2024, 792)
+position = Vector2(2088, 840)
 
 [node name="on_ball_enter_press_input" parent="." instance=ExtResource("4_dy70n")]
 position = Vector2(2136, 1096)

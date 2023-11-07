@@ -30,16 +30,16 @@ func _physics_process(_delta: float) -> void:
 		constant_torque = 0
 		add_constant_torque(100000 * speed * (1 if left_flipper else -1))
 	
-	if left_flipper: 
-		if (rotation_degrees > -30) && (rotation_degrees < -15):
-			$extended_collision.disabled = false
-		else:
-			$extended_collision.disabled = true
-	else:
-		if (rotation_degrees < 30) && (rotation_degrees > 15):
-			$extended_collision.disabled = false
-		else:
-			$extended_collision.disabled = true
+	#if left_flipper: 
+	#	if (rotation_degrees > -30) && (rotation_degrees < -15):
+	#		$extended_collision.disabled = false
+	#	else:
+	#		$extended_collision.disabled = true
+	#else:
+	#	if (rotation_degrees < 30) && (rotation_degrees > 15):
+	#		$extended_collision.disabled = false
+	#	else:
+	#		$extended_collision.disabled = true
 			
 func _on_body_entered(body: Node):
 	#print("collide with %s" % body.name)

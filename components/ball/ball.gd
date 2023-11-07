@@ -1,11 +1,20 @@
 extends RigidBody2D
 
+var trail: Line2D
+
 func _ready():
 	body_entered.connect(_on_body_entered)
 	add_to_group("ball")
+	trail = Line2D.new()
+	trail.width = 1
+	trail.antialiased = true
+	get_parent().call_deferred("add_child", trail)
 	pass
 
-func _physics_process(delta: float) -> void:
+func _process(_delta: float) -> void:
+	trail.add_point(global_position)	
+
+func _physics_process(_delta: float) -> void:
 	if (linear_velocity.length() > linear_velocity.limit_length(5000).length()):
 		set_linear_velocity(linear_velocity.limit_length(5000))
 

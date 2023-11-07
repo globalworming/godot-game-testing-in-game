@@ -40,7 +40,7 @@ input_action = "move_right"
 physics_material_override = ExtResource("5_e3epk")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="z0"]
-polygon = PackedVector2Array(792, 976, 816, 968, 912, 920, 1120, 752, 1184, 672, 1192, 688, 1096, 800, 1152, 832, 1144, 848, 1080, 816, 992, 888, 1104, 976, 1096, 984, 976, 896, 880, 952, 800, 984)
+polygon = PackedVector2Array(792, 976, 816, 968, 912, 920, 1120, 752, 1192, 664, 1192, 688, 1096, 800, 1152, 832, 1144, 848, 1080, 816, 992, 888, 1104, 976, 1096, 984, 976, 896, 880, 952, 800, 984)
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="z0"]
 polygon = PackedVector2Array(800, 896, 912, 824, 1008, 744, 1064, 688, 1104, 640, 992, 744, 904, 816, 792, 888)
@@ -62,7 +62,7 @@ polygon = PackedVector2Array(112, 168, 184, 224, 232, 104, 168, 80, 74, 10, 72, 
 position = Vector2(800, 936)
 
 [node name="move_ball_to_z0" parent="." instance=ExtResource("7_yqrrw")]
-position = Vector2(1160, 584)
+position = Vector2(1112, 656)
 
 [node name="move_ball_to_z1" parent="." instance=ExtResource("8_733bo")]
 position = Vector2(1128, 912)

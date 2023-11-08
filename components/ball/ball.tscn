@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cy6drw7rhi4gn"]
 
-[ext_resource type="Script" path="res://components/ball/ball.gd" id="1_fuql8"]
+[ext_resource type="Script" path="res://ball.gd" id="1_sfpmg"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_7wvop"]
 friction = 0.0
@@ -15,7 +15,7 @@ gravity_scale = 0.8
 continuous_cd = 2
 max_contacts_reported = 16
 contact_monitor = true
-script = ExtResource("1_fuql8")
+script = ExtResource("1_sfpmg")
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
 color = Color(0.0509804, 0.0509804, 0.0509804, 1)

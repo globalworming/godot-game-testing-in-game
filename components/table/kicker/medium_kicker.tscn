@@ -1,18 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://bw7e8meracl2q"]
+[gd_scene load_steps=2 format=3 uid="uid://bw7e8meracl2q"]
 
 [ext_resource type="Script" path="res://components/table/kicker/launcher.gd" id="1_4vcpv"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_e575g"]
-size = Vector2(208, 5.99962)
 
 [node name="medium_kicker" type="Node2D"]
 
 [node name="body" type="StaticBody2D" parent="."]
 rotation = -1.5708
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="body"]
-position = Vector2(6.2318e-05, -12.9998)
-shape = SubResource("RectangleShape2D_e575g")
 
 [node name="launcher" type="RigidBody2D" parent="."]
 gravity_scale = 0.0

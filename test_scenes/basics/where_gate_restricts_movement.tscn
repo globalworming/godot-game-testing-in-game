@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://dm221mimjldax"]
+
+[ext_resource type="PackedScene" uid="uid://cy6drw7rhi4gn" path="res://components/ball/ball.tscn" id="2_jijnk"]
+[ext_resource type="PackedScene" uid="uid://qd0hnots4y46" path="res://components/table/gate.tscn" id="3_y8aex"]
+[ext_resource type="PackedScene" uid="uid://dnk15rl8s15a0" path="res://components/table/bumber/big_bumper.tscn" id="4_j528y"]
+[ext_resource type="PackedScene" uid="uid://djgboj0jar52m" path="res://components/test/success_triggers/on_hit_test_success_block.tscn" id="4_t228r"]
+
+[node name="where_gate_restricts_movement" type="Node2D"]
+
+[node name="ball" parent="." instance=ExtResource("2_jijnk")]
+position = Vector2(956, 1586)
+rotation = 0.523599
+
+[node name="gate" parent="." instance=ExtResource("3_y8aex")]
+position = Vector2(1365, 1469)
+rotation = -3.14159
+
+[node name="gate2" parent="." instance=ExtResource("3_y8aex")]
+position = Vector2(1108, 1500)
+rotation = -3.92699
+
+[node name="gate3" parent="." instance=ExtResource("3_y8aex")]
+position = Vector2(1244, 1464)
+rotation = 2.61799
+
+[node name="gate4" parent="." instance=ExtResource("3_y8aex")]
+position = Vector2(1607, 1600)
+rotation = 1.8326
+
+[node name="gate5" parent="." instance=ExtResource("3_y8aex")]
+position = Vector2(1871, 1707)
+rotation = 1.8326
+
+[node name="gate6" parent="." instance=ExtResource("3_y8aex")]
+position = Vector2(1738, 1656)
+rotation = 8.11578
+
+[node name="big_bumper" parent="." instance=ExtResource("4_j528y")]
+position = Vector2(870, 1687)
+
+[node name="on hit test success block" parent="." instance=ExtResource("4_t228r")]
+position = Vector2(2092, 1727)

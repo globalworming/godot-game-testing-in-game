@@ -1,6 +1,5 @@
-[gd_scene load_steps=6 format=3 uid="uid://bxslkmfki3ltd"]
+[gd_scene load_steps=5 format=3 uid="uid://bxslkmfki3ltd"]
 
-[ext_resource type="Texture2D" uid="uid://e57xncluk2u2" path="res://Screenshot_20231108_231909.png" id="1_c3xc6"]
 [ext_resource type="PackedScene" uid="uid://cy6drw7rhi4gn" path="res://components/ball/ball.tscn" id="6_hid1y"]
 [ext_resource type="PackedScene" uid="uid://dgwsl3tvuq55l" path="res://components/table/flipper/flipper_left.tscn" id="7_pcowd"]
 [ext_resource type="PackedScene" uid="uid://c4t6p3yr1417a" path="res://components/table/flipper/flipper_right.tscn" id="8_lq4fs"]
@@ -11,11 +10,6 @@ radius = 7.2111
 [node name="test_table" type="Node2D"]
 metadata/_edit_vertical_guides_ = [2976.0, 1488.0]
 metadata/_edit_horizontal_guides_ = [312.0]
-
-[node name="Screenshot20231108231909" type="Sprite2D" parent="."]
-position = Vector2(1920, 1126.99)
-scale = Vector2(2.1, 2.08516)
-texture = ExtResource("1_c3xc6")
 
 [node name="z0" type="Node" parent="."]
 

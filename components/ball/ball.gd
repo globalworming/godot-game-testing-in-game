@@ -7,10 +7,9 @@ func _ready():
 	add_to_group("ball")
 	trail = Line2D.new()
 	trail.width = 48
-	trail.antialiased = false
+	trail.antialiased = true
 	trail.gradient = Gradient.new()
-	trail.gradient.colors = PackedColorArray([Color(0, 0, 1, .05), Color( .7, .7, 1, .1)])
-
+	trail.gradient.colors = PackedColorArray([Color(0, 0, 1, .05), Color( .1, .7, 1, .1)])
 	get_parent().call_deferred("add_child", trail)
 	pass
 

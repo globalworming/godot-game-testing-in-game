@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://bxslkmfki3ltd"]
+[gd_scene load_steps=8 format=3 uid="uid://bxslkmfki3ltd"]
 
 [ext_resource type="PackedScene" uid="uid://bw7e8meracl2q" path="res://components/table/kicker/medium_kicker.tscn" id="4_kma6l"]
 [ext_resource type="PackedScene" uid="uid://ccq0o403hpxun" path="res://components/table/kicker/small_kicker.tscn" id="5_catry"]
+[ext_resource type="PackedScene" uid="uid://dnk15rl8s15a0" path="res://components/table/bumber/big_bumper.tscn" id="6_c6mn2"]
 [ext_resource type="PackedScene" uid="uid://cy6drw7rhi4gn" path="res://components/ball/ball.tscn" id="6_hid1y"]
 [ext_resource type="PackedScene" uid="uid://dgwsl3tvuq55l" path="res://components/table/flipper/flipper_left.tscn" id="7_pcowd"]
 [ext_resource type="PackedScene" uid="uid://c4t6p3yr1417a" path="res://components/table/flipper/flipper_right.tscn" id="8_lq4fs"]
@@ -91,7 +92,7 @@ position = Vector2(631, -144)
 polygon = PackedVector2Array(1746, 337, 1764, 340, 1780, 343, 1830, 354, 1889, 369, 1916, 380, 1920, 356, 1639, 144, 1449, 170, 1233, 284, 1229, 670, 1216, 870, 1487, 876, 1521, 883, 1505, 836, 1486, 799, 1464, 764, 1447, 734, 1422, 683, 1408, 647, 1397, 612, 1390, 577, 1387, 558, 1387, 546, 1387, 521, 1388, 507, 1390, 497, 1393, 484, 1398, 469, 1405, 451, 1413, 437, 1422, 424, 1439, 404, 1454, 391, 1471, 379, 1484, 371, 1511, 359, 1535, 350, 1552, 345, 1572, 340, 1597, 336, 1620, 333, 1650, 332, 1691, 332, 1719, 334)
 
 [node name="ball" parent="." instance=ExtResource("6_hid1y")]
-position = Vector2(1109, 1484)
+position = Vector2(1109, 770)
 
 [node name="flipper" parent="." instance=ExtResource("7_pcowd")]
 position = Vector2(1128, 1856)
@@ -124,3 +125,9 @@ rotation = -1.5708
 [node name="small_kicker3" parent="." instance=ExtResource("5_catry")]
 position = Vector2(1799, 1163)
 rotation = 2.61799
+
+[node name="big_bumper" parent="." instance=ExtResource("6_c6mn2")]
+position = Vector2(1044, 996)
+
+[node name="big_bumper2" parent="." instance=ExtResource("6_c6mn2")]
+position = Vector2(2243, 1343)

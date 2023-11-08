@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://cbebkobni5lbk"]
+
+[ext_resource type="PackedScene" uid="uid://cy6drw7rhi4gn" path="res://components/ball/ball.tscn" id="1_05sqy"]
+[ext_resource type="PackedScene" uid="uid://dnk15rl8s15a0" path="res://components/table/bumber/big_bumper.tscn" id="2_pbbl7"]
+[ext_resource type="PackedScene" uid="uid://djgboj0jar52m" path="res://components/test/success_triggers/on_hit_test_success_block.tscn" id="3_gbe6x"]
+
+[node name="where_bumper_launches_ball" type="Node2D"]
+
+[node name="ball" parent="." instance=ExtResource("1_05sqy")]
+position = Vector2(1592, 691)
+
+[node name="big_bumper" parent="." instance=ExtResource("2_pbbl7")]
+position = Vector2(1489, 882)
+
+[node name="on hit test success block" parent="." instance=ExtResource("3_gbe6x")]
+position = Vector2(1766, 909)

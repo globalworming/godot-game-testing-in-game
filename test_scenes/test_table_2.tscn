@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bxslkmfki3ltd"]
+[gd_scene load_steps=7 format=3 uid="uid://bxslkmfki3ltd"]
 
+[ext_resource type="PackedScene" uid="uid://bw7e8meracl2q" path="res://components/table/kicker/medium_kicker.tscn" id="4_kma6l"]
+[ext_resource type="PackedScene" uid="uid://ccq0o403hpxun" path="res://components/table/kicker/small_kicker.tscn" id="5_catry"]
 [ext_resource type="PackedScene" uid="uid://cy6drw7rhi4gn" path="res://components/ball/ball.tscn" id="6_hid1y"]
-[ext_resource type="PackedScene" uid="uid://dgwsl3tvuq55l" path="res://components/flipper/flipper_left.tscn" id="7_pcowd"]
-[ext_resource type="PackedScene" uid="uid://c4t6p3yr1417a" path="res://components/flipper/flipper_right.tscn" id="8_lq4fs"]
+[ext_resource type="PackedScene" uid="uid://dgwsl3tvuq55l" path="res://components/table/flipper/flipper_left.tscn" id="7_pcowd"]
+[ext_resource type="PackedScene" uid="uid://c4t6p3yr1417a" path="res://components/table/flipper/flipper_right.tscn" id="8_lq4fs"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_i600e"]
 radius = 7.2111
@@ -98,3 +100,27 @@ rotation = 0.523599
 [node name="flipper2" parent="." instance=ExtResource("8_lq4fs")]
 position = Vector2(1848, 1856)
 rotation = 2.618
+
+[node name="medium_kicker" parent="." instance=ExtResource("4_kma6l")]
+position = Vector2(673, 1148)
+rotation = 0.523598
+
+[node name="medium_kicker2" parent="." instance=ExtResource("4_kma6l")]
+position = Vector2(1483, 1038)
+rotation = -4.71238
+
+[node name="medium_kicker3" parent="." instance=ExtResource("4_kma6l")]
+position = Vector2(825, 895)
+rotation = 4.71238
+
+[node name="small_kicker" parent="." instance=ExtResource("5_catry")]
+position = Vector2(1212, 1114)
+rotation = 1.0472
+
+[node name="small_kicker2" parent="." instance=ExtResource("5_catry")]
+position = Vector2(2014, 1196)
+rotation = -1.5708
+
+[node name="small_kicker3" parent="." instance=ExtResource("5_catry")]
+position = Vector2(1799, 1163)
+rotation = 2.61799

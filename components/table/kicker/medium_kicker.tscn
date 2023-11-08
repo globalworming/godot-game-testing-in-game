@@ -1,0 +1,36 @@
+[gd_scene load_steps=3 format=3 uid="uid://bw7e8meracl2q"]
+
+[ext_resource type="Script" path="res://components/table/kicker/launcher.gd" id="1_4vcpv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e575g"]
+size = Vector2(208, 5.99962)
+
+[node name="medium_kicker" type="Node2D"]
+
+[node name="body" type="StaticBody2D" parent="."]
+rotation = -1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="body"]
+position = Vector2(6.2318e-05, -12.9998)
+shape = SubResource("RectangleShape2D_e575g")
+
+[node name="launcher" type="RigidBody2D" parent="."]
+gravity_scale = 0.0
+script = ExtResource("1_4vcpv")
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="launcher"]
+rotation = -1.5708
+scale = Vector2(2.52, 1)
+polygon = PackedVector2Array(-40, 5, -37, 7, -34, 8, -28, 9, -12, 10, 12, 10, 28, 9, 34, 8, 37, 7, 40, 5, 41.2699, -7.99962, -41.2699, -8.00038)
+
+[node name="PinJoint2D" type="PinJoint2D" parent="."]
+position = Vector2(0, -112)
+node_a = NodePath("../body")
+node_b = NodePath("../launcher")
+softness = 16.0
+
+[node name="PinJoint2D2" type="PinJoint2D" parent="."]
+position = Vector2(0, 112)
+node_a = NodePath("../body")
+node_b = NodePath("../launcher")
+softness = 16.0

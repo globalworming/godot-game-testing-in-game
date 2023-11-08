@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://b5twhswdexy3"]
 
-[ext_resource type="PackedScene" uid="uid://dgwsl3tvuq55l" path="res://components/flipper/flipper_left.tscn" id="1_t0l7w"]
-[ext_resource type="PackedScene" uid="uid://c4t6p3yr1417a" path="res://components/flipper/flipper_right.tscn" id="2_l6tqu"]
+[ext_resource type="PackedScene" uid="uid://dgwsl3tvuq55l" path="res://components/table/flipper/flipper_left.tscn" id="1_t0l7w"]
+[ext_resource type="PackedScene" uid="uid://c4t6p3yr1417a" path="res://components/table/flipper/flipper_right.tscn" id="2_l6tqu"]
 [ext_resource type="PackedScene" uid="uid://cy6drw7rhi4gn" path="res://components/ball/ball.tscn" id="3_fahqh"]
 [ext_resource type="Texture2D" uid="uid://dmqirraou3wtn" path="res://assets/test_table.png" id="4_5o7uh"]
 [ext_resource type="PackedScene" uid="uid://0ulbaickvhem" path="res://components/layer/move_ball_to_z_0.tscn" id="5_rl4yy"]

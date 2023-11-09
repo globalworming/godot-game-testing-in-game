@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://d20k3ic1p541l"]
+
+[ext_resource type="Script" path="res://components/test/success_triggers/on_experience_collected_test_success.gd" id="1_hy4ex"]
+[ext_resource type="PackedScene" uid="uid://qu3ajd2iq8xm" path="res://components/test/success_triggers/shows_statistics.tscn" id="2_2cfv8"]
+[ext_resource type="LabelSettings" uid="uid://cne24tsnve2y2" path="res://label_settings/some_setting.tres" id="3_pkrk2"]
+[ext_resource type="Script" path="res://components/test/success_triggers/shows_experience_needed.gd" id="4_fgsxm"]
+
+[node name="on_experience_collected_test_success" type="Node2D"]
+script = ExtResource("1_hy4ex")
+
+[node name="shows_statistics" parent="." instance=ExtResource("2_2cfv8")]
+offset_left = -112.0
+offset_top = 80.0
+offset_right = 174.0
+offset_bottom = 146.0
+label_settings = ExtResource("3_pkrk2")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -120.0
+offset_top = 8.0
+offset_right = 268.0
+offset_bottom = 74.0
+text = "exp needed 1/100"
+label_settings = ExtResource("3_pkrk2")
+script = ExtResource("4_fgsxm")

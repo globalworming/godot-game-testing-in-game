@@ -8,6 +8,7 @@
 rotation = -1.5708
 
 [node name="launcher" type="RigidBody2D" parent="."]
+mass = 3.0
 gravity_scale = 0.0
 script = ExtResource("1_4vcpv")
 

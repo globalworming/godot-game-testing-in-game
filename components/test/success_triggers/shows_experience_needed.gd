@@ -1,4 +1,4 @@
-extends Area2D
+extends Label
 
 
 # Called when the node enters the scene tree for the first time.
@@ -8,9 +8,6 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	pass
-
-
-func _on_body_entered(body: Node2D) -> void:
-	if body.is_in_group("ball"):
-		body.move_to_z1()	
+	text = """
+	experience %d/%d
+	""" %   [Statistics.experience_collected, get_parent().experience_to_collect]

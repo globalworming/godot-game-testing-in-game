@@ -34,10 +34,10 @@ shape = SubResource("WorldBoundaryShape2D_te1jp")
 position = Vector2(1976, 1536)
 
 [node name="big_bumper4" parent="." instance=ExtResource("6_yxiul")]
-position = Vector2(2368, 1536)
+position = Vector2(2233, 1536)
 
 [node name="medium_kicker" parent="." instance=ExtResource("4_c52t0")]
-position = Vector2(1752, 1488)
+position = Vector2(1739, 1488)
 
 [node name="medium_kicker2" parent="." instance=ExtResource("4_c52t0")]
 position = Vector2(1808, 1712)
@@ -64,7 +64,7 @@ position = Vector2(2344, 1320)
 rotation = 1.5708
 
 [node name="medium_kicker5" parent="." instance=ExtResource("4_c52t0")]
-position = Vector2(2600, 1480)
+position = Vector2(2616, 1488)
 rotation = 3.14159
 
 [node name="medium_kicker6" parent="." instance=ExtResource("4_c52t0")]
@@ -72,4 +72,4 @@ position = Vector2(2544, 1712)
 rotation = 3.92699
 
 [node name="ball3" parent="." instance=ExtResource("1_gb2ph")]
-position = Vector2(2360, 1720)
+position = Vector2(2420, 1720)

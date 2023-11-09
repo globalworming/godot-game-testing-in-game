@@ -14,8 +14,8 @@ rotation = -0.932107
 position = Vector2(762, 1403)
 
 [node name="on hit test success block" parent="." instance=ExtResource("3_2864v")]
-position = Vector2(828, 1117)
+position = Vector2(827, 1226)
 
 [node name="kicker2" parent="." instance=ExtResource("1_rkpjl")]
-position = Vector2(1094, 1190)
+position = Vector2(1105, 1293)
 rotation = -3.10503

@@ -8,6 +8,7 @@ extends Node2D
 @export_node_path("Path2D") var route
 var node_to_follow: PathFollow2D
 var squashed = false
+var experience = preload("res://components/experience.tscn")
 
 func _ready() -> void:
 	if route != null:
@@ -18,14 +19,23 @@ func _ready() -> void:
 		
 func squash():
 	if squashed: return
-	squashed = true
+	Statistics.creatures_squashed += 1	
+	var _experience = experience.instantiate()
+	_experience.global_position = global_position
+	get_parent().call_deferred("add_child", _experience)
+	_experience.get_node("body").apply_central_impulse(
+		Vector2.from_angle(randf_range(0, 2 * PI)) * 1000)	
+	disable_any_interactions()
 	$body/Puddle.visible = true
 	$body/Creature.visible = false
-	body.set_deferred("freeze", true)
-	squasher.set_deferred("disabled", true)
-	Statistics.creatures_squashed += 1	
 	await get_tree().create_timer(1).timeout
 	get_parent().remove_child(self)
+	
+
+func disable_any_interactions():
+	squashed = true
+	body.set_deferred("freeze", true)
+	squasher.set_deferred("disabled", true)
 
 func _process(_delta: float) -> void:
 	if (route != null):

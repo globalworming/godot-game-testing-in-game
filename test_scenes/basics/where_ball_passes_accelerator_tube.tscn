@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://fx4n52fdnl54"]
+
+[ext_resource type="PackedScene" uid="uid://cy6drw7rhi4gn" path="res://components/ball/ball.tscn" id="1_qgm23"]
+[ext_resource type="Script" path="res://components/table/accelerator.gd" id="2_2lx77"]
+[ext_resource type="PackedScene" uid="uid://djgboj0jar52m" path="res://components/test/success_triggers/on_hit_test_success_block.tscn" id="3_xm7sg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q6cdu"]
+size = Vector2(162, 510)
+
+[node name="where_ball_passes_accelerator_tube" type="Node2D"]
+
+[node name="ball" parent="." instance=ExtResource("1_qgm23")]
+position = Vector2(664, 352)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(392, 1272)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(280, -192, 324.904, -121.342, 380.904, -97.3423, 432, -96, 484.904, -97.3423, 1024, -312, 1104, -376, 1184, -456, 1200, -552, 1184, -672, 1128, -768, 992, -872, 968, -928, 968, -1016, 1032, -1016, 1664, -296, 252.904, 94.6577, 184, -200, 224, -480, 256, -264)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(776, -880)
+rotation = 0.0725291
+shape = SubResource("RectangleShape2D_q6cdu")
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(872, -1016, 880, -928, 912, -864, 936, -832, 992, -784, 848, -616)
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(1128, 1064)
+script = ExtResource("2_2lx77")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(-400, 72.0001, -360, 96.0001, -304, 104, -256, 96.0001, -192, 80.0001, 288, -112, 432, -248, 456, -344, 432, -464, 384, -552, 248, -656, 216, -720, 216, -808, 144, -808, 152, -720, 184, -656, 248, -592, 328, -528, 376, -456, 400, -368, 352, -240, 248, -168)
+
+[node name="on hit test success block" parent="." instance=ExtResource("3_xm7sg")]
+position = Vector2(1312, 232)

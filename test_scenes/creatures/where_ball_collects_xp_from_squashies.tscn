@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=3 uid="uid://de6ntcdinrk1q"]
+
+[ext_resource type="PackedScene" uid="uid://cy6drw7rhi4gn" path="res://components/ball/ball.tscn" id="1_5oxl1"]
+[ext_resource type="PackedScene" uid="uid://cq6r1jcjy0qc2" path="res://components/creatures/small_creature.tscn" id="2_idsw2"]
+[ext_resource type="PackedScene" uid="uid://d20k3ic1p541l" path="res://components/test/success_triggers/on_experience_collected_test_success.tscn" id="3_n7sim"]
+
+[node name="where_ball_collects_xp_from_squashies" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 9
+collision_mask = 9
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(126, -112)
+polygon = PackedVector2Array(931, 1039, 933, 1062, 937, 1085, 946, 1107, 954, 1127, 979, 1159, 1019, 1192, 1061, 1210, 1089, 1214, 1114, 1214, 1137, 1212, 1159, 1208, 1179, 1200, 1202, 1187, 1222, 1172, 1243, 1152, 1259, 1128, 1278, 1087, 1282, 1056, 1282, 1016, 1282, 976, 1689, 1062, 1161, 1365, 659, 1079, 930, 944, 930, 1008)
+
+[node name="ball" parent="." instance=ExtResource("1_5oxl1")]
+position = Vector2(1088, 432)
+
+[node name="small_creature" parent="." instance=ExtResource("2_idsw2")]
+position = Vector2(1096, 984)
+
+[node name="small_creature2" parent="." instance=ExtResource("2_idsw2")]
+position = Vector2(1216, 1080)
+
+[node name="small_creature3" parent="." instance=ExtResource("2_idsw2")]
+position = Vector2(1120, 1016)
+
+[node name="small_creature4" parent="." instance=ExtResource("2_idsw2")]
+position = Vector2(1160, 1048)
+
+[node name="small_creature5" parent="." instance=ExtResource("2_idsw2")]
+position = Vector2(1288, 1064)
+
+[node name="small_creature6" parent="." instance=ExtResource("2_idsw2")]
+position = Vector2(1336, 1024)
+
+[node name="small_creature7" parent="." instance=ExtResource("2_idsw2")]
+position = Vector2(1360, 976)
+
+[node name="on_experience_collected_test_success" parent="." instance=ExtResource("3_n7sim")]
+position = Vector2(1592, 1160)

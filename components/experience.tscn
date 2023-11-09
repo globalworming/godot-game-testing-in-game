@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://xkpfmw2fj5u5"]
+
+[ext_resource type="Texture2D" uid="uid://m7hmhko8gdau" path="res://assets/crystal.png" id="1_72w7w"]
+[ext_resource type="Script" path="res://components/experience.gd" id="1_rirei"]
+[ext_resource type="Script" path="res://components/experience_body.gd" id="2_44gcb"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cmod3"]
+height = 34.0
+
+[node name="experience" type="Node2D"]
+script = ExtResource("1_rirei")
+
+[node name="body" type="RigidBody2D" parent="."]
+collision_layer = 8
+collision_mask = 8
+gravity_scale = 0.2
+max_contacts_reported = 2
+contact_monitor = true
+can_sleep = false
+lock_rotation = true
+linear_damp = 16.0
+script = ExtResource("2_44gcb")
+
+[node name="Crystal" type="Sprite2D" parent="body"]
+position = Vector2(0, 2)
+texture = ExtResource("1_72w7w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="body"]
+position = Vector2(0, 5)
+shape = SubResource("CapsuleShape2D_cmod3")

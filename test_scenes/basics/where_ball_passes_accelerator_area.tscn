@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://cpebbc24uj106"]
+
+[ext_resource type="PackedScene" uid="uid://cy6drw7rhi4gn" path="res://components/ball/ball.tscn" id="1_3u26c"]
+[ext_resource type="PackedScene" uid="uid://djgboj0jar52m" path="res://components/test/success_triggers/on_hit_test_success_block.tscn" id="2_8vf3g"]
+[ext_resource type="Script" path="res://components/table/accelerator.gd" id="3_q7ts5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_m5cyo"]
+radius = 170.0
+
+[node name="where_ball_passes_accelerator_area" type="Node2D"]
+
+[node name="ball" parent="." instance=ExtResource("1_3u26c")]
+position = Vector2(1088, 784)
+
+[node name="on hit test success block" parent="." instance=ExtResource("2_8vf3g")]
+position = Vector2(1096, 472)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(126, -112)
+polygon = PackedVector2Array(931, 1039, 933, 1062, 937, 1085, 946, 1107, 954, 1127, 979, 1159, 1019, 1192, 1061, 1210, 1089, 1214, 1114, 1214, 1137, 1212, 1159, 1208, 1179, 1200, 1202, 1187, 1222, 1172, 1243, 1152, 1259, 1128, 1278, 1087, 1282, 1056, 1282, 1016, 1282, 976, 1689, 1062, 1161, 1365, 659, 1079, 930, 944, 930, 1008)
+
+[node name="accelerator" type="Area2D" parent="."]
+position = Vector2(1233, 927)
+linear_damp = 0.0
+script = ExtResource("3_q7ts5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="accelerator"]
+shape = SubResource("CircleShape2D_m5cyo")

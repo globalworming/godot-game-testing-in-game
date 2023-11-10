@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://bpdhllh214f6i"]
+
+[ext_resource type="Script" path="res://test_scenes/basics/where_switches_are_hit.gd" id="1_wior7"]
+[ext_resource type="PackedScene" uid="uid://d4knaw8vqi57s" path="res://components/table/switch/switch.tscn" id="1_y2his"]
+[ext_resource type="PackedScene" uid="uid://cy6drw7rhi4gn" path="res://components/ball/ball.tscn" id="2_td6ge"]
+
+[node name="where_switches_are_hit" type="Node2D"]
+script = ExtResource("1_wior7")
+
+[node name="switch" parent="." instance=ExtResource("1_y2his")]
+position = Vector2(439, 480)
+rotation = -1.0472
+
+[node name="switch2" parent="." instance=ExtResource("1_y2his")]
+position = Vector2(615, 720)
+rotation = 5.23599
+
+[node name="switch3" parent="." instance=ExtResource("1_y2his")]
+position = Vector2(245, 1419)
+rotation = 5.49779
+
+[node name="ball" parent="." instance=ExtResource("2_td6ge")]
+position = Vector2(427, 245)
+
+[node name="ball2" parent="." instance=ExtResource("2_td6ge")]
+position = Vector2(615, 278)
+
+[node name="ball3" parent="." instance=ExtResource("2_td6ge")]
+position = Vector2(249, 256)
+
+[node name="ball4" parent="." instance=ExtResource("2_td6ge")]
+position = Vector2(623, 661)

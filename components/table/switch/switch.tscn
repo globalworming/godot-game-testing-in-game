@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=3 uid="uid://d4knaw8vqi57s"]
+
+[ext_resource type="Script" path="res://components/table/switch/switch.gd" id="1_27k53"]
+[ext_resource type="Script" path="res://components/table/switch/body.gd" id="2_wm4jg"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hqloe"]
+radius = 5.0
+height = 52.0
+
+[node name="switch" type="Node2D"]
+script = ExtResource("1_27k53")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="body" type="RigidBody2D" parent="."]
+mass = 0.1
+gravity_scale = 0.0
+lock_rotation = true
+script = ExtResource("2_wm4jg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="body"]
+shape = SubResource("CapsuleShape2D_hqloe")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="."]
+position = Vector2(0, -32)
+node_a = NodePath("../StaticBody2D")
+node_b = NodePath("../body")
+softness = 16.0
+
+[node name="PinJoint2D2" type="PinJoint2D" parent="."]
+position = Vector2(0, 32)
+node_a = NodePath("../StaticBody2D")
+node_b = NodePath("../body")
+softness = 16.0
+
+[node name="indicator" type="Polygon2D" parent="."]
+position = Vector2(-8, 8)
+color = Color(0.188235, 0.188235, 0.188235, 1)
+polygon = PackedVector2Array(-16, 0, -8, -8, -16, -16, -24, -16, -32, -8, -24, 0)

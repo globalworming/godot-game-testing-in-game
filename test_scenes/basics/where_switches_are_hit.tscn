@@ -26,7 +26,7 @@ position = Vector2(427, 245)
 position = Vector2(615, 278)
 
 [node name="ball3" parent="." instance=ExtResource("2_td6ge")]
-position = Vector2(249, 256)
+position = Vector2(229, 47)
 
 [node name="ball4" parent="." instance=ExtResource("2_td6ge")]
 position = Vector2(623, 661)

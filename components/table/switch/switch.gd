@@ -14,4 +14,4 @@ func switch():
 	if !prevent_switch_timer.is_stopped(): return
 	prevent_switch_timer.start(0.1)
 	enabled = !enabled
-	$indicator.color = Color(1, 0.2, 0.2) if enabled else Color( 0.1, 0.1, 0,1)
+	$body/indicator.color = Color(1, 0.2, 0.2) if enabled else Color( 0.1, 0.1, 0,1)

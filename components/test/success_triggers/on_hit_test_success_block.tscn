@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://components/test/on_hit_test_success_block.gd" id="1_v1p8g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qh64l"]
-size = Vector2(16, 16)
+size = Vector2(40, 40)
 
 [node name="on hit test success block" type="RigidBody2D"]
 freeze = true
@@ -13,5 +13,6 @@ script = ExtResource("1_v1p8g")
 shape = SubResource("RectangleShape2D_qh64l")
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
+scale = Vector2(3, 3)
 color = Color(0.141176, 0.486275, 0.270588, 1)
 polygon = PackedVector2Array(-5, 8, -2.06239, 8, 8, -4, 8, -8, 6, -8, -3, 5, -6, -1, -8, 0)

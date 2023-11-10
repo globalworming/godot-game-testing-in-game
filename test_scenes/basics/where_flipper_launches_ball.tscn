@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://dnbgcqa5yxpag"]
 
-[ext_resource type="PackedScene" uid="uid://dgwsl3tvuq55l" path="res://components/flipper/flipper_left.tscn" id="1_5rghx"]
+[ext_resource type="PackedScene" uid="uid://dgwsl3tvuq55l" path="res://components/table/flipper/flipper_left.tscn" id="1_5rghx"]
 [ext_resource type="PackedScene" uid="uid://cy6drw7rhi4gn" path="res://components/ball/ball.tscn" id="2_w35rq"]
 [ext_resource type="PackedScene" uid="uid://q1mu1qhtguxi" path="res://components/test/on_ball_enter_press_input.tscn" id="4_dy70n"]
 [ext_resource type="PackedScene" uid="uid://djgboj0jar52m" path="res://components/test/success_triggers/on_hit_test_success_block.tscn" id="4_f8vef"]
@@ -17,12 +17,13 @@ size = Vector2(224, 616)
 position = Vector2(1856, 1128)
 
 [node name="ball" parent="." instance=ExtResource("2_w35rq")]
-position = Vector2(2136, 1040)
+position = Vector2(2136, 928)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(1360, 688)
 
 [node name="Polygon2D" type="Polygon2D" parent="StaticBody2D"]
+color = Color(0.152941, 0.152941, 0.152941, 1)
 polygon = PackedVector2Array(448, 64, 824, 104, 848, 584, 888, 584, 840, 48, 816, 16, 424, 48, 424, 576, 552, 576, 496, 496, 448, 472, 448, 416, 488, 384)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]

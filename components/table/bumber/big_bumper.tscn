@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://dnk15rl8s15a0"]
+[gd_scene load_steps=5 format=3 uid="uid://dnk15rl8s15a0"]
 
 [ext_resource type="Script" path="res://components/table/bumber/big_bumper.gd" id="1_drtyw"]
+[ext_resource type="Texture2D" uid="uid://cxcsxyic7nu07" path="res://assets/bumper.png" id="2_jyif1"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0qin6"]
 bounce = 1.0
@@ -21,6 +22,10 @@ lock_rotation = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
 shape = SubResource("CircleShape2D_553km")
+
+[node name="Bumper" type="Sprite2D" parent="RigidBody2D"]
+scale = Vector2(2.12, 2.12)
+texture = ExtResource("2_jyif1")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 

@@ -1,12 +1,12 @@
 [gd_scene load_steps=3 format=3 uid="uid://bygfbdd70dsu1"]
 
 [ext_resource type="PackedScene" uid="uid://cy6drw7rhi4gn" path="res://components/ball/ball.tscn" id="2_m1t81"]
-[ext_resource type="PackedScene" uid="uid://djgboj0jar52m" path="res://components/test/on_hit_test_success_block.tscn" id="3_de2rk"]
+[ext_resource type="PackedScene" uid="uid://djgboj0jar52m" path="res://components/test/success_triggers/on_hit_test_success_block.tscn" id="3_de2rk"]
 
 [node name="where_ball_falls" type="Node2D"]
 
 [node name="ball" parent="." instance=ExtResource("2_m1t81")]
-position = Vector2(1192, 928)
+position = Vector2(1189, 819)
 
 [node name="on hit test success block" parent="." instance=ExtResource("3_de2rk")]
 position = Vector2(1201, 1002)

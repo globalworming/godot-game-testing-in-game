@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://1ilawlds03gg"]
+
+[ext_resource type="Script" path="res://test_scenes/basics/where_roll_overs_are_enabled.gd" id="1_3mc0y"]
+[ext_resource type="PackedScene" uid="uid://cy6drw7rhi4gn" path="res://components/ball/ball.tscn" id="2_5fht0"]
+[ext_resource type="PackedScene" uid="uid://3xuy6qe8somj" path="res://components/table/roll_over/roll_over.tscn" id="3_pborm"]
+
+[node name="where_roll_overs_are_enabled" type="Node2D"]
+script = ExtResource("1_3mc0y")
+
+[node name="roll_over" parent="." instance=ExtResource("3_pborm")]
+position = Vector2(248, 650)
+
+[node name="roll_over2" parent="." instance=ExtResource("3_pborm")]
+position = Vector2(250, 534)
+
+[node name="roll_over3" parent="." instance=ExtResource("3_pborm")]
+position = Vector2(372, 742)
+
+[node name="roll_over4" parent="." instance=ExtResource("3_pborm")]
+position = Vector2(494, 870)
+
+[node name="ball" parent="." instance=ExtResource("2_5fht0")]
+position = Vector2(248, 390)
+
+[node name="ball2" parent="." instance=ExtResource("2_5fht0")]
+position = Vector2(356, 310)
+
+[node name="ball3" parent="." instance=ExtResource("2_5fht0")]
+position = Vector2(464, 206)

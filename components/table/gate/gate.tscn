@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://qd0hnots4y46"]
+[gd_scene load_steps=3 format=3 uid="uid://qd0hnots4y46"]
+
+[ext_resource type="Texture2D" uid="uid://dld07ymf2ybq" path="res://assets/gate.png" id="1_wyt16"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xkums"]
 size = Vector2(128, 32)
@@ -13,3 +15,15 @@ rotation = -1.5708
 shape = SubResource("RectangleShape2D_xkums")
 one_way_collision = true
 one_way_collision_margin = 16.0
+
+[node name="Gate2" type="Sprite2D" parent="."]
+position = Vector2(30, -33)
+rotation = -1.57079
+scale = Vector2(1.1262, 1.44153)
+texture = ExtResource("1_wyt16")
+
+[node name="Gate3" type="Sprite2D" parent="."]
+position = Vector2(30, 33)
+rotation = -1.57079
+scale = Vector2(1.1262, 1.44153)
+texture = ExtResource("1_wyt16")

@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://dvo08xoywsj1v"]
+
+[ext_resource type="PackedScene" uid="uid://denq0y0o8bxgs" path="res://components/table/rail_gun/rail_gun.tscn" id="1_b7tyb"]
+[ext_resource type="Script" path="res://test_scenes/basics/where_rail_gun_launches_ball.gd" id="1_inlwx"]
+[ext_resource type="PackedScene" uid="uid://cy6drw7rhi4gn" path="res://components/ball/ball.tscn" id="2_6m7s1"]
+[ext_resource type="PackedScene" uid="uid://djgboj0jar52m" path="res://components/test/success_triggers/on_hit_test_success_block.tscn" id="4_kr2sk"]
+
+[node name="where_rail_gun_launches_ball" type="Node2D"]
+script = ExtResource("1_inlwx")
+
+[node name="rail_gun" parent="." instance=ExtResource("1_b7tyb")]
+position = Vector2(1376, 936)
+
+[node name="ball" parent="." instance=ExtResource("2_6m7s1")]
+position = Vector2(1376, 848)
+
+[node name="on hit test success block" parent="." instance=ExtResource("4_kr2sk")]
+position = Vector2(152, 104)

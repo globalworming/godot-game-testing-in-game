@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cqjpyatumfxys"]
+
+[ext_resource type="Texture2D" uid="uid://ex8qea8hempr" path="res://assets/tunnel_exit.png" id="1_qkhwc"]
+
+[node name="tunnel_exit" type="Node2D"]
+
+[node name="TunnelExit" type="Sprite2D" parent="."]
+rotation = 1.5708
+scale = Vector2(0.323475, 0.323475)
+texture = ExtResource("1_qkhwc")

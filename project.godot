@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 TestStatus="*res://autoload/test_status.gd"
 Statistics="*res://autoload/statistics.gd"
+SimulateInput="*res://autoload/simulate_input.gd"
 
 [display]
 

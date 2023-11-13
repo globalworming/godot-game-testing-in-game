@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://csy3f1ujkt171"]
+
+[ext_resource type="Script" path="res://components/table/tunnel/tunnel_entry.gd" id="1_lxmwp"]
+[ext_resource type="Texture2D" uid="uid://diqx3h6nw1enb" path="res://assets/tunnel_entry.png" id="2_oh022"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pfc5r"]
+radius = 24.0
+
+[node name="tunnel_entry" type="Area2D"]
+gravity_point_unit_distance = 64.0
+script = ExtResource("1_lxmwp")
+
+[node name="TunnelEntry" type="Sprite2D" parent="."]
+position = Vector2(-1.77636e-14, 5)
+rotation = -1.5708
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("2_oh022")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_pfc5r")

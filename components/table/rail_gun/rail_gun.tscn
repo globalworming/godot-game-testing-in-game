@@ -1,0 +1,114 @@
+[gd_scene load_steps=5 format=3 uid="uid://denq0y0o8bxgs"]
+
+[ext_resource type="Script" path="res://components/table/rail_gun/rail_gun.gd" id="1_x33x3"]
+[ext_resource type="Texture2D" uid="uid://cmyecltbk8ynh" path="res://assets/progress_under.png" id="2_76mov"]
+[ext_resource type="Texture2D" uid="uid://bay2qa6552hao" path="res://assets/progress_over.png" id="3_7p0kc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_by35r"]
+radius = 8.0
+
+[node name="rail_gun" type="Node2D"]
+script = ExtResource("1_x33x3")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_by35r")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="PinJoint2D" type="PinJoint2D" parent="."]
+node_a = NodePath("../StaticBody2D")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+max_value = 300.0
+rounded = true
+fill_mode = 5
+texture_under = ExtResource("2_76mov")
+texture_progress = ExtResource("3_7p0kc")
+
+[node name="angles" type="Node2D" parent="."]
+
+[node name="Node2D" type="Node2D" parent="angles"]
+position = Vector2(-112, -48)
+scale = Vector2(149.194, 3.13324)
+
+[node name="Polygon2D" type="Polygon2D" parent="angles/Node2D"]
+color = Color(0.247059, 0.247059, 0.247059, 1)
+polygon = PackedVector2Array(0, 0, 0.0536216, 0, 0.750703, 15.3196, 0, 2.55327)
+
+[node name="Node2D2" type="Node2D" parent="angles"]
+position = Vector2(-96, -72)
+
+[node name="Polygon2D" type="Polygon2D" parent="angles/Node2D2"]
+position = Vector2(-16, 24)
+scale = Vector2(149.194, 3.13324)
+color = Color(0.247059, 0.247059, 0.247059, 1)
+polygon = PackedVector2Array(0.107243, -7.65981, 0.160865, -7.65981, 0.750703, 15.3196, 0.107243, -5.10654)
+
+[node name="Node2D3" type="Node2D" parent="angles"]
+position = Vector2(-72, -96)
+
+[node name="Polygon2D" type="Polygon2D" parent="angles/Node2D3"]
+position = Vector2(-40, 48)
+scale = Vector2(149.194, 3.13324)
+color = Color(0.247059, 0.247059, 0.247059, 1)
+polygon = PackedVector2Array(0.268108, -15.3196, 0.32173, -15.3196, 0.750703, 15.3196, 0.268108, -12.7663)
+
+[node name="Node2D4" type="Node2D" parent="angles"]
+position = Vector2(-40, -112)
+
+[node name="Polygon2D" type="Polygon2D" parent="angles/Node2D4"]
+position = Vector2(-72, 64)
+scale = Vector2(149.194, 3.13324)
+color = Color(0.247059, 0.247059, 0.247059, 1)
+polygon = PackedVector2Array(0.482595, -20.4262, 0.536216, -17.8729, 0.750703, 15.3196, 0.482595, -17.8729)
+
+[node name="Node2D5" type="Node2D" parent="angles"]
+position = Vector2(0, -128)
+
+[node name="Polygon2D" type="Polygon2D" parent="angles/Node2D5"]
+position = Vector2(-112, 72)
+scale = Vector2(149.194, 3.13324)
+color = Color(0.247059, 0.247059, 0.247059, 1)
+polygon = PackedVector2Array(0.750703, -22.9794, 0.804325, -20.4262, 0.750703, 17.8729, 0.697081, -20.4262)
+
+[node name="Node2D6" type="Node2D" parent="angles"]
+position = Vector2(40, -112)
+
+[node name="Polygon2D" type="Polygon2D" parent="angles/Node2D6"]
+position = Vector2(-152, 64)
+scale = Vector2(149.194, 3.13324)
+color = Color(0.247059, 0.247059, 0.247059, 1)
+polygon = PackedVector2Array(1.01881, -20.4262, 1.01881, -17.8729, 0.750703, 15.3196, 0.965189, -17.8729)
+
+[node name="Node2D7" type="Node2D" parent="angles"]
+position = Vector2(72, -96)
+
+[node name="Polygon2D" type="Polygon2D" parent="angles/Node2D7"]
+position = Vector2(-184, 48)
+scale = Vector2(149.194, 3.13324)
+color = Color(0.247059, 0.247059, 0.247059, 1)
+polygon = PackedVector2Array(1.2333, -15.3196, 1.2333, -12.7663, 0.750703, 15.3196, 1.17968, -15.3196)
+
+[node name="Node2D8" type="Node2D" parent="angles"]
+position = Vector2(96, -72)
+
+[node name="Polygon2D" type="Polygon2D" parent="angles/Node2D8"]
+position = Vector2(-208, 24)
+scale = Vector2(149.194, 3.13324)
+color = Color(0.247059, 0.247059, 0.247059, 1)
+polygon = PackedVector2Array(1.39416, -7.65981, 1.39416, -5.10654, 0.750703, 15.3196, 1.34054, -7.65981)
+
+[node name="Node2D9" type="Node2D" parent="angles"]
+position = Vector2(112, -48)
+
+[node name="Polygon2D" type="Polygon2D" parent="angles/Node2D9"]
+position = Vector2(-224, 0)
+scale = Vector2(149.194, 3.13324)
+color = Color(0.247059, 0.247059, 0.247059, 1)
+polygon = PackedVector2Array(1.50141, 0, 1.50141, 2.55327, 0.750703, 15.3196, 1.44778, 0)

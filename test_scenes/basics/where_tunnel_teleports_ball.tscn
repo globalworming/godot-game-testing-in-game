@@ -1,0 +1,52 @@
+[gd_scene load_steps=5 format=3 uid="uid://faasgfodow7r"]
+
+[ext_resource type="PackedScene" uid="uid://cy6drw7rhi4gn" path="res://components/ball/ball.tscn" id="1_7aujd"]
+[ext_resource type="PackedScene" uid="uid://csy3f1ujkt171" path="res://components/table/tunnel/tunnel_entry.tscn" id="2_ohxpp"]
+[ext_resource type="PackedScene" uid="uid://cqjpyatumfxys" path="res://components/table/tunnel/tunnel_exit.tscn" id="3_c7f4e"]
+[ext_resource type="PackedScene" uid="uid://djgboj0jar52m" path="res://components/test/success_triggers/on_hit_test_success_block.tscn" id="4_seji8"]
+
+[node name="where_tunnel_teleports_ball" type="Node2D"]
+
+[node name="tunnel_entry" parent="." instance=ExtResource("2_ohxpp")]
+position = Vector2(384, 735)
+exit = NodePath("../tunnel_exit")
+
+[node name="ball2" parent="." instance=ExtResource("1_7aujd")]
+position = Vector2(504, 231)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(376, 655)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(-1112.4, -1084.8)
+polygon = PackedVector2Array(931, 1039, 933, 1062, 937, 1085, 946, 1107, 954, 1127, 979, 1159, 1019, 1192, 1061, 1210, 1089, 1214, 1114, 1214, 1137, 1212, 1159, 1208, 1179, 1200, 1202, 1187, 1222, 1172, 1243, 1152, 1259, 1128, 1278, 1087, 1282, 1056, 1282, 1016, 1282, 976, 1338, 968, 1314, 1248, 914, 1248, 906, 1104, 906, 960, 930, 944, 930, 1008)
+
+[node name="Polygon2D" type="Polygon2D" parent="StaticBody2D"]
+position = Vector2(-1238.4, -972.8)
+color = Color(0.121569, 0.121569, 0.121569, 1)
+polygon = PackedVector2Array(1056, 832, 1056, 928, 1064, 976, 1096, 1040, 1160, 1088, 1216, 1104, 1288, 1096, 1360, 1056, 1400, 992, 1408, 944, 1408, 864, 1408, 832, 1472, 832, 1472, 1152, 1024, 1152, 1024, 832)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(792, 975)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2"]
+position = Vector2(-1112.4, -1084.8)
+polygon = PackedVector2Array(931, 1039, 933, 1062, 937, 1085, 946, 1107, 954, 1127, 979, 1159, 1019, 1192, 1061, 1210, 1089, 1214, 1114, 1214, 1137, 1212, 1159, 1208, 1179, 1200, 1202, 1187, 1222, 1172, 1243, 1152, 1259, 1128, 1278, 1087, 1282, 1056, 1282, 1016, 1282, 976, 1338, 968, 1314, 1248, 914, 1248, 906, 1104, 906, 960, 930, 944, 930, 1008)
+
+[node name="Polygon2D" type="Polygon2D" parent="StaticBody2D2"]
+position = Vector2(-1238.4, -972.8)
+color = Color(0.121569, 0.121569, 0.121569, 1)
+polygon = PackedVector2Array(1056, 832, 1056, 928, 1064, 976, 1096, 1040, 1160, 1088, 1216, 1104, 1288, 1096, 1360, 1056, 1400, 992, 1408, 944, 1408, 864, 1408, 832, 1472, 832, 1472, 1152, 1024, 1152, 1024, 832)
+
+[node name="tunnel_exit" parent="." instance=ExtResource("3_c7f4e")]
+position = Vector2(648, 527)
+
+[node name="tunnel_entry2" parent="." instance=ExtResource("2_ohxpp")]
+position = Vector2(904, 983)
+exit = NodePath("../tunnel_exit2")
+
+[node name="tunnel_exit2" parent="." instance=ExtResource("3_c7f4e")]
+position = Vector2(992, 383)
+
+[node name="on hit test success block" parent="." instance=ExtResource("4_seji8")]
+position = Vector2(992, 775)

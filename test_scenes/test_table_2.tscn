@@ -1,5 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bxslkmfki3ltd"]
+[gd_scene load_steps=8 format=3 uid="uid://bxslkmfki3ltd"]
 
+[ext_resource type="PackedScene" uid="uid://csy3f1ujkt171" path="res://components/table/tunnel/tunnel_entry.tscn" id="4_5eg0h"]
+[ext_resource type="PackedScene" uid="uid://cqjpyatumfxys" path="res://components/table/tunnel/tunnel_exit.tscn" id="5_lgjch"]
+[ext_resource type="PackedScene" uid="uid://denq0y0o8bxgs" path="res://components/table/rail_gun/rail_gun.tscn" id="6_8cccx"]
 [ext_resource type="PackedScene" uid="uid://cy6drw7rhi4gn" path="res://components/ball/ball.tscn" id="6_hid1y"]
 [ext_resource type="PackedScene" uid="uid://dgwsl3tvuq55l" path="res://components/table/flipper/flipper_left.tscn" id="7_pcowd"]
 [ext_resource type="PackedScene" uid="uid://c4t6p3yr1417a" path="res://components/table/flipper/flipper_right.tscn" id="8_lq4fs"]
@@ -17,11 +20,9 @@ metadata/_edit_horizontal_guides_ = [312.0]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="z0/StaticBody2D"]
 position = Vector2(1, 0)
-polygon = PackedVector2Array(2307, 1508, 2331, 2164, -625, 2207, -575, -422, 3801, -419, 3872, 2193, 2331, 2169, 2307, 1508, 2434, 1410, 2529, 1332, 2579, 1287, 2624, 1245, 2663, 1205, 2709, 1155, 2750, 1105, 2775, 1071, 2795, 1043, 2824, 997, 2855, 938, 2871, 902, 2886, 864, 2896, 832, 2905, 794, 2909, 773, 2915, 723, 2915, 695, 2912, 659, 2908, 634, 2900, 596, 2891, 568, 2877, 535, 2864, 508, 2839, 468, 2825, 449, 2804, 422, 2769, 386, 2744, 362, 2727, 348, 2716, 339, 2689, 319, 2658, 298, 2610, 269, 2557, 241, 2486, 208, 2436, 188, 2389, 171, 2350, 158, 2311, 146, 2273, 135, 2233, 124, 2188, 113, 2142, 103, 2078, 90, 1999, 76, 1944, 67, 1902, 61, 1837, 53, 1776, 46, 1728, 41, 1675, 37, 1620, 33, 1561, 30, 1500, 27, 1467, 26, 1421, 26, 1372, 28, 1312, 31, 1223, 38, 1166, 44, 1114, 50, 1064, 57, 991, 68, 921, 80, 834, 98, 765, 114, 695, 132, 605, 160, 503, 198, 435, 227, 370, 260, 320, 287, 267, 323, 211, 367, 157, 421, 117, 472, 85, 524, 62, 582, 51, 622, 41, 673, 40, 699, 44, 743, 56, 811, 70, 853, 83, 889, 100, 928, 123, 970, 138, 996, 183, 1061, 244, 1134, 337, 1228, 398, 1281, 464, 1336, 509, 1371, 706, 1513, 1144, 1828, 1113, 1887, 1060, 1981, 1385, 2149, 1393, 2051, 1582, 2051, 1596, 2144, 1922, 1963, 1864, 1884, 1832, 1828, 2065, 1677, 2184, 1595)
+polygon = PackedVector2Array(2307, 1508, 2331, 2164, -625, 2207, -575, -422, 3801, -419, 3872, 2193, 2331, 2169, 2307, 1508, 2434, 1410, 2529, 1332, 2579, 1287, 2624, 1245, 2663, 1205, 2709, 1155, 2750, 1105, 2775, 1071, 2795, 1043, 2824, 997, 2855, 938, 2871, 902, 2886, 864, 2896, 832, 2905, 794, 2909, 773, 2915, 723, 2915, 695, 2912, 659, 2908, 634, 2900, 596, 2891, 568, 2877, 535, 2864, 508, 2839, 468, 2825, 449, 2804, 422, 2769, 386, 2744, 362, 2727, 348, 2716, 339, 2689, 319, 2658, 298, 2610, 269, 2557, 241, 2486, 208, 2436, 188, 2389, 171, 2350, 158, 2311, 146, 2273, 135, 2233, 124, 2188, 113, 2142, 103, 2078, 90, 1999, 76, 1944, 67, 1902, 61, 1837, 53, 1776, 46, 1728, 41, 1675, 37, 1620, 33, 1561, 30, 1500, 27, 1467, 26, 1421, 26, 1372, 28, 1312, 31, 1223, 38, 1166, 44, 1114, 50, 1064, 57, 991, 68, 921, 80, 834, 98, 765, 114, 695, 132, 605, 160, 503, 198, 435, 227, 370, 260, 320, 287, 267, 323, 211, 367, 157, 421, 117, 472, 85, 524, 62, 582, 51, 622, 41, 673, 40, 699, 44, 743, 56, 811, 70, 853, 83, 889, 100, 928, 123, 970, 138, 996, 183, 1061, 244, 1134, 337, 1228, 398, 1281, 464, 1336, 509, 1371, 706, 1513, 1144, 1828, 1113, 1887, 1060, 1981, 1486, 2165, 1922, 1963, 1864, 1884, 1832, 1828, 2065, 1677, 2184, 1595)
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="z0"]
-collision_layer = 0
-collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="z0/StaticBody2D2"]
 position = Vector2(588, 1223)
@@ -99,3 +100,13 @@ rotation = 0.523599
 [node name="flipper2" parent="." instance=ExtResource("8_lq4fs")]
 position = Vector2(1848, 1856)
 rotation = 2.618
+
+[node name="rail_gun" parent="." instance=ExtResource("6_8cccx")]
+position = Vector2(1488, 1682)
+
+[node name="tunnel_entry" parent="." instance=ExtResource("4_5eg0h")]
+position = Vector2(1486, 2133)
+exit = NodePath("../tunnel_exit")
+
+[node name="tunnel_exit" parent="." instance=ExtResource("5_lgjch")]
+position = Vector2(1489, 1686)

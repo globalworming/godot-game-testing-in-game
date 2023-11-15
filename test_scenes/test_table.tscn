@@ -43,15 +43,6 @@ rotation = 2.3667
 position = Vector2(1856, 1794)
 rotation = 0.769095
 
-[node name="gate" parent="z0" instance=ExtResource("1_iqell")]
-position = Vector2(-656, 740)
-scale = Vector2(1, 1.92)
-
-[node name="gate5" parent="z0" instance=ExtResource("1_iqell")]
-position = Vector2(-570, 740)
-rotation = -3.14127
-scale = Vector2(1, 1.92)
-
 [node name="move_ball_to_z2" parent="z0" instance=ExtResource("2_hhdlh")]
 position = Vector2(2318, 782)
 
@@ -184,7 +175,6 @@ position = Vector2(1595, 1455)
 [node name="switch" parent="z0" instance=ExtResource("16_1uyrf")]
 position = Vector2(666, 1130)
 rotation = 0.790567
-scale = Vector2(1, 1)
 
 [node name="switch2" parent="z0" instance=ExtResource("16_1uyrf")]
 position = Vector2(683, 298)
@@ -193,7 +183,6 @@ rotation = 1.128
 [node name="switch5" parent="z0" instance=ExtResource("16_1uyrf")]
 position = Vector2(744, 277)
 rotation = 1.36456
-scale = Vector2(1, 1)
 
 [node name="switch6" parent="z0" instance=ExtResource("16_1uyrf")]
 position = Vector2(817, 266)

@@ -1,9 +1,7 @@
-extends Node2D
+extends RigidBody2D
 
 
-@onready var body = $body
-@onready var squasher = $body/squash_area/CollisionShape2D
-@export_range(0.0, 1000.0) var mass: float = 1.0
+@onready var squasher = $squash_area/CollisionShape2D
 @export var health: float = 20.0
 @export_node_path("Path2D") var route
 var node_to_follow: PathFollow2D
@@ -21,22 +19,23 @@ func squash():
 	if squashed: return
 	Statistics.creatures_squashed += 1	
 	disable_any_interactions()
-	$body/Puddle.visible = true
-	$body/Creature.visible = false
+	$Puddle.visible = true
+	$Creature.visible = false
+	$crack.play()
 	spawn_experience()
 	await get_tree().create_timer(1).timeout
 	get_parent().remove_child(self)
 	
 func spawn_experience():
 	var _experience = experience.instantiate()
-	get_node("/root").call_deferred("add_child", _experience)
-	_experience.global_position = $body.global_position
-	_experience.get_node("body").apply_central_impulse(Vector2.from_angle(randf_range(0, 2 * PI)) * 1000)
+	get_parent().call_deferred("add_child", _experience)
+	_experience.global_position = global_position
+	_experience.apply_central_impulse(Vector2.from_angle(randf_range(0, 2 * PI)) * 10)
 
 func disable_any_interactions():
 	squashed = true
-	body.collision_layer = 0
-	body.set_deferred("freeze", true)
+	collision_layer = 0
+	set_deferred("freeze", true)
 	squasher.set_deferred("disabled", true)
 
 func _process(_delta: float) -> void:
@@ -44,7 +43,7 @@ func _process(_delta: float) -> void:
 		advance_route(_delta)
 		
 func advance_route(delta):
-	var distance_to_follow_node = body.global_position.distance_to(node_to_follow.global_position)
+	var distance_to_follow_node = global_position.distance_to(node_to_follow.global_position)
 	
 	if (distance_to_follow_node < 100):
 		node_to_follow.progress += 15
@@ -52,24 +51,24 @@ func advance_route(delta):
 	move_towards_follow_node(delta)
 	
 func move_towards_follow_node(delta):
-	if (body.linear_velocity.length() <= 500):
-		body.apply_central_force((body.global_position - node_to_follow.global_position).normalized() * delta * -300000) 
-	else: body.linear_velocity = body.linear_velocity.normalized() * 500
+	if (linear_velocity.length() <= 500):
+		apply_central_force((global_position - node_to_follow.global_position).normalized() * delta * -300000) 
+	else: linear_velocity = linear_velocity.normalized() * 500
 	
 
 func rotate_to_follow_node(delta):
-	var target_rotation = body.global_position.angle_to_point(node_to_follow.global_position) -PI / 2
-	var difference = fmod(target_rotation - body.rotation, PI)
+	var target_rotation = global_position.angle_to_point(node_to_follow.global_position) -PI / 2
+	var difference = fmod(target_rotation - rotation, PI)
 	
 	if (abs(difference) < deg_to_rad(15) ): 
-		body.lock_rotation = true
+		lock_rotation = true
 	else:		
-		body.lock_rotation = false
+		lock_rotation = false
 		
 	if (difference > 0):
-		body.apply_torque(100) 
+		apply_torque(100) 
 	if (difference < 0):
-		body.apply_torque(-100) 
+		apply_torque(-100) 
 				
 	if (abs(difference) > PI/4):
-		body.apply_central_force((body.global_position - node_to_follow.global_position).normalized() * delta * 20000) 
+		apply_central_force((global_position - node_to_follow.global_position).normalized() * delta * 20000) 

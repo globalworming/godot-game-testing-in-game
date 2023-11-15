@@ -20,10 +20,16 @@ position = Vector2(372, 742)
 position = Vector2(494, 870)
 
 [node name="ball" parent="." instance=ExtResource("2_5fht0")]
-position = Vector2(248, 390)
+position = Vector2(254, 448)
 
 [node name="ball2" parent="." instance=ExtResource("2_5fht0")]
 position = Vector2(356, 310)
+
+[node name="ball4" parent="." instance=ExtResource("2_5fht0")]
+position = Vector2(258, 252)
+
+[node name="ball5" parent="." instance=ExtResource("2_5fht0")]
+position = Vector2(250, 32)
 
 [node name="ball3" parent="." instance=ExtResource("2_5fht0")]
 position = Vector2(464, 206)

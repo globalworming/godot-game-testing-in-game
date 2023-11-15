@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dyr5t2yf2ff2w"]
+
+[ext_resource type="AudioStream" uid="uid://duaod548mi4jy" path="res://assets/sound/crack.mp3" id="1_w1qwe"]
+
+[node name="crack" type="AudioStreamPlayer2D"]
+position = Vector2(1402, 782)
+stream = ExtResource("1_w1qwe")
+autoplay = true

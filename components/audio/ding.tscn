@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dnty2ri30slaf"]
+
+[ext_resource type="AudioStream" uid="uid://dvwkhrwvnl8rs" path="res://assets/sound/ding.mp3" id="1_g2ffr"]
+
+[node name="ding" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_g2ffr")

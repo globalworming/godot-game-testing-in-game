@@ -23,6 +23,7 @@ func _process(_delta: float) -> void:
 
 func spawn():
 	var to_spawn = creature.instantiate()
-	to_spawn.route = NodePath("../../" + route.get_name(route.get_name_count() - 1))
-	add_child(to_spawn)
+	to_spawn.route = NodePath("../" + route.get_name(route.get_name_count() - 1))
+	to_spawn.position = position
+	get_parent().add_child(to_spawn)
 	pass

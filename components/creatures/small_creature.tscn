@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://cq6r1jcjy0qc2"]
+[gd_scene load_steps=8 format=3 uid="uid://cq6r1jcjy0qc2"]
 
 [ext_resource type="Script" path="res://components/creatures/small_creature.gd" id="1_awwyp"]
+[ext_resource type="PackedScene" uid="uid://dyr5t2yf2ff2w" path="res://components/audio/crack.tscn" id="2_5d5cx"]
 [ext_resource type="Texture2D" uid="uid://q12jabyyb8jb" path="res://assets/puddle.png" id="2_8xtc7"]
 [ext_resource type="Texture2D" uid="uid://hv4o836wib6" path="res://assets/creature.png" id="3_4fasq"]
 [ext_resource type="Script" path="res://components/creatures/squash_area.gd" id="4_x10x7"]
@@ -11,31 +12,35 @@ radius = 2.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_2mfcv"]
 radius = 53.0377
 
-[node name="small_creature" type="Node2D"]
-script = ExtResource("1_awwyp")
-
-[node name="body" type="RigidBody2D" parent="."]
+[node name="small creature" type="RigidBody2D"]
 gravity_scale = 0.0
 continuous_cd = 2
+script = ExtResource("1_awwyp")
+health = null
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="body"]
+[node name="crack" parent="." instance=ExtResource("2_5d5cx")]
+position = Vector2(0, 0)
+autoplay = false
+bus = &"New Bus"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_e74sq")
 
-[node name="squash_area" type="Area2D" parent="body"]
+[node name="squash_area" type="Area2D" parent="."]
 priority = 17
 script = ExtResource("4_x10x7")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="body/squash_area"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="squash_area"]
 shape = SubResource("CircleShape2D_2mfcv")
 
-[node name="Creature" type="Sprite2D" parent="body"]
+[node name="Creature" type="Sprite2D" parent="."]
 texture = ExtResource("3_4fasq")
 
-[node name="Puddle" type="Sprite2D" parent="body"]
+[node name="Puddle" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(1, 8)
 scale = Vector2(0.129661, 0.121895)
 texture = ExtResource("2_8xtc7")
 
-[connection signal="body_entered" from="body/squash_area" to="body/squash_area" method="_on_body_entered"]
-[connection signal="body_exited" from="body/squash_area" to="body/squash_area" method="_on_body_entered"]
+[connection signal="body_entered" from="squash_area" to="squash_area" method="_on_body_entered"]
+[connection signal="body_exited" from="squash_area" to="squash_area" method="_on_body_entered"]

@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bw7e8meracl2q"]
+[gd_scene load_steps=3 format=3 uid="uid://bw7e8meracl2q"]
 
 [ext_resource type="Script" path="res://components/table/kicker/launcher.gd" id="1_4vcpv"]
+[ext_resource type="Texture2D" uid="uid://cunf6nh554rn4" path="res://assets/kicker.png" id="2_4v1g6"]
 
 [node name="medium_kicker" type="Node2D"]
 
@@ -16,6 +17,12 @@ script = ExtResource("1_4vcpv")
 rotation = -1.5708
 scale = Vector2(2.52, 1)
 polygon = PackedVector2Array(-40, 5, -37, 7, -34, 8, -28, 9, -12, 10, 12, 10, 28, 9, 34, 8, 37, 7, 40, 5, 41.2699, -7.99962, -41.2699, -8.00038)
+
+[node name="Kicker" type="Sprite2D" parent="launcher"]
+position = Vector2(-15, 1.1921e-07)
+rotation = -1.57079
+scale = Vector2(2.47444, 1.67815)
+texture = ExtResource("2_4v1g6")
 
 [node name="PinJoint2D" type="PinJoint2D" parent="."]
 position = Vector2(0, -112)

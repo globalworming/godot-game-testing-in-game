@@ -9,8 +9,9 @@ func _ready():
 	trail.width = 48
 	trail.antialiased = true
 	trail.gradient = Gradient.new()
-	trail.gradient.colors = PackedColorArray([Color(0, 0, 1, .05), Color( .1, .7, 1, .1)])
+	trail.gradient.colors = PackedColorArray([Color(0, 0, 1, .01), Color( .1, .7, 1, .04)])
 	get_parent().call_deferred("add_child", trail)
+	get_parent().call_deferred("move_child", trail, 0)
 	pass
 
 func _process(_delta: float) -> void:

@@ -15,4 +15,4 @@ position = Vector2(1376, 936)
 position = Vector2(1376, 848)
 
 [node name="on hit test success block" parent="." instance=ExtResource("4_kr2sk")]
-position = Vector2(152, 104)
+position = Vector2(1040, 496)

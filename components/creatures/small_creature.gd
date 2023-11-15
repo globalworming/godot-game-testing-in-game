@@ -20,20 +20,22 @@ func _ready() -> void:
 func squash():
 	if squashed: return
 	Statistics.creatures_squashed += 1	
-	var _experience = experience.instantiate()
-	_experience.global_position = global_position
-	get_parent().call_deferred("add_child", _experience)
-	_experience.get_node("body").apply_central_impulse(
-		Vector2.from_angle(randf_range(0, 2 * PI)) * 1000)	
 	disable_any_interactions()
 	$body/Puddle.visible = true
 	$body/Creature.visible = false
+	spawn_experience()
 	await get_tree().create_timer(1).timeout
 	get_parent().remove_child(self)
 	
+func spawn_experience():
+	var _experience = experience.instantiate()
+	get_node("/root").call_deferred("add_child", _experience)
+	_experience.global_position = $body.global_position
+	_experience.get_node("body").apply_central_impulse(Vector2.from_angle(randf_range(0, 2 * PI)) * 1000)
 
 func disable_any_interactions():
 	squashed = true
+	body.collision_layer = 0
 	body.set_deferred("freeze", true)
 	squasher.set_deferred("disabled", true)
 

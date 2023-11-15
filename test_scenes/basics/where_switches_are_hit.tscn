@@ -29,4 +29,4 @@ position = Vector2(615, 278)
 position = Vector2(229, 47)
 
 [node name="ball4" parent="." instance=ExtResource("2_td6ge")]
-position = Vector2(623, 661)
+position = Vector2(650, 500)

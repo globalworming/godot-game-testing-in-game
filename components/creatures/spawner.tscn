@@ -13,6 +13,7 @@ scale = Vector2(0.32658, 0.32658)
 texture = ExtResource("2_blrih")
 
 [node name="Circle" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(3.8147e-06, -175)
 rotation = -0.785397
 scale = Vector2(0.297913, 0.297913)

@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://c4t6p3yr1417a"]
 
-[ext_resource type="PackedScene" uid="uid://cm5r4tyfdxsrw" path="res://components/flipper/paddle.tscn" id="1_mps3b"]
+[ext_resource type="PackedScene" uid="uid://cm5r4tyfdxsrw" path="res://components/table/flipper/paddle.tscn" id="1_mps3b"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8jfuj"]
 radius = 8.0
@@ -41,6 +41,7 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="Polygon2D" type="Polygon2D" parent="end block"]
+visible = false
 position = Vector2(3.8147e-06, -7.62939e-06)
 color = Color(0.866667, 0, 0.254902, 1)
 polygon = PackedVector2Array(-4.00003, 6.92819, -6.92819, -4.00003, 4.00003, -6.92819, 6.92819, 4.00003)
@@ -55,6 +56,7 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="Polygon2D" type="Polygon2D" parent="start block"]
+visible = false
 color = Color(0.866667, 0, 0.254902, 1)
 polygon = PackedVector2Array(-4.00003, 6.92819, -6.92819, -4.00003, 4.00003, -6.92819, 6.92819, 4.00003)
 

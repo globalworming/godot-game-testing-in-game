@@ -5,7 +5,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_amv4h"]
 radius = 64.0
 
-[node name="move_ball_to_z1" type="Area2D"]
+[node name="move_ball_to_z1_layer" type="Area2D"]
 script = ExtResource("1_oc4c3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

@@ -14,7 +14,7 @@ position = Vector2(104, 960)
 rotation = 1.5708
 
 [node name="ball" parent="." instance=ExtResource("2_c5121")]
-position = Vector2(152, 1232)
+position = Vector2(160, 1168)
 
 [node name="on_ball_enter_press_input" parent="." instance=ExtResource("3_nt85y")]
 position = Vector2(136, 1264)

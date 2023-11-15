@@ -5,8 +5,10 @@ extends RigidBody2D
 @export var health: float = 20.0
 @export_node_path("Path2D") var route
 var node_to_follow: PathFollow2D
-var squashed = false
+var is_squashed = false
 var experience = preload("res://components/experience.tscn")
+
+signal squashed
 
 func _ready() -> void:
 	if route != null:
@@ -16,24 +18,18 @@ func _ready() -> void:
 		route_to_follow.add_child(node_to_follow)
 		
 func squash():
-	if squashed: return
+	if is_squashed: return
+	is_squashed = true
+	squashed.emit()
 	Statistics.creatures_squashed += 1	
 	disable_any_interactions()
 	$Puddle.visible = true
 	$Creature.visible = false
 	$crack.play()
-	spawn_experience()
 	await get_tree().create_timer(1).timeout
 	get_parent().remove_child(self)
 	
-func spawn_experience():
-	var _experience = experience.instantiate()
-	get_parent().call_deferred("add_child", _experience)
-	_experience.global_position = global_position
-	_experience.apply_central_impulse(Vector2.from_angle(randf_range(0, 2 * PI)) * 10)
-
 func disable_any_interactions():
-	squashed = true
 	collision_layer = 0
 	set_deferred("freeze", true)
 	squasher.set_deferred("disabled", true)

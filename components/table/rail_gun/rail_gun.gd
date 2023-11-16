@@ -34,7 +34,7 @@ func count_down():
 
 func fire():
 	$PinJoint2D.set_node_b($PinJoint2D.get_path())
-	var aim_angle = angle.global_position - global_position
+	var aim_angle = global_position.direction_to(angle.global_position)
 	ammo.apply_central_impulse(aim_angle.normalized() * 10000)
 	$TextureProgressBar.value = 0
 	enabled = false

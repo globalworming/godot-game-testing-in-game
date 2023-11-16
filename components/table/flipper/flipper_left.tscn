@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://dgwsl3tvuq55l"]
+[gd_scene load_steps=9 format=3 uid="uid://dgwsl3tvuq55l"]
 
 [ext_resource type="PackedScene" uid="uid://cm5r4tyfdxsrw" path="res://components/table/flipper/paddle.tscn" id="1_l7xg2"]
+[ext_resource type="Script" path="res://components/table/flipper/health.gd" id="2_74tu7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8jfuj"]
 radius = 8.0
@@ -10,6 +11,16 @@ normal = Vector2(1, 0)
 distance = -40.0
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_t1iq1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_trs8n"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hnkmq"]
+bg_color = Color(1, 0.08, 0.58, 1)
+
+[sub_resource type="Theme" id="Theme_acfg7"]
+ProgressBar/styles/background = SubResource("StyleBoxFlat_trs8n")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_hnkmq")
 
 [node name="flipper" type="Node2D"]
 
@@ -22,7 +33,7 @@ shape = SubResource("CircleShape2D_8jfuj")
 color = Color(0.866667, 0, 0.254902, 1)
 polygon = PackedVector2Array(-4.00003, 6.92819, -6.92819, -4.00003, 4.00003, -6.92819, 6.92819, 4.00003)
 
-[node name="pin paddle ancor" type="PinJoint2D" parent="."]
+[node name="Pin" type="PinJoint2D" parent="."]
 node_a = NodePath("../paddle anchor")
 node_b = NodePath("../paddle")
 bias = 0.9
@@ -57,3 +68,13 @@ polygon = PackedVector2Array(-4.00003, 6.92819, -6.92819, -4.00003, 4.00003, -6.
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="start block"]
 shape = SubResource("WorldBoundaryShape2D_t1iq1")
+
+[node name="health" type="Node2D" parent="."]
+position = Vector2(-41, 46)
+script = ExtResource("2_74tu7")
+
+[node name="progress" type="ProgressBar" parent="health"]
+offset_left = -46.0
+offset_top = -65.0
+offset_bottom = -24.0
+theme = SubResource("Theme_acfg7")

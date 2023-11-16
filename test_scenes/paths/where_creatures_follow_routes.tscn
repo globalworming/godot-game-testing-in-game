@@ -6,7 +6,7 @@
 
 [sub_resource type="Curve2D" id="Curve2D_kxrt1"]
 _data = {
-"points": PackedVector2Array(-47.1461, 3.17839, 47.1461, -3.17839, -96, 296, 172.397, 16.059, -172.397, -16.059, 40, 192, 0, 0, 0, 0, 72, 352)
+"points": PackedVector2Array(-47.1461, 3.17839, 47.1461, -3.17839, -208, 320, 450.357, 55.2585, -450.357, -55.2585, -120, 152, 0, 0, 0, 0, -64, 392)
 }
 point_count = 3
 
@@ -21,18 +21,15 @@ position = Vector2(792, 520)
 curve = SubResource("Curve2D_kxrt1")
 
 [node name="ball" parent="." instance=ExtResource("2_wkuui")]
-position = Vector2(872, 872)
+position = Vector2(736, 928)
+freeze = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-position = Vector2(600, 384)
-polygon = PackedVector2Array(232, 536, 240, 488, 248, 504, 264, 520, 280, 520, 296, 512, 304, 496, 304, 480, 320, 544)
-
 [node name="small_creature" parent="." instance=ExtResource("2_kfq8d")]
-position = Vector2(640, 824)
+position = Vector2(528, 848)
 route = NodePath("../path")
 
 [node name="small_creature2" parent="." instance=ExtResource("2_kfq8d")]
-position = Vector2(688, 816)
+position = Vector2(456, 848)
 route = NodePath("../path")

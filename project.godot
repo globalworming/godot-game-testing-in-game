@@ -20,14 +20,20 @@ config/icon="res://icon.svg"
 TestStatus="*res://autoload/test_status.gd"
 Statistics="*res://autoload/statistics.gd"
 SimulateInput="*res://autoload/simulate_input.gd"
+Movement="*res://autoload/movement.gd"
 
 [display]
 
 window/size/viewport_width=3840
 window/size/viewport_height=2160
+window/size/mode=3
 window/size/initial_position_type=3
 window/size/borderless=true
 window/stretch/mode="canvas_items"
+
+[editor]
+
+movie_writer/movie_file="../godot.avi"
 
 [editor_plugins]
 

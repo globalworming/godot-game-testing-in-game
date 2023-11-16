@@ -34,37 +34,14 @@ func disable_any_interactions():
 	set_deferred("freeze", true)
 	squasher.set_deferred("disabled", true)
 
-func _process(_delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	if (route != null):
-		advance_route(_delta)
-		
-func advance_route(delta):
-	var distance_to_follow_node = global_position.distance_to(node_to_follow.global_position)
-	
-	if (distance_to_follow_node < 100):
-		node_to_follow.progress += 15
-	rotate_to_follow_node(delta)
-	move_towards_follow_node(delta)
-	
-func move_towards_follow_node(delta):
-	if (linear_velocity.length() <= 500):
-		apply_central_force((global_position - node_to_follow.global_position).normalized() * delta * -300000) 
-	else: linear_velocity = linear_velocity.normalized() * 500
-	
+		advance_route()
+		Movement.rotate_to(delta, node_to_follow, self, 100000, 5)
+		Movement.move_forward(delta, self, 1000000)
 
-func rotate_to_follow_node(delta):
-	var target_rotation = global_position.angle_to_point(node_to_follow.global_position) -PI / 2
-	var difference = fmod(target_rotation - rotation, PI)
-	
-	if (abs(difference) < deg_to_rad(15) ): 
-		lock_rotation = true
-	else:		
-		lock_rotation = false
 		
-	if (difference > 0):
-		apply_torque(100) 
-	if (difference < 0):
-		apply_torque(-100) 
-				
-	if (abs(difference) > PI/4):
-		apply_central_force((global_position - node_to_follow.global_position).normalized() * delta * 20000) 
+func advance_route():
+	var distance_to_follow_node = global_position.distance_to(node_to_follow.global_position)
+	if (distance_to_follow_node < 100):
+		node_to_follow.progress += 50

@@ -12,15 +12,15 @@ distance = -40.0
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_t1iq1"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_trs8n"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5cnxg"]
 bg_color = Color(0, 0, 0, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hnkmq"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mlg20"]
 bg_color = Color(1, 0.08, 0.58, 1)
 
 [sub_resource type="Theme" id="Theme_acfg7"]
-ProgressBar/styles/background = SubResource("StyleBoxFlat_trs8n")
-ProgressBar/styles/fill = SubResource("StyleBoxFlat_hnkmq")
+ProgressBar/styles/background = SubResource("StyleBoxFlat_5cnxg")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_mlg20")
 
 [node name="flipper" type="Node2D"]
 

@@ -2,7 +2,7 @@ extends RigidBody2D
 
 @onready var creature = get_parent()
 
-func on_ball_collision(_ball: RigidBody2D): 
+func on_ball_collision(_ball: RigidBody2D, _force: float): 
 	var damage = 15
 	Statistics.damage_dealt += min(creature.health, damage)
 	creature.health -= damage

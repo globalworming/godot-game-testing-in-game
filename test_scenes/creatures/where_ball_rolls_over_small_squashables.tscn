@@ -25,3 +25,8 @@ position = Vector2(1056, 592)
 position = Vector2(1061, 768)
 
 [node name="on_sqashed_test_success" parent="." instance=ExtResource("4_vpnj3")]
+position = Vector2(88, 284)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(992, 552)
+zoom = Vector2(1.945, 1.945)

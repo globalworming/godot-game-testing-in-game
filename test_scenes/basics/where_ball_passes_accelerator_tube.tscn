@@ -7,75 +7,76 @@
 [node name="where_ball_passes_accelerator_tube" type="Node2D"]
 
 [node name="Area2D" type="Area2D" parent="."]
-position = Vector2(1128, 1064)
+position = Vector2(1128, 944)
 script = ExtResource("2_2lx77")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
 polygon = PackedVector2Array(-400, 72.0001, -360, 96.0001, -304, 104, -256, 96.0001, -192, 80.0001, 288, -112, 432, -248, 456, -344, 432, -464, 384, -552, 248, -656, 216, -720, 216, -808, 144, -808, 152, -720, 184, -656, 248, -592, 328, -528, 376, -456, 400, -368, 352, -240, 248, -168)
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(0, -120)
 color = Color(0.0901961, 0.0901961, 0.0901961, 1)
 polygon = PackedVector2Array(616, 792, 648, 1008, 672, 1088, 712, 1152, 776, 1176, 840, 1176, 872, 1176, 1416, 960, 1504, 896, 1576, 816, 1592, 720, 1576, 600, 1520, 504, 1384, 400, 1360, 344, 1360, 192, 1264, 192, 1264, 256, 1272, 344, 1304, 408, 1328, 440, 1384, 488, 1456, 536, 1496, 600, 1528, 696, 1472, 824, 1384, 896, 1088, 992, 1080, 0, 1792, 0, 1792, 1152, 512, 1392)
 
 [node name="Polygon2D2" type="Polygon2D" parent="."]
-position = Vector2(864, 1128)
+position = Vector2(864, 1008)
 rotation = 1.0472
 color = Color(0, 0.235294, 0.380392, 1)
 polygon = PackedVector2Array(24, 0, 0, -8, -24, 0, -24, 8, 0, 0, 24, 8)
 
 [node name="Polygon2D3" type="Polygon2D" parent="."]
-position = Vector2(1000, 1072)
+position = Vector2(1000, 952)
 rotation = 1.0472
 color = Color(0, 0.235294, 0.380392, 1)
 polygon = PackedVector2Array(24, 0, 0, -8, -24, 0, -24, 8, 0, 0, 24, 8)
 
 [node name="Polygon2D4" type="Polygon2D" parent="."]
-position = Vector2(1152, 1016)
+position = Vector2(1152, 896)
 rotation = 1.0472
 color = Color(0, 0.235294, 0.380392, 1)
 polygon = PackedVector2Array(24, 0, 0, -8, -24, 0, -24, 8, 0, 0, 24, 8)
 
 [node name="Polygon2D5" type="Polygon2D" parent="."]
-position = Vector2(1320, 952)
+position = Vector2(1320, 832)
 rotation = 1.0472
 color = Color(0, 0.235294, 0.380392, 1)
 polygon = PackedVector2Array(24, 0, 0, -8, -24, 0, -24, 8, 0, 0, 24, 8)
 
 [node name="Polygon2D6" type="Polygon2D" parent="."]
-position = Vector2(1456, 880)
+position = Vector2(1456, 760)
 rotation = 0.785397
 color = Color(0, 0.235294, 0.380392, 1)
 polygon = PackedVector2Array(24, 0, 0, -8, -24, 0, -24, 8, 0, 0, 24, 8)
 
 [node name="Polygon2D7" type="Polygon2D" parent="."]
-position = Vector2(1552, 752)
+position = Vector2(1552, 632)
 rotation = 0.261799
 color = Color(0, 0.235294, 0.380392, 1)
 polygon = PackedVector2Array(24, 0, 0, -8, -24, 0, -24, 8, 0, 0, 24, 8)
 
 [node name="Polygon2D8" type="Polygon2D" parent="."]
-position = Vector2(1536, 616)
+position = Vector2(1536, 496)
 rotation = -0.261799
 color = Color(0, 0.235294, 0.380392, 1)
 polygon = PackedVector2Array(24, 0, 0, -8, -24, 0, -24, 8, 0, 0, 24, 8)
 
 [node name="Polygon2D9" type="Polygon2D" parent="."]
-position = Vector2(1464, 504)
+position = Vector2(1464, 384)
 rotation = -0.785397
 color = Color(0, 0.235294, 0.380392, 1)
 polygon = PackedVector2Array(24, 0, 0, -8, -24, 0, -24, 8, 0, 0, 24, 8)
 
 [node name="Polygon2D10" type="Polygon2D" parent="."]
-position = Vector2(1336, 384)
+position = Vector2(1336, 264)
 rotation = -0.261799
 color = Color(0, 0.235294, 0.380392, 1)
 polygon = PackedVector2Array(24, 0, 0, -8, -24, 0, -24, 8, 0, 0, 24, 8)
 
 [node name="ball" parent="." instance=ExtResource("1_qgm23")]
-position = Vector2(664, 352)
+position = Vector2(648, 704)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(392, 1272)
+position = Vector2(392, 1152)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PackedVector2Array(280, -192, 324.904, -121.342, 380.904, -97.3423, 432, -96, 484.904, -97.3423, 1024, -312, 1104, -376, 1184, -456, 1200, -552, 1184, -672, 1128, -768, 992, -872, 968, -928, 968, -1016, 1032, -1016, 1664, -296, 252.904, 94.6577, 184, -200, 224, -480, 256, -264)
@@ -84,4 +85,8 @@ polygon = PackedVector2Array(280, -192, 324.904, -121.342, 380.904, -97.3423, 43
 polygon = PackedVector2Array(872, -1016, 880, -928, 912, -864, 936, -832, 992, -784, 848, -616)
 
 [node name="on hit test success block" parent="." instance=ExtResource("3_xm7sg")]
-position = Vector2(1312, 232)
+position = Vector2(1312, 112)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(992, 552)
+zoom = Vector2(1.945, 1.945)

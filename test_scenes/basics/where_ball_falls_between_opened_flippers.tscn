@@ -10,13 +10,17 @@
 script = ExtResource("1_1sgnq")
 
 [node name="flipper" parent="." instance=ExtResource("1_d1n34")]
-position = Vector2(872, 520)
+position = Vector2(792, 384)
 
 [node name="flipper2" parent="." instance=ExtResource("2_73io1")]
-position = Vector2(192, 520)
+position = Vector2(112, 384)
 
 [node name="ball" parent="." instance=ExtResource("3_ijxiv")]
-position = Vector2(536, 272)
+position = Vector2(456, 136)
 
 [node name="on hit test success block" parent="." instance=ExtResource("4_sebgs")]
-position = Vector2(528, 568)
+position = Vector2(448, 432)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(424, 240)
+zoom = Vector2(4.54, 4.54)

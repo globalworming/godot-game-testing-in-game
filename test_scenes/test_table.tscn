@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://eue4qx4tfut5"]
+[gd_scene load_steps=23 format=3 uid="uid://eue4qx4tfut5"]
 
 [ext_resource type="PackedScene" uid="uid://qd0hnots4y46" path="res://components/table/gate/gate.tscn" id="1_iqell"]
 [ext_resource type="Texture2D" uid="uid://qdau5053q4bf" path="res://assets/table_4_z0.png" id="1_k6jkt"]
@@ -9,11 +9,15 @@
 [ext_resource type="PackedScene" uid="uid://0ulbaickvhem" path="res://components/layer/move_ball_to_z0_layer.tscn" id="4_lxn5u"]
 [ext_resource type="PackedScene" uid="uid://bw7e8meracl2q" path="res://components/table/kicker/medium_kicker.tscn" id="6_n3nrq"]
 [ext_resource type="PackedScene" uid="uid://denq0y0o8bxgs" path="res://components/table/rail_gun/rail_gun.tscn" id="7_5hnl1"]
+[ext_resource type="Theme" uid="uid://3vecqhupwve8" path="res://theme.tres" id="8_5to18"]
 [ext_resource type="PackedScene" uid="uid://csy3f1ujkt171" path="res://components/table/tunnel/tunnel_entry.tscn" id="8_h7kvb"]
 [ext_resource type="PackedScene" uid="uid://cqjpyatumfxys" path="res://components/table/tunnel/tunnel_exit.tscn" id="9_34b81"]
+[ext_resource type="Script" path="res://test_scenes/level_progress.gd" id="9_uaed2"]
+[ext_resource type="Script" path="res://test_scenes/current_level.gd" id="9_ym15f"]
 [ext_resource type="PackedScene" uid="uid://dnk15rl8s15a0" path="res://components/table/bumber/big_bumper.tscn" id="14_k2snb"]
 [ext_resource type="PackedScene" uid="uid://3xuy6qe8somj" path="res://components/table/roll_over/roll_over.tscn" id="15_bn0ht"]
 [ext_resource type="PackedScene" uid="uid://d4knaw8vqi57s" path="res://components/table/switch/switch.tscn" id="16_1uyrf"]
+[ext_resource type="PackedScene" uid="uid://bwbe7pchxgu5s" path="res://components/creatures/tank.tscn" id="16_2brme"]
 [ext_resource type="PackedScene" uid="uid://bwyqjm6xsud0c" path="res://components/creatures/spawner.tscn" id="17_57nxu"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ci5jm"]
@@ -27,7 +31,7 @@ point_count = 23
 
 [sub_resource type="Curve2D" id="Curve2D_fj6y3"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -133, 203, 0, 0, 0, 0, -246, 109, 0, 0, 0, 0, -475, 122, 0, 0, 0, 0, -856, 182, 0, 0, 0, 0, -1129, 308, 0, 0, 0, 0, -1291, 478, 0, 0, 0, 0, -1337, 584, 0, 0, 0, 0, -1354, 787, 0, 0, 0, 0, -1342, 1246, 0, 0, 0, 0, -1333, 1427, 0, 0, 0, 0, -1308, 1632, 0, 0, 0, 0, -1254, 1717, 0, 0, 0, 0, -1108, 1772, 0, 0, 0, 0, -744, 1797, 0, 0, 0, 0, -341, 1781, 0, 0, 0, 0, -378, 1614, 0, 0, 0, 0, 61, 1479, 0, 0, 0, 0, 65, 2133)
+"points": PackedVector2Array(0, 0, 0, 0, -98, 339, 0, 0, 0, 0, -246, 109, 0, 0, 0, 0, -475, 122, 0, 0, 0, 0, -856, 182, 0, 0, 0, 0, -1129, 308, 0, 0, 0, 0, -1291, 478, 0, 0, 0, 0, -1337, 584, 0, 0, 0, 0, -1354, 787, 0, 0, 0, 0, -1342, 1246, 0, 0, 0, 0, -1333, 1427, 0, 0, 0, 0, -1308, 1632, 0, 0, 0, 0, -1254, 1717, 0, 0, 0, 0, -1108, 1772, 0, 0, 0, 0, -744, 1797, 0, 0, 0, 0, -341, 1781, 0, 0, 0, 0, -378, 1614, 0, 0, 0, 0, 61, 1479, 0, 0, 0, 0, 65, 2133)
 }
 point_count = 18
 
@@ -36,12 +40,12 @@ point_count = 18
 [node name="z0" type="Node2D" parent="."]
 
 [node name="gate3" parent="z0" instance=ExtResource("1_iqell")]
-position = Vector2(1072, 1793)
-rotation = 2.3667
+position = Vector2(1075, 1801)
+rotation = 2.35619
 
 [node name="gate4" parent="z0" instance=ExtResource("1_iqell")]
-position = Vector2(1856, 1794)
-rotation = 0.769095
+position = Vector2(1857, 1797)
+rotation = 0.785397
 
 [node name="move_ball_to_z2" parent="z0" instance=ExtResource("2_hhdlh")]
 position = Vector2(2318, 782)
@@ -239,6 +243,34 @@ polygon = PackedVector2Array(459, -163.4, 492, -150.1, 518, -131.8, 545, -102.6,
 [node name="move_ball_to_z2" parent="z1" instance=ExtResource("4_lxn5u")]
 position = Vector2(2212, 883)
 
+[node name="outer" type="Node2D" parent="."]
+position = Vector2(0, -8)
+
+[node name="Polygon2D" type="Polygon2D" parent="outer"]
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(13, 1824, 1084, 1821, 961, 2056, 1463, 2169, 1965, 2056, 1844, 1821, 2909, 1826, 2923, -36, 3938, -33, 3963, 1459, 3891, 2334, -75, 2221, -80, -175, 14, -25, 14, 141, 10, 1803)
+
+[node name="level_progress" type="ProgressBar" parent="outer"]
+offset_left = 2932.0
+offset_top = 47.0
+offset_right = 2936.0
+offset_bottom = 147.0
+scale = Vector2(16.52, 16.52)
+theme = ExtResource("8_5to18")
+value = 20.0
+fill_mode = 3
+show_percentage = false
+script = ExtResource("9_uaed2")
+
+[node name="current_level" type="Label" parent="outer"]
+offset_left = 2899.0
+offset_top = 1707.0
+offset_right = 3077.0
+offset_bottom = 1773.0
+theme = ExtResource("8_5to18")
+text = "level: 19"
+script = ExtResource("9_ym15f")
+
 [node name="flipper" parent="." instance=ExtResource("1_t0l7w")]
 position = Vector2(1096, 1840)
 rotation = 0.523599
@@ -283,10 +315,20 @@ curve = SubResource("Curve2D_8vx7e")
 [node name="spawn1" type="Node2D" parent="."]
 
 [node name="spawner" parent="spawn1" instance=ExtResource("17_57nxu")]
-position = Vector2(1295, 244)
+position = Vector2(1314, 337)
 rotation = -0.0433024
 rate = 20.0
 
 [node name="path" type="Path2D" parent="spawn1"]
 position = Vector2(1400, -18)
 curve = SubResource("Curve2D_fj6y3")
+
+[node name="tank" parent="." instance=ExtResource("16_2brme")]
+position = Vector2(829, 374)
+targets = Array[NodePath]([NodePath("../flipper")])
+health = 1000
+
+[node name="tank2" parent="." instance=ExtResource("16_2brme")]
+position = Vector2(1816, 263)
+targets = Array[NodePath]([NodePath("../flipper2")])
+health = 4000

@@ -17,7 +17,7 @@ shape = SubResource("RectangleShape2D_rckrp")
 [node name="indicator" type="Polygon2D" parent="."]
 position = Vector2(0, -0.333331)
 scale = Vector2(1, 1.26042)
-color = Color(0.0431373, 0.0627451, 0.141176, 1)
+color = Color(0.392157, 0.584314, 0.929412, 1)
 polygon = PackedVector2Array(40, -18.7769, 48, 0.264461, 40, 19.3058, 16, 38.3471, 0, 38.3471, -16, 38.3471, -40, 25.6529, -48, 0.264461, -40, -18.7769, -24, -32, -24, -32, 0, -37.8182, 24, -32)
 
 [node name="Bumper" type="Sprite2D" parent="."]

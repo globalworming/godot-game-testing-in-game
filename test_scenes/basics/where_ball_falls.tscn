@@ -6,7 +6,11 @@
 [node name="where_ball_falls" type="Node2D"]
 
 [node name="ball" parent="." instance=ExtResource("2_m1t81")]
-position = Vector2(1189, 819)
+position = Vector2(418, 103)
 
 [node name="on hit test success block" parent="." instance=ExtResource("3_de2rk")]
-position = Vector2(1201, 1002)
+position = Vector2(431, 377)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(423, 239)
+zoom = Vector2(4.54, 4.54)

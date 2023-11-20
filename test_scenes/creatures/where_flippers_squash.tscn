@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://c3rsgklrawomo"]
 
 [ext_resource type="PackedScene" uid="uid://cq6r1jcjy0qc2" path="res://components/creatures/small_creature.tscn" id="1_wqjfh"]
-[ext_resource type="PackedScene" uid="uid://dgwsl3tvuq55l" path="res://components/flipper/flipper_left.tscn" id="2_wkhio"]
+[ext_resource type="PackedScene" uid="uid://dgwsl3tvuq55l" path="res://components/table/flipper/flipper_left.tscn" id="2_wkhio"]
 [ext_resource type="PackedScene" uid="uid://w8ba7jncpcna" path="res://components/test/success_triggers/on_sqashed_test_success.tscn" id="3_6b8ne"]
 
 [sub_resource type="Curve2D" id="Curve2D_jpk1r"]
@@ -33,5 +33,9 @@ position = Vector2(400, 648)
 rotation = -1.8326
 
 [node name="on_sqashed_test_success" parent="." instance=ExtResource("3_6b8ne")]
-position = Vector2(664, 248)
+position = Vector2(440, 264)
 to_squash = 3
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(648, 368)
+zoom = Vector2(2.995, 2.995)

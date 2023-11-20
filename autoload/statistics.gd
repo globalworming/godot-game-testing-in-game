@@ -4,6 +4,7 @@ var creatures_squashed = 0
 var damage_dealt = 0
 var experience_collected = 0
 
+
 func reset():
 	creatures_squashed = 0
 	damage_dealt = 0

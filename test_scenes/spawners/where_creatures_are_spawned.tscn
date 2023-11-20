@@ -12,11 +12,16 @@ point_count = 3
 [node name="where_creatures_are_spawned" type="Node2D"]
 
 [node name="path" type="Path2D" parent="."]
+position = Vector2(-472, -432)
 curve = SubResource("Curve2D_y6818")
 
 [node name="spawner" parent="." instance=ExtResource("1_gccf7")]
-position = Vector2(680, 800)
+position = Vector2(208, 368)
 
 [node name="on_number_of_creatures_in_area_success" parent="." instance=ExtResource("2_w1gjt")]
-position = Vector2(1200, 952)
+position = Vector2(728, 520)
 collision_mask = 17
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(776, 432)
+zoom = Vector2(2.505, 2.505)

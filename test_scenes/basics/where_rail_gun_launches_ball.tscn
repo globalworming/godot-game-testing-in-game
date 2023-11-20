@@ -9,10 +9,14 @@
 script = ExtResource("1_inlwx")
 
 [node name="rail_gun" parent="." instance=ExtResource("1_b7tyb")]
-position = Vector2(1376, 936)
+position = Vector2(528, 584)
 
 [node name="ball" parent="." instance=ExtResource("2_6m7s1")]
-position = Vector2(1376, 848)
+position = Vector2(528, 496)
 
 [node name="on hit test success block" parent="." instance=ExtResource("4_kr2sk")]
-position = Vector2(1040, 496)
+position = Vector2(192, 144)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(448, 352)
+zoom = Vector2(3.065, 3.065)

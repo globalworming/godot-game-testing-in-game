@@ -21,10 +21,11 @@ shape = SubResource("CircleShape2D_by35r")
 node_a = NodePath("../StaticBody2D")
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="."]
-offset_left = -48.0
-offset_top = -48.0
-offset_right = 48.0
-offset_bottom = 48.0
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 80.0
+offset_bottom = 80.0
+scale = Vector2(0.33305, 0.333697)
 max_value = 200.0
 rounded = true
 fill_mode = 5

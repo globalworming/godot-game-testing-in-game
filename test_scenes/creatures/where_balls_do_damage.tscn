@@ -7,14 +7,18 @@
 [node name="where_balls_do_damage" type="Node2D"]
 
 [node name="big_creature" parent="." instance=ExtResource("1_bi8tt")]
-position = Vector2(1152, 992)
+position = Vector2(424, 560)
 mass = 2.0
 
 [node name="ball" parent="." instance=ExtResource("2_vpg11")]
-position = Vector2(1288, 728)
+position = Vector2(384, -144)
 
 [node name="ball2" parent="." instance=ExtResource("2_vpg11")]
-position = Vector2(1168, 216)
+position = Vector2(512, 144)
 
 [node name="on_damage_test_succes" parent="." instance=ExtResource("3_f4250")]
-position = Vector2(1648, 984)
+position = Vector2(984, 384)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(688, 384)
+zoom = Vector2(2.775, 2.775)

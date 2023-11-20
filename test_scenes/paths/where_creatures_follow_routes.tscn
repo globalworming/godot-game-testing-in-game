@@ -17,19 +17,23 @@ position = Vector2(40, 48)
 to_squash = 2
 
 [node name="path" type="Path2D" parent="."]
-position = Vector2(792, 520)
+position = Vector2(1248, 165.553)
 curve = SubResource("Curve2D_kxrt1")
 
 [node name="ball" parent="." instance=ExtResource("2_wkuui")]
-position = Vector2(736, 928)
+position = Vector2(1192, 573.553)
 freeze = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="small_creature" parent="." instance=ExtResource("2_kfq8d")]
-position = Vector2(528, 848)
+position = Vector2(984, 493.553)
 route = NodePath("../path")
 
 [node name="small_creature2" parent="." instance=ExtResource("2_kfq8d")]
-position = Vector2(456, 848)
+position = Vector2(912, 493.553)
 route = NodePath("../path")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(760, 424)
+zoom = Vector2(2.525, 2.525)

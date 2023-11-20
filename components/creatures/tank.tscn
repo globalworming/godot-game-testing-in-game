@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bwbe7pchxgu5s"]
+[gd_scene load_steps=19 format=3 uid="uid://bwbe7pchxgu5s"]
 
 [ext_resource type="Script" path="res://components/creatures/tank.gd" id="1_3ee2d"]
 [ext_resource type="Texture2D" uid="uid://dlf2lmefdog4q" path="res://assets/tank.png" id="1_w16oc"]
@@ -6,27 +6,38 @@
 [ext_resource type="Texture2D" uid="uid://b1g0hmixiqqwm" path="res://assets/background.svg" id="3_hqiq3"]
 [ext_resource type="Texture2D" uid="uid://bv0o46nfoo6vq" path="res://assets/progress.svg" id="4_kdd1i"]
 [ext_resource type="Texture2D" uid="uid://bhr6x4876jdgx" path="res://assets/impact.png" id="6_h06uf"]
+[ext_resource type="Script" path="res://components/table/flipper/health.gd" id="8_opcbt"]
 [ext_resource type="AudioStream" uid="uid://bwtt8fbqjtqpc" path="res://assets/sound/shot.mp3" id="8_ov58m"]
+[ext_resource type="Script" path="res://components/creatures/on_squash_spawn_experience.gd" id="9_ajtar"]
+[ext_resource type="Script" path="res://components/creatures/on_health_zero_squash.gd" id="10_j2erg"]
+[ext_resource type="PackedScene" uid="uid://cbewjcjypn3x3" path="res://components/creatures/squashable.tscn" id="11_l3723"]
+[ext_resource type="Texture2D" uid="uid://q12jabyyb8jb" path="res://assets/puddle.png" id="12_11d2g"]
+[ext_resource type="AudioStream" uid="uid://duaod548mi4jy" path="res://assets/sound/crack.mp3" id="13_phadq"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_23cp3"]
 radius = 40.0
 height = 128.0
 
-[sub_resource type="Gradient" id="Gradient_uln5i"]
-colors = PackedColorArray(0.629675, 0.629675, 0.629675, 1, 1, 1, 1, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_j4k0p"]
-gradient = SubResource("Gradient_uln5i")
-
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_nb46e"]
-emission_shape = 2
-emission_sphere_radius = 5.05
+direction = Vector3(0, 0, 0)
+spread = 0.0
 gravity = Vector3(0, 0, 0)
-scale_min = 0.8
-color = Color(1, 0.0784314, 0.580392, 1)
-color_ramp = SubResource("GradientTexture1D_j4k0p")
+scale_min = 0.4
+scale_max = 0.5
+color = Color(1, 0.08, 0.58, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_trs8n"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hnkmq"]
+bg_color = Color(1, 0.08, 0.58, 1)
+
+[sub_resource type="Theme" id="Theme_2hnup"]
+ProgressBar/styles/background = SubResource("StyleBoxFlat_trs8n")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_hnkmq")
 
 [node name="tank" type="RigidBody2D"]
+position = Vector2(-1, 0)
 mass = 10.0
 gravity_scale = 0.0
 script = ExtResource("1_3ee2d")
@@ -80,3 +91,26 @@ fract_delta = false
 
 [node name="shot" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8_ov58m")
+
+[node name="Health" type="Node2D" parent="."]
+script = ExtResource("8_opcbt")
+current_value = 400
+max_value = 400
+
+[node name="progress" type="ProgressBar" parent="Health"]
+offset_left = -66.0
+offset_top = 48.0
+offset_right = 30.0
+offset_bottom = 71.0
+rotation = -1.57079
+theme = SubResource("Theme_2hnup")
+
+[node name="on_squash_spawn_experience" type="Node2D" parent="."]
+script = ExtResource("9_ajtar")
+
+[node name="on_health_zero_squash" type="Node" parent="."]
+script = ExtResource("10_j2erg")
+
+[node name="Squashable" parent="." instance=ExtResource("11_l3723")]
+corpse_texture = ExtResource("12_11d2g")
+squash_sound = ExtResource("13_phadq")

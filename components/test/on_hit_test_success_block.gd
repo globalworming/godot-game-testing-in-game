@@ -13,7 +13,7 @@ func _ready():
 func _process(_delta):
 	pass
 	
-func on_ball_collision(_node: Node):
+func on_ball_collision(_node: Node, _force: float):
 	if !emitted:
 		emitted = true
 		TestStatus.test_success.emit()

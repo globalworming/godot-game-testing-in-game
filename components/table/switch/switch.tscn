@@ -33,7 +33,7 @@ texture = ExtResource("2_v31ck")
 [node name="indicator" type="Polygon2D" parent="body"]
 position = Vector2(-32.3234, -0.0454731)
 rotation = -1.57079
-color = Color(0.188235, 0.188235, 0.188235, 1)
+color = Color(0.392157, 0.584314, 0.929412, 1)
 offset = Vector2(20.3226, 8.04767)
 polygon = PackedVector2Array(-16, 0, -8, -8, -16, -16, -24, -16, -32, -8, -24, 0)
 

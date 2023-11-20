@@ -7,10 +7,14 @@
 [node name="where_bumper_launches_ball" type="Node2D"]
 
 [node name="ball" parent="." instance=ExtResource("1_05sqy")]
-position = Vector2(1592, 691)
+position = Vector2(982, 583)
 
 [node name="big_bumper" parent="." instance=ExtResource("2_pbbl7")]
-position = Vector2(1489, 882)
+position = Vector2(879, 774)
 
 [node name="on hit test success block" parent="." instance=ExtResource("3_gbe6x")]
-position = Vector2(1796, 807)
+position = Vector2(1182, 637)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(992, 558)
+zoom = Vector2(1.945, 1.945)

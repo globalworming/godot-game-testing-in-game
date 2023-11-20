@@ -10,6 +10,10 @@ var resized = false;
 
 func _ready():
 	TestStatus.test_success.connect(_test_success)
+	TestStatus.test_error.connect(func ():
+		push_error("failed ", next_test.name)
+		_test_success()
+	)
 	var dirs = Files.list_dirs("res://test_scenes")
 	tests = list_tests(dirs)
 	tests.sort()

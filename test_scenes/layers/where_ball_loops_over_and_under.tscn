@@ -6,8 +6,8 @@
 [ext_resource type="Script" path="res://test_scenes/layers/display_z.gd" id="3_eyo6s"]
 [ext_resource type="PackedScene" uid="uid://q1mu1qhtguxi" path="res://components/test/on_ball_enter_press_input.tscn" id="4_heg54"]
 [ext_resource type="PhysicsMaterial" uid="uid://dxf5cx15n75hb" path="res://materials/no_bounce_no_friction.tres" id="5_e3epk"]
-[ext_resource type="PackedScene" uid="uid://0ulbaickvhem" path="res://components/layer/move_ball_to_z_0.tscn" id="7_yqrrw"]
-[ext_resource type="PackedScene" uid="uid://b74wl2mwppu43" path="res://components/layer/move_ball_to_z_1.tscn" id="8_733bo"]
+[ext_resource type="PackedScene" uid="uid://b74wl2mwppu43" path="res://components/layer/move_ball_to_z1_layer.tscn" id="8_1skli"]
+[ext_resource type="PackedScene" uid="uid://0ulbaickvhem" path="res://components/layer/move_ball_to_z0_layer.tscn" id="9_7r34q"]
 [ext_resource type="PackedScene" uid="uid://djgboj0jar52m" path="res://components/test/success_triggers/on_hit_test_success_block.tscn" id="10_i7hwp"]
 
 [node name="where_ball_loops_over_and_under" type="Node2D"]
@@ -61,12 +61,16 @@ polygon = PackedVector2Array(1016, 904, 880, 792, 784, 680, 704, 560, 672, 448, 
 [node name="on hit test success block" parent="." instance=ExtResource("10_i7hwp")]
 position = Vector2(800, 936)
 
-[node name="move_ball_to_z0" parent="." instance=ExtResource("7_yqrrw")]
-position = Vector2(1112, 656)
-
-[node name="move_ball_to_z1" parent="." instance=ExtResource("8_733bo")]
-position = Vector2(1128, 912)
-
 [node name="Polygon2D2" type="Polygon2D" parent="."]
 color = Color(0.156863, 0.156863, 0.156863, 1)
 polygon = PackedVector2Array(1144, 856, 1064, 808, 968, 744, 872, 648, 824, 576, 880, 640, 992, 736, 1104, 640, 1008, 744, 1080, 792, 1120, 752, 1224, 608, 1288, 464, 1304, 288, 1272, 184, 1184, 112, 1104, 88, 968, 120, 840, 184, 728, 264, 680, 392, 688, 512, 760, 656, 920, 824, 1112, 976, 1096, 992, 768, 992, 960, 888, 896, 840, 624, 992, 480, 992, 480, 0, 1624, 0, 1632, 992, 1480, 992, 1544, 856, 1560, 800, 1504, 784, 1272, 688, 1168, 832)
+
+[node name="move_ball_to_z1_layer" parent="." instance=ExtResource("8_1skli")]
+position = Vector2(1096, 904)
+
+[node name="move_ball_to_z0_layer" parent="." instance=ExtResource("9_7r34q")]
+position = Vector2(1080, 728)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(1080, 608)
+zoom = Vector2(1.79, 1.79)

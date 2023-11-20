@@ -3,8 +3,7 @@ extends Node2D
 var experience = preload("res://components/experience.tscn")
 
 func _ready() -> void:
-	if get_parent().has_signal("squashed"):
-		get_parent().squashed.connect(spawn_experience)
+	(get_parent().get_node("Squashable") as Squashable).squashed.connect(spawn_experience)
 
 func spawn_experience():
 	var _experience = experience.instantiate()

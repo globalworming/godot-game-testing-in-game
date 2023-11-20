@@ -25,7 +25,7 @@ func squash():
 	sprite.visible = false
 	body.set_deferred("freeze", true)
 	collider.set_deferred("disabled", true)
-	Statistics.creatures_squashed += 1	
+	Statistics.creatures_squashed += 1
 	await get_tree().create_timer(1).timeout
 	get_parent().remove_child(self)
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cq6r1jcjy0qc2"]
+[gd_scene load_steps=12 format=3 uid="uid://cq6r1jcjy0qc2"]
 
 [ext_resource type="Script" path="res://components/creatures/small_creature.gd" id="1_awwyp"]
 [ext_resource type="PackedScene" uid="uid://dyr5t2yf2ff2w" path="res://components/audio/crack.tscn" id="2_5d5cx"]
@@ -6,6 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://hv4o836wib6" path="res://assets/creature.png" id="3_4fasq"]
 [ext_resource type="Script" path="res://components/creatures/squash_area.gd" id="4_x10x7"]
 [ext_resource type="Script" path="res://components/creatures/on_squash_spawn_experience.gd" id="6_is0i5"]
+[ext_resource type="PackedScene" uid="uid://cbewjcjypn3x3" path="res://components/creatures/squashable.tscn" id="7_88lxe"]
+[ext_resource type="AudioStream" uid="uid://duaod548mi4jy" path="res://assets/sound/crack.mp3" id="8_8fouq"]
+[ext_resource type="Texture2D" uid="uid://bcsh6slbk328" path="res://assets/small_puddle.png" id="8_cer63"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_e74sq"]
 radius = 2.0
@@ -45,6 +48,10 @@ texture = ExtResource("2_8xtc7")
 
 [node name="on_squash_spawn_experience" type="Node2D" parent="."]
 script = ExtResource("6_is0i5")
+
+[node name="Squashable" parent="." instance=ExtResource("7_88lxe")]
+corpse_texture = ExtResource("8_cer63")
+squash_sound = ExtResource("8_8fouq")
 
 [connection signal="body_entered" from="squash_area" to="squash_area" method="_on_body_entered"]
 [connection signal="body_exited" from="squash_area" to="squash_area" method="_on_body_entered"]

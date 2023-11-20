@@ -21,10 +21,23 @@ func _physics_process(_delta: float) -> void:
 	if (linear_velocity.length() > linear_velocity.limit_length(5000).length()):
 		set_linear_velocity(linear_velocity.limit_length(5000))
 
+
+var previous_linear_velocities : Array[Vector2] = [Vector2.ZERO, Vector2.ZERO, Vector2.ZERO]
+
+func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
+	#print("_integrate_forces: ball speed %s" %  state.linear_velocity.length())
+	previous_linear_velocities.pop_front()
+	previous_linear_velocities.push_back(state.linear_velocity)
+
 func _on_body_entered(body: Node):
 	#print("collide with %s" % body.name)
 	if body.has_method("on_ball_collision"):
-		body.on_ball_collision(self)
+	#	print("_on_body_entered: ball speed after collition %s" %  linear_velocity.length())
+		var collision_force = mass * previous_linear_velocities.map(func (it): 
+			return (it - linear_velocity).length()
+		).max()
+		#print("force: %s" % collision_force)
+		body.on_ball_collision(self, collision_force)
 
 func move_to_z0():
 	collision_layer = 1

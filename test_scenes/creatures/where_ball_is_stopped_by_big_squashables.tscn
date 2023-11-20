@@ -8,13 +8,17 @@
 [node name="where_ball_is_stopped_by_big_squashables" type="Node2D"]
 
 [node name="ball" parent="." instance=ExtResource("3_ddjoj")]
-position = Vector2(1109, 609)
+position = Vector2(713, 394)
 
 [node name="on hit test success block" parent="." instance=ExtResource("4_xr3gb")]
-position = Vector2(1052, 1018)
+position = Vector2(656, 803)
 
 [node name="small_creature" parent="." instance=ExtResource("4_i6w1r")]
-position = Vector2(1111, 726)
+position = Vector2(715, 511)
 
 [node name="big_creature" parent="." instance=ExtResource("5_d51d2")]
-position = Vector2(1169, 905)
+position = Vector2(773, 690)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(805, 439)
+zoom = Vector2(2.405, 2.405)

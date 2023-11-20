@@ -8,23 +8,27 @@
 [node name="where_gate_restricts_movement" type="Node2D"]
 
 [node name="ball" parent="." instance=ExtResource("2_jijnk")]
-position = Vector2(596, 933)
+position = Vector2(589, 671)
 rotation = 0.523599
 
 [node name="gate" parent="." instance=ExtResource("3_y8aex")]
-position = Vector2(998, 489)
+position = Vector2(907, 155)
 rotation = -0.785397
 
 [node name="gate2" parent="." instance=ExtResource("3_y8aex")]
-position = Vector2(705, 809)
+position = Vector2(649, 547)
 rotation = -3.92699
 
 [node name="gate3" parent="." instance=ExtResource("3_y8aex")]
-position = Vector2(837, 651)
+position = Vector2(744, 366)
 rotation = 2.35619
 
 [node name="big_bumper" parent="." instance=ExtResource("4_j528y")]
-position = Vector2(538, 1090)
+position = Vector2(531, 828)
 
 [node name="on hit test success block" parent="." instance=ExtResource("4_t228r")]
-position = Vector2(949, 778)
+position = Vector2(942, 516)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(992, 559)
+zoom = Vector2(1.945, 1.945)

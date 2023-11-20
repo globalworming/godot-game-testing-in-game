@@ -1,21 +1,25 @@
 [gd_scene load_steps=4 format=3 uid="uid://bochb3biia81d"]
 
-[ext_resource type="PackedScene" uid="uid://ccq0o403hpxun" path="res://components/table/kicker/small_kicker.tscn" id="1_rkpjl"]
 [ext_resource type="PackedScene" uid="uid://cy6drw7rhi4gn" path="res://components/ball/ball.tscn" id="2_wwsch"]
 [ext_resource type="PackedScene" uid="uid://djgboj0jar52m" path="res://components/test/success_triggers/on_hit_test_success_block.tscn" id="3_2864v"]
+[ext_resource type="PackedScene" uid="uid://bw7e8meracl2q" path="res://components/table/kicker/medium_kicker.tscn" id="3_sbaey"]
 
 [node name="where_kicker_launches_ball" type="Node2D"]
 
-[node name="kicker" parent="." instance=ExtResource("1_rkpjl")]
-position = Vector2(760, 1513)
-rotation = -0.932107
-
 [node name="ball" parent="." instance=ExtResource("2_wwsch")]
-position = Vector2(762, 1403)
+position = Vector2(229, 489)
 
 [node name="on hit test success block" parent="." instance=ExtResource("3_2864v")]
-position = Vector2(827, 1226)
+position = Vector2(577, 107)
 
-[node name="kicker2" parent="." instance=ExtResource("1_rkpjl")]
-position = Vector2(1162, 1123)
-rotation = -3.10503
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(687, 380)
+zoom = Vector2(2.855, 2.855)
+
+[node name="medium_kicker" parent="." instance=ExtResource("3_sbaey")]
+position = Vector2(241, 589)
+rotation = -1.0472
+
+[node name="medium_kicker2" parent="." instance=ExtResource("3_sbaey")]
+position = Vector2(882, 189)
+rotation = 3.40339

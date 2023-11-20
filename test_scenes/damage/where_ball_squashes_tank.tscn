@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cuqt01e7eti0w"]
 
-[ext_resource type="Script" path="res://test_scenes/creatures/where_ball_squashes_tank.gd" id="1_35533"]
+[ext_resource type="Script" path="res://test_scenes/damage/where_ball_squashes_tank.gd" id="1_35533"]
 [ext_resource type="PackedScene" uid="uid://w8ba7jncpcna" path="res://components/test/success_triggers/on_sqashed_test_success.tscn" id="1_h8ob8"]
 [ext_resource type="PackedScene" uid="uid://bwbe7pchxgu5s" path="res://components/creatures/tank.tscn" id="2_p5qjj"]
 [ext_resource type="PackedScene" uid="uid://cy6drw7rhi4gn" path="res://components/ball/ball.tscn" id="3_8oc45"]

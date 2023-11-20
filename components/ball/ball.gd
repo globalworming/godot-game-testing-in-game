@@ -11,7 +11,10 @@ func _ready():
 	trail.gradient = Gradient.new()
 	trail.gradient.colors = PackedColorArray([Color(0, 0, 1, .01), Color( .1, .7, 1, .04)])
 	get_parent().call_deferred("add_child", trail)
-	get_parent().call_deferred("move_child", trail, 0)
+	#get_node("/root").call_deferred("move_child", trail, 0)
+	#call_deferred("add_child", trail)
+	#call_deferred("move_child", trail, 0)
+	
 	pass
 
 func _process(_delta: float) -> void:
@@ -22,20 +25,25 @@ func _physics_process(_delta: float) -> void:
 		set_linear_velocity(linear_velocity.limit_length(5000))
 
 
-var previous_linear_velocities : Array[Vector2] = [Vector2.ZERO, Vector2.ZERO, Vector2.ZERO]
+var velocities : Array[Vector2] = [Vector2.ZERO, Vector2.ZERO, Vector2.ZERO]
 
 func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 	#print("_integrate_forces: ball speed %s" %  state.linear_velocity.length())
-	previous_linear_velocities.pop_front()
-	previous_linear_velocities.push_back(state.linear_velocity)
+	velocities.pop_front()
+	velocities.push_back(state.linear_velocity)
 
 func _on_body_entered(body: Node):
 	#print("collide with %s" % body.name)
 	if body.has_method("on_ball_collision"):
 	#	print("_on_body_entered: ball speed after collition %s" %  linear_velocity.length())
-		var collision_force = mass * previous_linear_velocities.map(func (it): 
-			return (it - linear_velocity).length()
-		).max()
+		var xs = velocities.map(func (it): 
+			return it.x
+		)
+		var ys = velocities.map(func (it): 
+			return it.y
+		)
+		var collision_force = (Vector2(xs.max(), ys.max()) - Vector2(xs.min(), ys.min())).length()
+		#var collision_force = mass * (lenghts.max() - lenghts.min())
 		#print("force: %s" % collision_force)
 		body.on_ball_collision(self, collision_force)
 

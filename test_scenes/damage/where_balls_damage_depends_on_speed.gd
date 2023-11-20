@@ -12,7 +12,8 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	var damage = Statistics.damage_dealt;
 	if (damage != damage_before):
-		if (damage - damage_before) < 90: 
+		#print(damage)
+		if (damage - damage_before) < 15: 
 			push_error("more damage expected")
 			TestStatus.test_error.emit()
 		damage_before = damage

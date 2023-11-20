@@ -31,7 +31,7 @@ func move_forward(delta: float, body: RigidBody2D,force: int, max_speed: int = 5
 
 func move_towards(delta: float, target: Node2D, body: RigidBody2D, force: int, max_speed: int = 500): 
 	if (body.linear_velocity.length() <= max_speed):
-		var direction = Vector2.from_angle(body.global_position.angle_to_point(target.global_position)).normalized()
+		var direction = body.global_position.direction_to(target.global_position).normalized()
 		body.apply_central_force(direction  * delta * body.mass * force) 
 	else: body.linear_velocity = body.linear_velocity.normalized() * max_speed
 

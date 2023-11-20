@@ -33,8 +33,8 @@ collision_layer = 33
 collision_mask = 48
 
 [node name="Health" parent="paddle" instance=ExtResource("2_cburi")]
-current_value = 30
-max_value = 100
+position = Vector2(-7, 32)
+scale = Vector2(1.32705, 1.32705)
 
 [node name="end block" type="StaticBody2D" parent="."]
 rotation = 0.785397

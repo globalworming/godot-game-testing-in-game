@@ -9,7 +9,6 @@ func _ready() -> void:
 		push_error("connect component with health!")
 	health = _destructable.get_node("Health")
 
-
 func _process(_delta: float) -> void:
 	if health.current_value <= 0:
 		TestStatus.test_success.emit()

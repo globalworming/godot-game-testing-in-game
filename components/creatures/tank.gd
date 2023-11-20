@@ -7,8 +7,7 @@ var interval = 100.0 / fire_rate
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	($Health as Health).current_value = health
-	($Health as Health).max_value = health
+	($Health as Health).set_value(health, health)
 	
 	$progress.max_value = interval * 100
 	$progress.visible = false

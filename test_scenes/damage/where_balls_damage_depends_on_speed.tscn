@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bdqjuldism75v"]
 
-[ext_resource type="Script" path="res://test_scenes/creatures/where_balls_damage_depends_on_speed.gd" id="1_8mlus"]
+[ext_resource type="Script" path="res://test_scenes/damage/where_balls_damage_depends_on_speed.gd" id="1_8mlus"]
 [ext_resource type="PackedScene" uid="uid://cy6drw7rhi4gn" path="res://components/ball/ball.tscn" id="2_6xlpr"]
 [ext_resource type="PackedScene" uid="uid://bwbe7pchxgu5s" path="res://components/creatures/tank.tscn" id="3_rlf4c"]
 [ext_resource type="PackedScene" uid="uid://qu3ajd2iq8xm" path="res://components/test/success_triggers/shows_statistics.tscn" id="4_cipv2"]
@@ -16,15 +16,16 @@ position = Vector2(688, 384)
 zoom = Vector2(2.775, 2.775)
 
 [node name="tank" parent="." instance=ExtResource("3_rlf4c")]
-position = Vector2(181, 544)
+position = Vector2(197, 552)
 linear_damp = 100.0
 angular_damp = 100.0
+health = 70
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(120, 640)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(24, -24)
+position = Vector2(40, -16)
 shape = SubResource("RectangleShape2D_5dcjn")
 
 [node name="ball3" parent="." instance=ExtResource("2_6xlpr")]

@@ -7,6 +7,8 @@ extends RigidBody2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	self.add_to_group("destructable_player_asset")
+	if $Health:
+		$Health.set_value(100, 100)
 	pass # Replace with function body.
 
 

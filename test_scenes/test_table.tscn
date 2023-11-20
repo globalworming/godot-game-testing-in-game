@@ -325,10 +325,13 @@ curve = SubResource("Curve2D_fj6y3")
 
 [node name="tank" parent="." instance=ExtResource("16_2brme")]
 position = Vector2(829, 374)
-targets = Array[NodePath]([NodePath("../flipper")])
 health = 1000
 
 [node name="tank2" parent="." instance=ExtResource("16_2brme")]
 position = Vector2(1816, 263)
-targets = Array[NodePath]([NodePath("../flipper2")])
 health = 4000
+
+[node name="spawner" parent="." instance=ExtResource("17_57nxu")]
+position = Vector2(1653, 396)
+rate = 30.0
+_creature = "res://components/creatures/tank.tscn"

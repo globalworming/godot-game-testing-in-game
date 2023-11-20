@@ -20,16 +20,12 @@ position = Vector2(816, 632)
 
 [node name="tank" parent="." instance=ExtResource("2_y7jrb")]
 position = Vector2(96, 72)
-targets = Array[NodePath]([NodePath("../flipper")])
 
 [node name="tank2" parent="." instance=ExtResource("2_y7jrb")]
 position = Vector2(1400, 248)
-targets = Array[NodePath]([NodePath("../flipper")])
 
 [node name="tank3" parent="." instance=ExtResource("2_y7jrb")]
 position = Vector2(624, 824)
-targets = Array[NodePath]([NodePath("../flipper")])
 
 [node name="tank4" parent="." instance=ExtResource("2_y7jrb")]
 position = Vector2(1800, 992)
-targets = Array[NodePath]([NodePath("../flipper")])

@@ -1,6 +1,6 @@
 class_name Health extends Node2D
 
-@export var current_value = 20
+@export var current_value = 0
 @export var max_value = 200
 signal zero
 

@@ -5,7 +5,7 @@ func tap(action: StringName):
 	a.action = action
 	a.pressed = true
 	Input.parse_input_event(a)
-	await get_tree().create_timer(0.032).timeout
+	await get_tree().create_timer(0.1).timeout
 	a = InputEventAction.new()
 	a.action = action
 	a.pressed = false

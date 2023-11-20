@@ -1,7 +1,7 @@
 extends Node2D
 
 @export var rate = 150.0
-@export_file("*creature.tscn") var _creature = "res://components/creatures/small_creature.tscn"
+@export_file var _creature = "res://components/creatures/small_creature.tscn"
 @onready var creature = load(_creature)
 var timer = Timer.new()
 @export_node_path("Path2D") var route = ^"../path"
@@ -22,8 +22,9 @@ func _process(_delta: float) -> void:
 	pass
 
 func spawn():
-	var to_spawn = creature.instantiate()
-	to_spawn.route = NodePath(route)
+	var to_spawn = creature.instantiate() as Node2D
+	if(to_spawn.get_property_list().map(func (it: Dictionary): return it.name).has("route")):
+		to_spawn.route = NodePath(route)
 	to_spawn.position = position
 	get_parent().add_child(to_spawn)
 	pass

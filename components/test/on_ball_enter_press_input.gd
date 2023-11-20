@@ -13,5 +13,5 @@ func _process(_delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("ball"):
-		Input.action_press(input_action)
+		SimulateInput.tap(input_action)
 	pass # Replace with function body.

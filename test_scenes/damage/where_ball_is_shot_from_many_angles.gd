@@ -9,6 +9,7 @@ var offset = Vector2(700, 700)
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$on_damage_test_succes.damage_to_deal = 55000
+	tank.get_node("Health").set_value(55000, 55000)
 	pass # Replace with function body.
 
 

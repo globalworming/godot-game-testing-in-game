@@ -1,20 +1,27 @@
-[gd_scene load_steps=4 format=3 uid="uid://bwyqjm6xsud0c"]
+[gd_scene load_steps=5 format=3 uid="uid://bwyqjm6xsud0c"]
 
 [ext_resource type="Script" path="res://components/creatures/spawner.gd" id="1_6u3bh"]
+[ext_resource type="Texture2D" uid="uid://b1g0hmixiqqwm" path="res://assets/background.svg" id="2_0qo5q"]
 [ext_resource type="Texture2D" uid="uid://c1v2256dl27uj" path="res://assets/flagpole.png" id="2_blrih"]
-[ext_resource type="Texture2D" uid="uid://bvmye0wjh1ydm" path="res://assets/circle.png" id="3_ijsf1"]
+[ext_resource type="Texture2D" uid="uid://bv0o46nfoo6vq" path="res://assets/progress.svg" id="3_collr"]
 
 [node name="spawner" type="Node2D"]
 script = ExtResource("1_6u3bh")
 
+[node name="progress" type="TextureProgressBar" parent="."]
+offset_left = -24.0
+offset_top = -8.0
+offset_right = 72.0
+offset_bottom = 88.0
+scale = Vector2(0.493754, 0.28543)
+rounded = true
+fill_mode = 5
+texture_under = ExtResource("2_0qo5q")
+texture_progress = ExtResource("3_collr")
+
 [node name="Flagpole" type="Sprite2D" parent="."]
 position = Vector2(24, -52)
-scale = Vector2(0.32658, 0.32658)
+scale = Vector2(0.330364, 0.332725)
 texture = ExtResource("2_blrih")
 
-[node name="Circle" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(3.8147e-06, -175)
-rotation = -0.785397
-scale = Vector2(0.297913, 0.297913)
-texture = ExtResource("3_ijsf1")
+[node name="Timer" type="Timer" parent="."]

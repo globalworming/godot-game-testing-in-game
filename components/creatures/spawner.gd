@@ -1,30 +1,24 @@
-extends Node2D
+class_name Spawner extends Node2D
 
-@export var rate = 150.0
-@export_file var _creature = "res://components/creatures/small_creature.tscn"
-@onready var creature = load(_creature)
-var timer = Timer.new()
-@export_node_path("Path2D") var route = ^"../path"
+var creature
+var secs
+var offset
+var started = false
 
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	timer.timeout.connect(spawn)
-	timer.autostart = true;
-	timer.wait_time = 100.0 / rate
-	add_child(timer)
-
+func start():
+	$Timer.start(secs)
+	$Timer.timeout.connect(spawn)
+	started = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	#print(timer.wait_time, " ", timer.time_left, " ",  timer.wait_time / timer.time_left)
-	$Circle.rotation = -2*PI * timer.time_left / timer.wait_time
+	if !started: return 
+	$progress.max_value =  $Timer.wait_time * 100
+	$progress.value = 100 * ($Timer.wait_time - $Timer.time_left)
 	pass
 
 func spawn():
 	var to_spawn = creature.instantiate() as Node2D
-	if(to_spawn.get_property_list().map(func (it: Dictionary): return it.name).has("route")):
-		to_spawn.route = NodePath(route)
 	to_spawn.position = position
 	get_parent().add_child(to_spawn)
-	pass
+	

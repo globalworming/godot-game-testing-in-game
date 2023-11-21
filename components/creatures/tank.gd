@@ -1,14 +1,16 @@
 extends RigidBody2D
 
-var targets: Array[RigidBody2D] = []
-@export var fire_rate = 70
-var interval = 100.0 / fire_rate
-@export var health = 400
+var target: RigidBody2D
+var fire_rate: int
+var interval: int
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	var health = exp(Statistics.current_minute) * 1000
 	($Health as Health).set_value(health, health)
 	
+	fire_rate = floor(exp(Statistics.current_minute) * 40)
+	interval = floor(100.0 / fire_rate)
 	$progress.max_value = interval * 100
 	$progress.visible = false
 	$targeting.timeout.connect(fire)
@@ -17,19 +19,28 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	$progress.value = (interval - $targeting.time_left) * 100
 
+func aquire_target():
+	var new_targets = get_node("/root").find_children("*", "RigidBody2D", true, false).filter(
+		func (it: RigidBody2D): 
+			#print(it.name)
+			return it.is_in_group("destructable_player_asset")).filter(
+		func (it: RigidBody2D): 
+			#print(it.name)
+			return (it.get_node("Health") as Health).current_value > 0)
+	if (new_targets.size() == 0): return
+	new_targets.sort_custom(func (a: Node2D, b: Node2D): return global_position.distance_to(a.global_position) < global_position.distance_to(b.global_position))
+	target = new_targets[0]
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
-	if (targets.size() == 0): 
-		var new_targets = get_node("/root").find_children("paddle", "RigidBody2D", true, false).filter(
-			func (it: RigidBody2D): 
-				#print(it.name)
-				return it.is_in_group("destructable_player_asset"))
-		for t in new_targets:
-			targets.push_back(t)
-	if (targets.size() == 0): return
-	var target = targets[0]
-	
-	
+	if (!target): 
+		aquire_target()
+		return
+	if (target.get_node("Health") as Health).current_value <= 0:
+		target = null
+		$targeting.stop()		
+		return
+		
 	# rotate until looking at
 	Movement.rotate_to(delta, target, self, 1000000, 3)
 	if (!Movement.looking_at(target, self, deg_to_rad(5))): return
@@ -46,8 +57,8 @@ func _physics_process(delta: float) -> void:
 		$targeting.start(interval)
 	
 func fire():
+	if !target: return
 	$shot_particle.emitting = true
-	var target = targets[0]
 	$impact_particle.global_position = target.global_position  + Vector2(0, -20)
 	$impact_particle.global_rotation = 0
 	$impact_particle.restart()

@@ -1,7 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dnk15rl8s15a0"]
+[gd_scene load_steps=8 format=3 uid="uid://dnk15rl8s15a0"]
 
 [ext_resource type="Texture2D" uid="uid://cxcsxyic7nu07" path="res://assets/bumper.png" id="2_jyif1"]
 [ext_resource type="Script" path="res://components/table/bumber/body.gd" id="2_q7esn"]
+[ext_resource type="PackedScene" uid="uid://3lghw1uy1x2c" path="res://components/health.tscn" id="3_c8dyp"]
+[ext_resource type="PackedScene" uid="uid://c1uovajy2j1sc" path="res://components/destructable_player_asset.tscn" id="4_uneeo"]
+[ext_resource type="PackedScene" uid="uid://tmqe8awd2jxj" path="res://components/on_health_zero_destroy_player_asset.tscn" id="5_qwk7u"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0qin6"]
 bounce = 1.0
@@ -26,6 +29,15 @@ shape = SubResource("CircleShape2D_553km")
 [node name="Bumper" type="Sprite2D" parent="body"]
 scale = Vector2(2.12, 2.12)
 texture = ExtResource("2_jyif1")
+
+[node name="Health" parent="body" instance=ExtResource("3_c8dyp")]
+position = Vector2(-40, -16)
+rotation = 1.57079
+scale = Vector2(1.75103, 1.75103)
+
+[node name="DestructablePlayerAsset" parent="body" instance=ExtResource("4_uneeo")]
+
+[node name="on_health_zero_destroy_player_asset" parent="body" instance=ExtResource("5_qwk7u")]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 

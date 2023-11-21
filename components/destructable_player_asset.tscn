@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://c1uovajy2j1sc"]
+
+[ext_resource type="Script" path="res://components/destructable_player_asset.gd" id="1_0eode"]
+[ext_resource type="Texture2D" uid="uid://bhr6x4876jdgx" path="res://assets/impact.png" id="2_46ups"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_rddev"]
+emission_shape = 1
+emission_sphere_radius = 27.95
+gravity = Vector3(0, 0, 0)
+linear_accel_max = 100.0
+color = Color(1, 0, 0, 1)
+hue_variation_min = -0.04
+hue_variation_max = 0.15
+
+[node name="DestructablePlayerAsset" type="Node2D"]
+script = ExtResource("1_0eode")
+
+[node name="indicator" type="GPUParticles2D" parent="."]
+emitting = false
+process_material = SubResource("ParticleProcessMaterial_rddev")
+texture = ExtResource("2_46ups")

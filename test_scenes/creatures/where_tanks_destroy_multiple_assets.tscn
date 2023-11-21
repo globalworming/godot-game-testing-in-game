@@ -1,0 +1,57 @@
+[gd_scene load_steps=6 format=3 uid="uid://dkbwh0nh3urec"]
+
+[ext_resource type="Script" path="res://test_scenes/creatures/where_tanks_destroy_multiple_assets.gd" id="1_wdnop"]
+[ext_resource type="PackedScene" uid="uid://og3yi4m0mfsc" path="res://components/test/success_triggers/on_player_assets_destroyed_test_success.tscn" id="2_5ugow"]
+[ext_resource type="PackedScene" uid="uid://bwbe7pchxgu5s" path="res://components/creatures/tank.tscn" id="2_hgj8s"]
+[ext_resource type="PackedScene" uid="uid://dgwsl3tvuq55l" path="res://components/table/flipper/flipper_left.tscn" id="3_b4f47"]
+[ext_resource type="PackedScene" uid="uid://dnk15rl8s15a0" path="res://components/table/bumber/big_bumper.tscn" id="4_834e2"]
+
+[node name="where_tanks_destroy_multiple_assets" type="Node2D"]
+script = ExtResource("1_wdnop")
+
+[node name="on_player_assets_destroyed_test_success" parent="." instance=ExtResource("2_5ugow")]
+position = Vector2(1481, 340)
+player_assets_to_destroy = 8
+
+[node name="tank" parent="." instance=ExtResource("2_hgj8s")]
+position = Vector2(171, 543)
+rotation = 1.45577
+fire_rate = 300
+
+[node name="tank2" parent="." instance=ExtResource("2_hgj8s")]
+position = Vector2(1683, 1143)
+rotation = 1.45577
+fire_rate = 300
+
+[node name="tank3" parent="." instance=ExtResource("2_hgj8s")]
+position = Vector2(559, 1178)
+rotation = 1.45577
+fire_rate = 300
+
+[node name="flipper" parent="." instance=ExtResource("3_b4f47")]
+position = Vector2(213, 742)
+
+[node name="big_bumper" parent="." instance=ExtResource("4_834e2")]
+position = Vector2(555, 535)
+
+[node name="big_bumper2" parent="." instance=ExtResource("4_834e2")]
+position = Vector2(693, 852)
+
+[node name="big_bumper8" parent="." instance=ExtResource("4_834e2")]
+position = Vector2(739, 1084)
+
+[node name="big_bumper9" parent="." instance=ExtResource("4_834e2")]
+position = Vector2(824, 600)
+
+[node name="Camera2D" type="Camera2D" parent="big_bumper9"]
+position = Vector2(346, 61)
+zoom = Vector2(1.655, 1.655)
+
+[node name="big_bumper10" parent="." instance=ExtResource("4_834e2")]
+position = Vector2(999, 893)
+
+[node name="big_bumper3" parent="." instance=ExtResource("4_834e2")]
+position = Vector2(1220, 688)
+
+[node name="big_bumper6" parent="." instance=ExtResource("4_834e2")]
+position = Vector2(396, 1036)

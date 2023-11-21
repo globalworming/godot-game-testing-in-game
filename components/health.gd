@@ -1,8 +1,11 @@
 class_name Health extends Node2D
 
-var current_value = 0
+var current_value = 200
 var max_value = 200
 signal zero
+
+func _ready() -> void:
+	set_value(current_value, max_value)
 
 func set_value(current: int, maximum: int):
 	max_value = maximum

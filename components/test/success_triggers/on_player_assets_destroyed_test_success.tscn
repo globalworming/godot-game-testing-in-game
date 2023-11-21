@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://og3yi4m0mfsc"]
+
+[ext_resource type="Script" path="res://components/test/success_triggers/on_player_assets_destroyed_test_success.gd" id="1_hpcul"]
+[ext_resource type="PackedScene" uid="uid://qu3ajd2iq8xm" path="res://components/test/shows_statistics.tscn" id="2_76yk7"]
+[ext_resource type="LabelSettings" uid="uid://cne24tsnve2y2" path="res://label_settings/some_setting.tres" id="3_p22yc"]
+[ext_resource type="Script" path="res://components/test/success_triggers/show_player_assets_to_destroy.gd" id="4_3sag6"]
+
+[node name="on_player_assets_destroyed_test_success" type="Node2D"]
+script = ExtResource("1_hpcul")
+
+[node name="shows_statistics" parent="." instance=ExtResource("2_76yk7")]
+offset_left = -144.0
+offset_top = 64.0
+offset_right = 142.0
+offset_bottom = 130.0
+scale = Vector2(1.09094, 0.969793)
+label_settings = ExtResource("3_p22yc")
+
+[node name="show_player_assets_to_destroy" type="Label" parent="."]
+offset_left = -72.0
+offset_right = 88.0
+offset_bottom = 66.0
+text = "to destroy"
+label_settings = ExtResource("3_p22yc")
+script = ExtResource("4_3sag6")

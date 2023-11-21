@@ -1,7 +1,8 @@
-[gd_scene load_steps=23 format=3 uid="uid://eue4qx4tfut5"]
+[gd_scene load_steps=22 format=3 uid="uid://eue4qx4tfut5"]
 
 [ext_resource type="PackedScene" uid="uid://qd0hnots4y46" path="res://components/table/gate/gate.tscn" id="1_iqell"]
 [ext_resource type="Texture2D" uid="uid://qdau5053q4bf" path="res://assets/table_4_z0.png" id="1_k6jkt"]
+[ext_resource type="Script" path="res://test_scenes/test_table.gd" id="1_s8525"]
 [ext_resource type="PackedScene" uid="uid://dgwsl3tvuq55l" path="res://components/table/flipper/flipper_left.tscn" id="1_t0l7w"]
 [ext_resource type="PackedScene" uid="uid://b74wl2mwppu43" path="res://components/layer/move_ball_to_z1_layer.tscn" id="2_hhdlh"]
 [ext_resource type="PackedScene" uid="uid://c4t6p3yr1417a" path="res://components/table/flipper/flipper_right.tscn" id="2_l6tqu"]
@@ -17,25 +18,19 @@
 [ext_resource type="PackedScene" uid="uid://dnk15rl8s15a0" path="res://components/table/bumber/big_bumper.tscn" id="14_k2snb"]
 [ext_resource type="PackedScene" uid="uid://3xuy6qe8somj" path="res://components/table/roll_over/roll_over.tscn" id="15_bn0ht"]
 [ext_resource type="PackedScene" uid="uid://d4knaw8vqi57s" path="res://components/table/switch/switch.tscn" id="16_1uyrf"]
-[ext_resource type="PackedScene" uid="uid://bwbe7pchxgu5s" path="res://components/creatures/tank.tscn" id="16_2brme"]
-[ext_resource type="PackedScene" uid="uid://bwyqjm6xsud0c" path="res://components/creatures/spawner.tscn" id="17_57nxu"]
+[ext_resource type="PackedScene" uid="uid://qu3ajd2iq8xm" path="res://components/test/shows_statistics.tscn" id="18_kwpqm"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ci5jm"]
 radius = 8.06226
 
-[sub_resource type="Curve2D" id="Curve2D_8vx7e"]
+[sub_resource type="Curve2D" id="Curve2D_a0sxm"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 376, 922, 0, 0, 0, 0, 609, 728, 0, 0, 0, 0, 616, 580, 0, 0, 0, 0, 575, 491, 0, 0, 0, 0, 467, 459, 0, 0, 0, 0, 267, 379, 0, 0, 0, 0, 148, 263, 0, 0, 0, 0, 146, 140, 0, 0, 0, 0, 223, 96, 0, 0, 0, 0, 467, 106, 0, 0, 0, 0, 748, 163, 0, 0, 0, 0, 991, 268, 0, 0, 0, 0, 1178, 432, 0, 0, 0, 0, 1244, 771, 0, 0, 0, 0, 1247, 1182, 0, 0, 0, 0, 1229, 1396, 0, 0, 0, 0, 1197, 1635, 0, 0, 0, 0, 1106, 1758, 0, 0, 0, 0, 805, 1797, 0, 0, 0, 0, 419, 1806, 0, 0, 0, 0, -86, 1543, 0, 0, 0, 0, -175, 1889, 0, 0, 0, 0, -168, 2146)
+"points": PackedVector2Array(0, 0, 0, 0, 1394, 119, 0, 0, 0, 0, 1507, 350, 0, 0, 0, 0, 1664, 498, 0, 0, 0, 0, 1701, 720, 0, 0, 0, 0, 1502, 813, 0, 0, 0, 0, 993, 996, 0, 0, 0, 0, 862, 1110, 0, 0, 0, 0, 784, 1270, 0, 0, 0, 0, 792, 1406, 0, 0, 0, 0, 830, 1490, 0, 0, 0, 0, 908, 1585, 0, 0, 0, 0, 1024, 1661, 0, 0, 0, 0, 1135, 1749, 0, 0, 0, 0, 1140, 1953)
 }
-point_count = 23
-
-[sub_resource type="Curve2D" id="Curve2D_fj6y3"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, -98, 339, 0, 0, 0, 0, -246, 109, 0, 0, 0, 0, -475, 122, 0, 0, 0, 0, -856, 182, 0, 0, 0, 0, -1129, 308, 0, 0, 0, 0, -1291, 478, 0, 0, 0, 0, -1337, 584, 0, 0, 0, 0, -1354, 787, 0, 0, 0, 0, -1342, 1246, 0, 0, 0, 0, -1333, 1427, 0, 0, 0, 0, -1308, 1632, 0, 0, 0, 0, -1254, 1717, 0, 0, 0, 0, -1108, 1772, 0, 0, 0, 0, -744, 1797, 0, 0, 0, 0, -341, 1781, 0, 0, 0, 0, -378, 1614, 0, 0, 0, 0, 61, 1479, 0, 0, 0, 0, 65, 2133)
-}
-point_count = 18
+point_count = 14
 
 [node name="test_table" type="Node2D"]
+script = ExtResource("1_s8525")
 
 [node name="z0" type="Node2D" parent="."]
 
@@ -147,10 +142,10 @@ polygon = PackedVector2Array(-651.5, 4.10001, -634, 41, -609.3, 76, -579.3, 110,
 position = Vector2(1150, 373)
 
 [node name="big_bumper2" parent="z0" instance=ExtResource("14_k2snb")]
-position = Vector2(1473, 244)
+position = Vector2(1692, 281)
 
 [node name="big_bumper3" parent="z0" instance=ExtResource("14_k2snb")]
-position = Vector2(2106, 602)
+position = Vector2(1445, 538)
 
 [node name="roll_over" parent="z0" instance=ExtResource("15_bn0ht")]
 position = Vector2(1248, 1590)
@@ -180,20 +175,32 @@ position = Vector2(1595, 1455)
 position = Vector2(666, 1130)
 rotation = 0.790567
 
+[node name="switch8" parent="z0" instance=ExtResource("16_1uyrf")]
+position = Vector2(587, 1118)
+rotation = 0.790567
+
+[node name="switch9" parent="z0" instance=ExtResource("16_1uyrf")]
+position = Vector2(510, 1107)
+rotation = 0.790567
+
+[node name="switch10" parent="z0" instance=ExtResource("16_1uyrf")]
+position = Vector2(434, 1093)
+rotation = 0.790567
+
 [node name="switch2" parent="z0" instance=ExtResource("16_1uyrf")]
-position = Vector2(683, 298)
+position = Vector2(648, 299)
 rotation = 1.128
 
 [node name="switch5" parent="z0" instance=ExtResource("16_1uyrf")]
-position = Vector2(744, 277)
+position = Vector2(704, 280)
 rotation = 1.36456
 
 [node name="switch6" parent="z0" instance=ExtResource("16_1uyrf")]
-position = Vector2(817, 266)
+position = Vector2(760, 264)
 rotation = 1.50567
 
 [node name="switch7" parent="z0" instance=ExtResource("16_1uyrf")]
-position = Vector2(899, 262)
+position = Vector2(816, 256)
 rotation = 1.55684
 
 [node name="switch3" parent="z0" instance=ExtResource("16_1uyrf")]
@@ -203,6 +210,22 @@ rotation = 2.36655
 [node name="switch4" parent="z0" instance=ExtResource("16_1uyrf")]
 position = Vector2(1872, 984)
 rotation = 2.2945
+
+[node name="flipper" parent="z0" instance=ExtResource("1_t0l7w")]
+position = Vector2(1096, 1840)
+rotation = 0.523599
+
+[node name="flipper2" parent="z0" instance=ExtResource("2_l6tqu")]
+position = Vector2(1832, 1840)
+rotation = 2.618
+
+[node name="medium_kicker" parent="z0" instance=ExtResource("6_n3nrq")]
+position = Vector2(753, 1569)
+rotation = -0.961651
+
+[node name="medium_kicker2" parent="z0" instance=ExtResource("6_n3nrq")]
+position = Vector2(2176, 1568)
+rotation = -2.18033
 
 [node name="z1" type="Node2D" parent="."]
 visible = false
@@ -271,22 +294,6 @@ theme = ExtResource("8_5to18")
 text = "level: 19"
 script = ExtResource("9_ym15f")
 
-[node name="flipper" parent="." instance=ExtResource("1_t0l7w")]
-position = Vector2(1096, 1840)
-rotation = 0.523599
-
-[node name="flipper2" parent="." instance=ExtResource("2_l6tqu")]
-position = Vector2(1832, 1840)
-rotation = -3.66519
-
-[node name="medium_kicker" parent="." instance=ExtResource("6_n3nrq")]
-position = Vector2(753, 1569)
-rotation = -0.961651
-
-[node name="medium_kicker2" parent="." instance=ExtResource("6_n3nrq")]
-position = Vector2(2176, 1568)
-rotation = -2.18033
-
 [node name="rail_gun" parent="." instance=ExtResource("7_5hnl1")]
 position = Vector2(1450, 1590)
 scale = Vector2(2.85304, 2.85304)
@@ -301,37 +308,20 @@ position = Vector2(1450, 1590)
 [node name="ball3" parent="." instance=ExtResource("3_fahqh")]
 position = Vector2(649, 1280)
 
-[node name="spawn2" type="Node2D" parent="."]
-position = Vector2(0, 4)
+[node name="shows_statistics" parent="." instance=ExtResource("18_kwpqm")]
+offset_left = 2976.0
+offset_top = 52.0
+offset_right = 3262.0
+offset_bottom = 118.0
 
-[node name="spawner2" parent="spawn2" instance=ExtResource("17_57nxu")]
-position = Vector2(2000, 911)
-rate = 60.0
+[node name="spawn_point1" type="Node2D" parent="."]
+position = Vector2(839, 920)
 
-[node name="path" type="Path2D" parent="spawn2"]
-position = Vector2(1655, -22)
-curve = SubResource("Curve2D_8vx7e")
+[node name="spawn_point2" type="Node2D" parent="."]
+position = Vector2(1694, 850)
 
-[node name="spawn1" type="Node2D" parent="."]
+[node name="spawn_point3" type="Node2D" parent="."]
+position = Vector2(1445, 76)
 
-[node name="spawner" parent="spawn1" instance=ExtResource("17_57nxu")]
-position = Vector2(1314, 337)
-rotation = -0.0433024
-rate = 20.0
-
-[node name="path" type="Path2D" parent="spawn1"]
-position = Vector2(1400, -18)
-curve = SubResource("Curve2D_fj6y3")
-
-[node name="tank" parent="." instance=ExtResource("16_2brme")]
-position = Vector2(829, 374)
-health = 1000
-
-[node name="tank2" parent="." instance=ExtResource("16_2brme")]
-position = Vector2(1816, 263)
-health = 40000
-
-[node name="spawner" parent="." instance=ExtResource("17_57nxu")]
-position = Vector2(1653, 396)
-rate = 30.0
-_creature = "res://components/creatures/tank.tscn"
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_a0sxm")

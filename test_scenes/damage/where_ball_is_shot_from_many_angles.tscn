@@ -19,7 +19,6 @@ gravity_scale = 0.0
 [node name="tank" parent="." instance=ExtResource("3_ib0eu")]
 position = Vector2(1215, 504)
 lock_rotation = true
-health = 55000
 
 [node name="on_damage_test_succes" parent="." instance=ExtResource("2_yapl2")]
 position = Vector2(1544, 256)

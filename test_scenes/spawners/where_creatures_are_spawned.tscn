@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://bdyac7x7emml1"]
+[gd_scene load_steps=5 format=3 uid="uid://bdyac7x7emml1"]
 
 [ext_resource type="PackedScene" uid="uid://bwyqjm6xsud0c" path="res://components/creatures/spawner.tscn" id="1_gccf7"]
+[ext_resource type="Script" path="res://test_scenes/spawners/where_creatures_are_spawned.gd" id="1_pvrwg"]
 [ext_resource type="PackedScene" uid="uid://ov6g7ycvj5cc" path="res://components/test/success_triggers/on_number_of_creatures_in_area_success.tscn" id="2_w1gjt"]
 
 [sub_resource type="Curve2D" id="Curve2D_y6818"]
@@ -10,6 +11,7 @@ _data = {
 point_count = 3
 
 [node name="where_creatures_are_spawned" type="Node2D"]
+script = ExtResource("1_pvrwg")
 
 [node name="path" type="Path2D" parent="."]
 position = Vector2(-472, -432)

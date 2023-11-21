@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://tmqe8awd2jxj"]
+
+[ext_resource type="Script" path="res://components/on_health_zero_destroy_player_asset.gd" id="1_bh8gb"]
+
+[node name="on_health_zero_destroy_player_asset" type="Node"]
+script = ExtResource("1_bh8gb")

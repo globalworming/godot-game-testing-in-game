@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://dgwsl3tvuq55l"]
+[gd_scene load_steps=5 format=3 uid="uid://dgwsl3tvuq55l"]
 
 [ext_resource type="PackedScene" uid="uid://cm5r4tyfdxsrw" path="res://components/table/flipper/paddle.tscn" id="1_l7xg2"]
-[ext_resource type="PackedScene" uid="uid://3lghw1uy1x2c" path="res://components/health.tscn" id="2_cburi"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8jfuj"]
 radius = 8.0
@@ -31,10 +30,6 @@ bias = 0.9
 [node name="paddle" parent="." instance=ExtResource("1_l7xg2")]
 collision_layer = 33
 collision_mask = 48
-
-[node name="Health" parent="paddle" instance=ExtResource("2_cburi")]
-position = Vector2(-7, 32)
-scale = Vector2(1.32705, 1.32705)
 
 [node name="end block" type="StaticBody2D" parent="."]
 rotation = 0.785397

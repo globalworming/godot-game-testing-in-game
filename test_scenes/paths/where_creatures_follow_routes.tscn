@@ -28,11 +28,9 @@ freeze = true
 
 [node name="small_creature" parent="." instance=ExtResource("2_kfq8d")]
 position = Vector2(984, 493.553)
-route = NodePath("../path")
 
 [node name="small_creature2" parent="." instance=ExtResource("2_kfq8d")]
 position = Vector2(912, 493.553)
-route = NodePath("../path")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(760, 424)

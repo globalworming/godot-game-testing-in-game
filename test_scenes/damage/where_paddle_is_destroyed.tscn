@@ -9,8 +9,8 @@
 script = ExtResource("1_ev732")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(952, 536)
-zoom = Vector2(2, 2)
+position = Vector2(776, 424)
+zoom = Vector2(2.38, 2.38)
 
 [node name="on_destruction_test_success" parent="." instance=ExtResource("1_bxi3a")]
 position = Vector2(320, 192)
@@ -20,12 +20,3 @@ position = Vector2(816, 632)
 
 [node name="tank" parent="." instance=ExtResource("2_y7jrb")]
 position = Vector2(96, 72)
-
-[node name="tank2" parent="." instance=ExtResource("2_y7jrb")]
-position = Vector2(1400, 248)
-
-[node name="tank3" parent="." instance=ExtResource("2_y7jrb")]
-position = Vector2(624, 824)
-
-[node name="tank4" parent="." instance=ExtResource("2_y7jrb")]
-position = Vector2(1800, 992)

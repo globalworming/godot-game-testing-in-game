@@ -9,6 +9,7 @@ func _ready() -> void:
 	current_event = events.pop_front();
 	current_event.start.call(self)
 	Statistics.next_minute.connect(next_event)
+	$tank.set_level(15)
 
 func next_event():
 	current_event.stop.call(self)

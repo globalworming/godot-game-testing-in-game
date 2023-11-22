@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://eue4qx4tfut5"]
+[gd_scene load_steps=23 format=3 uid="uid://eue4qx4tfut5"]
 
 [ext_resource type="PackedScene" uid="uid://qd0hnots4y46" path="res://components/table/gate/gate.tscn" id="1_iqell"]
 [ext_resource type="Texture2D" uid="uid://qdau5053q4bf" path="res://assets/table_4_z0.png" id="1_k6jkt"]
@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://3xuy6qe8somj" path="res://components/table/roll_over/roll_over.tscn" id="15_bn0ht"]
 [ext_resource type="PackedScene" uid="uid://d4knaw8vqi57s" path="res://components/table/switch/switch.tscn" id="16_1uyrf"]
 [ext_resource type="PackedScene" uid="uid://qu3ajd2iq8xm" path="res://components/test/shows_statistics.tscn" id="18_kwpqm"]
+[ext_resource type="PackedScene" uid="uid://bwbe7pchxgu5s" path="res://components/creatures/tank.tscn" id="20_i25bs"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ci5jm"]
 radius = 8.06226
@@ -306,7 +307,7 @@ exit = NodePath("../tunnel_exit")
 position = Vector2(1450, 1590)
 
 [node name="ball3" parent="." instance=ExtResource("3_fahqh")]
-position = Vector2(649, 1280)
+position = Vector2(1597, -630)
 
 [node name="shows_statistics" parent="." instance=ExtResource("18_kwpqm")]
 offset_left = 2976.0
@@ -325,3 +326,9 @@ position = Vector2(1445, 76)
 
 [node name="Path2D" type="Path2D" parent="."]
 curve = SubResource("Curve2D_a0sxm")
+
+[node name="tank" parent="." instance=ExtResource("20_i25bs")]
+position = Vector2(2125, 286)
+
+[node name="Camera2D" type="Camera2D" parent="tank"]
+zoom = Vector2(1.735, 1.735)

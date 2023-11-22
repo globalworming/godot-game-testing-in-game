@@ -24,7 +24,6 @@ script = ExtResource("1_awwyp")
 [node name="crack" parent="." instance=ExtResource("2_5d5cx")]
 position = Vector2(0, 0)
 autoplay = false
-bus = &"New Bus"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_e74sq")

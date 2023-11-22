@@ -11,16 +11,20 @@ func rotate_to(delta: float, target: Node2D, body: RigidBody2D, force: int, accu
 	# but after that allow rotation again
 	#body.angular_damp = 30
 	body.lock_rotation = false
-		
-	if (difference > 0):
+	
+	var target_angle = body.global_position.angle_to_point(target.global_position)
+	var current_angle = fmod(body.rotation, 2* PI )
+	var direction = sin(target_angle - current_angle)
+	if (direction > 0):
 		body.apply_torque(force * body.mass * delta) 
-	if (difference < 0):
+	if (direction < 0):
 		body.apply_torque(-force * body.mass * delta) 
 
 
 func rotation_difference(target: Node2D, body: Node2D) -> float:
-	var target_rotation = body.global_position.angle_to_point(target.global_position)
-	return fmod(target_rotation - body.rotation, 2 * PI)
+	var target_rotation = fmod(body.global_position.angle_to_point(target.global_position), 2* PI) + 2 * PI 
+	var body_rotation = fmod(body.rotation, 2 * PI)  + 2 * PI 
+	return target_rotation - body_rotation
 
 
 func move_forward(delta: float, body: RigidBody2D,force: int, max_speed: int = 500): 

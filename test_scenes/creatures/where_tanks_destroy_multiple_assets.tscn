@@ -16,17 +16,14 @@ player_assets_to_destroy = 8
 [node name="tank" parent="." instance=ExtResource("2_hgj8s")]
 position = Vector2(171, 543)
 rotation = 1.45577
-fire_rate = 300
 
 [node name="tank2" parent="." instance=ExtResource("2_hgj8s")]
 position = Vector2(1683, 1143)
 rotation = 1.45577
-fire_rate = 300
 
 [node name="tank3" parent="." instance=ExtResource("2_hgj8s")]
 position = Vector2(559, 1178)
 rotation = 1.45577
-fire_rate = 300
 
 [node name="flipper" parent="." instance=ExtResource("3_b4f47")]
 position = Vector2(213, 742)

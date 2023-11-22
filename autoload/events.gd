@@ -34,7 +34,7 @@ func first():
 			_spawner.start()
 			to_clean_up.push_back(_spawner)
 			pass,
-		func (table: Node2D):
+		func (_table: Node2D):
 			clean_up()
 			pass	
 	)

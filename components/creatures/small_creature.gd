@@ -46,7 +46,7 @@ func _physics_process(delta: float) -> void:
 	if (route != null && node_to_follow != null):
 		advance_route()
 		Movement.rotate_to(delta, node_to_follow, self, 100000, 5)
-		Movement.move_forward(delta, self, 1000000)
+		Movement.move_towards(delta, node_to_follow, self, 1000000)
 
 		
 func advance_route():

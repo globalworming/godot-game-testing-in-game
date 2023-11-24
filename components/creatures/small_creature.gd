@@ -5,10 +5,6 @@ extends RigidBody2D
 @export var health: float = 20.0
 var route: Path2D
 var node_to_follow: PathFollow2D
-var is_squashed = false
-var experience = preload("res://components/experience.tscn")
-
-signal squashed
 
 func _process(_delta: float) -> void:
 	if route == null:
@@ -24,23 +20,6 @@ func _process(_delta: float) -> void:
 
 func closest(a:Path2D, b: Path2D):
 	return (a.curve.get_baked_points()[0] + a.global_position).distance_to(global_position) < (b.curve.get_baked_points()[0] + b.global_position).distance_to(global_position)
-
-func squash():
-	if is_squashed: return
-	is_squashed = true
-	squashed.emit()
-	Statistics.creatures_squashed += 1	
-	disable_any_interactions()
-	$Puddle.visible = true
-	$Creature.visible = false
-	$crack.play()
-	await get_tree().create_timer(1).timeout
-	get_parent().remove_child(self)
-	
-func disable_any_interactions():
-	collision_layer = 0
-	set_deferred("freeze", true)
-	squasher.set_deferred("disabled", true)
 
 func _physics_process(delta: float) -> void:
 	if (route != null && node_to_follow != null):

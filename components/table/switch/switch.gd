@@ -14,4 +14,5 @@ func switch():
 	if !prevent_switch_timer.is_stopped(): return
 	prevent_switch_timer.start(0.1)
 	enabled = !enabled
+	($switch_on if enabled else $switch_off).play()
 	$body/indicator.color = Color.DEEP_PINK if enabled else Color.CORNFLOWER_BLUE

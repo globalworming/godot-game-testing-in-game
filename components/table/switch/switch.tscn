@@ -1,14 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://d4knaw8vqi57s"]
+[gd_scene load_steps=7 format=3 uid="uid://d4knaw8vqi57s"]
 
 [ext_resource type="Script" path="res://components/table/switch/switch.gd" id="1_27k53"]
 [ext_resource type="Texture2D" uid="uid://b78i7j81wckav" path="res://assets/switch.png" id="2_v31ck"]
 [ext_resource type="Script" path="res://components/table/switch/body.gd" id="2_wm4jg"]
+[ext_resource type="PackedScene" uid="uid://4ittfh70t35y" path="res://components/audio/switch_on.tscn" id="3_ruie1"]
+[ext_resource type="PackedScene" uid="uid://djlnro3tvkqlk" path="res://components/audio/switch_off.tscn" id="4_uidpg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_khv3s"]
 size = Vector2(48, 18)
 
 [node name="switch" type="Node2D"]
 script = ExtResource("1_27k53")
+
+[node name="switch_on" parent="." instance=ExtResource("3_ruie1")]
+
+[node name="switch_off" parent="." instance=ExtResource("4_uidpg")]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://djlnro3tvkqlk"]
+
+[ext_resource type="AudioStream" uid="uid://bftlofis4l8m3" path="res://assets/sound/switch_off.mp3" id="1_b07o5"]
+
+[node name="switch_off" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_b07o5")

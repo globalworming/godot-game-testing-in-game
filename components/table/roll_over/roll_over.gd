@@ -11,6 +11,7 @@ func switch(body: Node2D):
 #	if enabled: return
 	if !body.is_in_group("ball"): return
 	enabled = !enabled
+	($rollover_on if enabled else $rollover_off).play()
 	apply_color()
 	Experience.gain(experience)
 	

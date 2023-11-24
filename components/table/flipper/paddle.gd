@@ -26,10 +26,12 @@ func _physics_process(_delta: float) -> void:
 			rotation_degrees = -5
 	
 	if Input.is_action_just_pressed(input_action):
+		$paddle_up.play()
 		constant_torque = 0		
 		add_constant_torque(100000 * speed * (-1 if left_flipper else 1))
 	
 	if Input.is_action_just_released(input_action):
+		$paddle_down.play()		
 		constant_torque = 0
 		add_constant_torque(100000 * speed * (1 if left_flipper else -1))
 	

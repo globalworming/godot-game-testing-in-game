@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cm5r4tyfdxsrw"]
+[gd_scene load_steps=8 format=3 uid="uid://cm5r4tyfdxsrw"]
 
 [ext_resource type="Script" path="res://components/table/flipper/paddle.gd" id="1_cchts"]
+[ext_resource type="PackedScene" uid="uid://d3pp1a3pk0k3y" path="res://components/audio/paddle_down.tscn" id="2_bf12s"]
 [ext_resource type="PackedScene" uid="uid://3lghw1uy1x2c" path="res://components/health.tscn" id="2_x3lp8"]
+[ext_resource type="PackedScene" uid="uid://bvcqayl035jt2" path="res://components/audio/paddle_up.tscn" id="3_aun3d"]
 [ext_resource type="PackedScene" uid="uid://tmqe8awd2jxj" path="res://components/on_health_zero_destroy_player_asset.tscn" id="3_e11i7"]
 [ext_resource type="PackedScene" uid="uid://c1uovajy2j1sc" path="res://components/destructable_player_asset.tscn" id="4_kjt8j"]
 
@@ -17,6 +19,10 @@ continuous_cd = 2
 max_contacts_reported = 16
 contact_monitor = true
 script = ExtResource("1_cchts")
+
+[node name="paddle_up" parent="." instance=ExtResource("2_bf12s")]
+
+[node name="paddle_down" parent="." instance=ExtResource("3_aun3d")]
 
 [node name="collision_area" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(0, -32, 64, -32, 128, -30, 168, -28, 227, -25, 272, -22, 287, -21, 296, -20, 310, -18, 316, -17, 324, -15, 329, -13, 332, -11, 334, -8, 335, -5, 336, 0, 335, 5, 334, 8, 332, 11, 329, 13, 324, 15, 316, 17, 310, 18, 296, 20, 287, 21, 272, 22, 227, 25, 168, 28, 128, 30, 64, 32, 0, 32)

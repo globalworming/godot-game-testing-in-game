@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cebxwne61ok4x"]
+
+[ext_resource type="AudioStream" uid="uid://chhpkthy34l03" path="res://assets/sound/bump.mp3" id="1_oqwta"]
+
+[node name="bump" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_oqwta")

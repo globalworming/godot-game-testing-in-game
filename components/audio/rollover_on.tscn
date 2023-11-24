@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cnycdid1kc34t"]
+
+[ext_resource type="AudioStream" uid="uid://cur8h5dnwkaqu" path="res://assets/sound/rollover_on.mp3" id="1_7s7b3"]
+
+[node name="rollover_on" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_7s7b3")

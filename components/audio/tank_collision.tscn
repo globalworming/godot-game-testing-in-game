@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cqeu0fo50ylc1"]
+
+[ext_resource type="AudioStream" uid="uid://cr1qtuorec7hd" path="res://assets/sound/tank_collision.mp3" id="1_aw8m3"]
+
+[node name="tank_collision" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_aw8m3")

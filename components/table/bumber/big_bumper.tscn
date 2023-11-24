@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://dnk15rl8s15a0"]
+[gd_scene load_steps=9 format=3 uid="uid://dnk15rl8s15a0"]
 
+[ext_resource type="PackedScene" uid="uid://cebxwne61ok4x" path="res://components/audio/bump.tscn" id="2_aphmr"]
 [ext_resource type="Texture2D" uid="uid://cxcsxyic7nu07" path="res://assets/bumper.png" id="2_jyif1"]
 [ext_resource type="Script" path="res://components/table/bumber/body.gd" id="2_q7esn"]
 [ext_resource type="PackedScene" uid="uid://3lghw1uy1x2c" path="res://components/health.tscn" id="3_c8dyp"]
@@ -22,6 +23,8 @@ max_contacts_reported = 8
 contact_monitor = true
 lock_rotation = true
 script = ExtResource("2_q7esn")
+
+[node name="bump" parent="body" instance=ExtResource("2_aphmr")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="body"]
 shape = SubResource("CircleShape2D_553km")

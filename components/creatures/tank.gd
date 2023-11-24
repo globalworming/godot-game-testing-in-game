@@ -19,8 +19,8 @@ func set_level(level: int):
 	if (level > 0): targeting_secs = 0.2 + 10 * (1 - tanh(level * (2 * PI / 15)))
 	$progress.max_value = targeting_secs * 100
 	$progress.visible = false
-	forward_force = 10 * exp(level) + 10000
-	rotation_force = 10 * exp(level) + 1000000
+	forward_force = floor(10 * exp(level)) + 10000
+	rotation_force = floor(10 * exp(level)) + 1000000
 	pass
 
 func _process(_delta: float) -> void:
@@ -81,4 +81,5 @@ func fire():
 
 func on_ball_collision(_ball: RigidBody2D, force: float): 
 	#print("damage %s" % force)
+	$tank_collision.play()
 	($Health as Health).damage(int(force))

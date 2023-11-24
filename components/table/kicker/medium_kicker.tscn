@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bw7e8meracl2q"]
+[gd_scene load_steps=4 format=3 uid="uid://bw7e8meracl2q"]
 
 [ext_resource type="Script" path="res://components/table/kicker/launcher.gd" id="1_4vcpv"]
 [ext_resource type="Texture2D" uid="uid://cunf6nh554rn4" path="res://assets/kicker.png" id="2_4v1g6"]
+[ext_resource type="PackedScene" uid="uid://cm1v3w2gcla60" path="res://components/audio/kick.tscn" id="2_kdb2j"]
 
 [node name="medium_kicker" type="Node2D"]
 
@@ -12,6 +13,8 @@ rotation = -1.5708
 mass = 3.0
 gravity_scale = 0.0
 script = ExtResource("1_4vcpv")
+
+[node name="kick" parent="launcher" instance=ExtResource("2_kdb2j")]
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="launcher"]
 rotation = -1.5708

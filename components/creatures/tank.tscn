@@ -1,7 +1,9 @@
-[gd_scene load_steps=17 format=3 uid="uid://bwbe7pchxgu5s"]
+[gd_scene load_steps=19 format=3 uid="uid://bwbe7pchxgu5s"]
 
 [ext_resource type="Script" path="res://components/creatures/tank.gd" id="1_3ee2d"]
 [ext_resource type="Texture2D" uid="uid://dlf2lmefdog4q" path="res://assets/tank.png" id="1_w16oc"]
+[ext_resource type="PackedScene" uid="uid://cqeu0fo50ylc1" path="res://components/audio/tank_collision.tscn" id="2_spq17"]
+[ext_resource type="PackedScene" uid="uid://dyxa3r6n74rba" path="res://components/audio/play_once_in_parent.tscn" id="2_yyow3"]
 [ext_resource type="Texture2D" uid="uid://b613sc40c2koe" path="res://assets/shot.png" id="3_hdegn"]
 [ext_resource type="Texture2D" uid="uid://b1g0hmixiqqwm" path="res://assets/background.svg" id="3_hqiq3"]
 [ext_resource type="Texture2D" uid="uid://bv0o46nfoo6vq" path="res://assets/progress.svg" id="4_kdd1i"]
@@ -12,7 +14,7 @@
 [ext_resource type="Script" path="res://components/creatures/on_health_zero_squash.gd" id="10_j2erg"]
 [ext_resource type="PackedScene" uid="uid://cbewjcjypn3x3" path="res://components/creatures/squashable.tscn" id="11_l3723"]
 [ext_resource type="Texture2D" uid="uid://q12jabyyb8jb" path="res://assets/puddle.png" id="12_11d2g"]
-[ext_resource type="AudioStream" uid="uid://duaod548mi4jy" path="res://assets/sound/crack.mp3" id="13_phadq"]
+[ext_resource type="PackedScene" uid="uid://dyr5t2yf2ff2w" path="res://components/audio/crack.tscn" id="15_yvmj5"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_5ot8j"]
 
@@ -33,6 +35,10 @@ mass = 10.0
 physics_material_override = SubResource("PhysicsMaterial_5ot8j")
 gravity_scale = 0.0
 script = ExtResource("1_3ee2d")
+
+[node name="tank_collision" parent="." instance=ExtResource("2_yyow3")]
+
+[node name="tank_collision" parent="tank_collision" instance=ExtResource("2_spq17")]
 
 [node name="Tank" type="Sprite2D" parent="."]
 position = Vector2(20, -1)
@@ -72,7 +78,7 @@ emitting = false
 amount = 1
 process_material = SubResource("ParticleProcessMaterial_nb46e")
 texture = ExtResource("6_h06uf")
-lifetime = 0.4
+lifetime = 0.2
 one_shot = true
 interpolate = false
 fract_delta = false
@@ -91,7 +97,12 @@ script = ExtResource("10_j2erg")
 
 [node name="Squashable" parent="." instance=ExtResource("11_l3723")]
 corpse_texture = ExtResource("12_11d2g")
-squash_sound = ExtResource("13_phadq")
+
+[node name="sound" parent="Squashable" instance=ExtResource("2_yyow3")]
+position = Vector2(-1, 0)
+
+[node name="crack" parent="Squashable/sound" instance=ExtResource("15_yvmj5")]
+autoplay = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708

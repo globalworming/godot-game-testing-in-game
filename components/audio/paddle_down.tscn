@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://d3pp1a3pk0k3y"]
+
+[ext_resource type="AudioStream" uid="uid://bcn015ic4sspu" path="res://assets/sound/paddle_down.mp3" id="1_qudxc"]
+
+[node name="paddle_down" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_qudxc")

@@ -13,7 +13,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _physics_process(_delta: float) -> void:
+func _input(event: InputEvent) -> void:
 	if left_flipper: 
 		if (rotation_degrees < -50):
 			rotation_degrees = -50
@@ -25,12 +25,12 @@ func _physics_process(_delta: float) -> void:
 		if (rotation_degrees < -5):
 			rotation_degrees = -5
 	
-	if Input.is_action_just_pressed(input_action):
+	if event.is_action_pressed(input_action):
 		$paddle_up.play()
 		constant_torque = 0		
 		add_constant_torque(100000 * speed * (-1 if left_flipper else 1))
 	
-	if Input.is_action_just_released(input_action):
+	if event.is_action_released(input_action):
 		$paddle_down.play()		
 		constant_torque = 0
 		add_constant_torque(100000 * speed * (1 if left_flipper else -1))

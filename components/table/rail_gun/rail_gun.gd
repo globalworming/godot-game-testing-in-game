@@ -12,8 +12,10 @@ func _process(_delta: float) -> void:
 	if !ammo: get_ammo()
 	if ammo:
 		count_down()
-		aim()
-		
+		if !angle:
+			angle = $angles.get_child(floori($angles.get_child_count() / 2.0))
+		angle.get_node("./Polygon2D").color = Color(0.6, 0.2, 0.2)
+
 func get_ammo():
 	for body in $Area2D.get_overlapping_bodies():
 			if !body.is_in_group("ball"): return
@@ -45,20 +47,19 @@ func fire():
 	await get_tree().create_timer(0.2).timeout
 	enabled = true
 
+func _input(event: InputEvent) -> void:
+	aim(event)
 	
-func aim():
-	if !angle:
-		angle = $angles.get_child(floori($angles.get_child_count() / 2.0))
-		angle.get_node("./Polygon2D").color = Color(0.6, 0.2, 0.2)
-		return
-	if Input.is_action_just_pressed("move_left"):
+func aim(event: InputEvent):
+	if !ammo: return
+	if event.is_action_pressed("move_left"):
 		var previous = angle
 		selected_angle = max(0, selected_angle - 1)
 		angle = $angles.get_child(selected_angle)
 		previous.get_node("./Polygon2D").color = Color(0.25, 0.25, 0.25)
 		angle.get_node("./Polygon2D").color = Color(0.6, 0.2, 0.2)
 		
-	if Input.is_action_just_pressed("move_right"):
+	if event.is_action_pressed("move_right"):
 		var previous = angle
 		selected_angle = min($angles.get_child_count() - 1, selected_angle + 1)
 		angle = $angles.get_child(selected_angle)

@@ -21,19 +21,25 @@ func pick_body_to_tunnel():
 			to_tunnel = body
 			exited = false
 
-func tunnel(delta):
-	if exited:
-		var new_scale = to_tunnel.scale * (1 + 3 * delta)
-		if (new_scale.length() > Vector2.ONE.length()): 
-			to_tunnel.scale = Vector2.ONE
-			to_tunnel.freeze = false
-			to_tunnel = null
-			return
-		to_tunnel.scale = new_scale
-		return
+func animate_enter(delta: float):
 	var new_scale = to_tunnel.scale * (1 - 3 * delta)
 	if new_scale.length() < 0.1: 
 		exited = true
 		to_tunnel.global_position = _exit.global_position
 	to_tunnel.scale = to_tunnel.scale * (1 - 3 * delta)
+
+func animate_exit(delta: float):
+	var new_scale = to_tunnel.scale * (1 + 3 * delta)
+	if (new_scale.length() > Vector2.ONE.length()): 
+		to_tunnel.scale = Vector2.ONE
+		to_tunnel.freeze = false
+		to_tunnel = null
+		return
+	to_tunnel.scale = new_scale
+
+func tunnel(delta):
+	if exited:
+		animate_exit(delta)
+		return
+	animate_enter(delta)
 	

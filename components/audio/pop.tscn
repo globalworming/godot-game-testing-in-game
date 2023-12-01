@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dqd1d8b8eocnr"]
+
+[ext_resource type="AudioStream" uid="uid://jgf6xyp01ffm" path="res://assets/sound/pop.mp3" id="1_dhbs7"]
+
+[node name="Pop" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_dhbs7")

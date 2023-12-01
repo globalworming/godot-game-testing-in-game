@@ -1,7 +1,7 @@
 extends Node
 const spawner = preload("res://components/creatures/spawner.tscn")
 const tank = preload("res://components/creatures/tank.tscn")
-const paddle_slower = preload("res://components/creatures/small_creature.tscn")
+const paddle_slower = preload("res://components/creatures/slimer.tscn")
 
 var to_clean_up: Array[Node] = []
 
@@ -77,7 +77,7 @@ Event.new(
 		await get_tree().create_timer(3).timeout
 		var _spawner3 = spawner.instantiate()
 		_spawner3.creature = paddle_slower
-		_spawner3.secs = 5
+		_spawner3.secs = 2
 		_spawner3.global_position = table.get_node("spawn_point3").global_position
 		table.add_child(_spawner3)
 		_spawner3.start()

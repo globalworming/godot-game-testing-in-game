@@ -1,8 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://cq6r1jcjy0qc2"]
+[gd_scene load_steps=11 format=3 uid="uid://cq6r1jcjy0qc2"]
 
 [ext_resource type="Script" path="res://components/creatures/small_creature.gd" id="1_awwyp"]
 [ext_resource type="PackedScene" uid="uid://dyr5t2yf2ff2w" path="res://components/audio/crack.tscn" id="2_5d5cx"]
-[ext_resource type="Texture2D" uid="uid://q12jabyyb8jb" path="res://assets/puddle.png" id="2_8xtc7"]
 [ext_resource type="Texture2D" uid="uid://hv4o836wib6" path="res://assets/creature.png" id="3_4fasq"]
 [ext_resource type="Script" path="res://components/creatures/squash_area.gd" id="4_x10x7"]
 [ext_resource type="Script" path="res://components/creatures/on_squash_spawn_experience.gd" id="6_is0i5"]
@@ -34,12 +33,6 @@ shape = SubResource("CircleShape2D_2mfcv")
 [node name="Creature" type="Sprite2D" parent="."]
 rotation = -1.57079
 texture = ExtResource("3_4fasq")
-
-[node name="Puddle" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(1, 8)
-scale = Vector2(0.129661, 0.121895)
-texture = ExtResource("2_8xtc7")
 
 [node name="on_squash_spawn_experience" type="Node2D" parent="."]
 script = ExtResource("6_is0i5")

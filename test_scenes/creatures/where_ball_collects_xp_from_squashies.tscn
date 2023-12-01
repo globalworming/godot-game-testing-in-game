@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://de6ntcdinrk1q"]
+[gd_scene load_steps=5 format=3 uid="uid://de6ntcdinrk1q"]
 
 [ext_resource type="PackedScene" uid="uid://cy6drw7rhi4gn" path="res://components/ball/ball.tscn" id="1_5oxl1"]
 [ext_resource type="PackedScene" uid="uid://cq6r1jcjy0qc2" path="res://components/creatures/small_creature.tscn" id="2_idsw2"]
 [ext_resource type="PackedScene" uid="uid://d20k3ic1p541l" path="res://components/test/success_triggers/on_experience_collected_test_success.tscn" id="3_n7sim"]
+[ext_resource type="PackedScene" uid="uid://g1g4wymaj3" path="res://components/creatures/slimer.tscn" id="4_76o5w"]
 
 [node name="where_ball_collects_xp_from_squashies" type="Node2D"]
 
@@ -16,9 +17,6 @@ polygon = PackedVector2Array(931, 1039, 933, 1062, 937, 1085, 946, 1107, 954, 11
 
 [node name="ball" parent="." instance=ExtResource("1_5oxl1")]
 position = Vector2(672, 232)
-
-[node name="small_creature" parent="." instance=ExtResource("2_idsw2")]
-position = Vector2(676, 630.3)
 
 [node name="small_creature2" parent="." instance=ExtResource("2_idsw2")]
 position = Vector2(796, 726.3)
@@ -50,3 +48,6 @@ polygon = PackedVector2Array(1056, 832, 1056, 928, 1064, 976, 1096, 1040, 1160, 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(992, 552)
 zoom = Vector2(1.945, 1.945)
+
+[node name="slimer" parent="." instance=ExtResource("4_76o5w")]
+position = Vector2(688, 576)

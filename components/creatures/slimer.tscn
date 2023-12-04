@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://g1g4wymaj3"]
+[gd_scene load_steps=12 format=3 uid="uid://g1g4wymaj3"]
 
 [ext_resource type="Script" path="res://components/creatures/small_creature.gd" id="1_gp88o"]
 [ext_resource type="Script" path="res://components/creatures/squash_area.gd" id="2_q5che"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cbewjcjypn3x3" path="res://components/creatures/squashable.tscn" id="6_i40bh"]
 [ext_resource type="PackedScene" uid="uid://dyxa3r6n74rba" path="res://components/audio/play_once_in_parent.tscn" id="8_wv3xw"]
 [ext_resource type="PackedScene" uid="uid://dqd1d8b8eocnr" path="res://components/audio/pop.tscn" id="9_jgak8"]
+[ext_resource type="Script" path="res://components/creatures/on_paddle_entered_slime.gd" id="9_o40e2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_e74sq"]
 radius = 13.1529
@@ -43,6 +44,9 @@ corpse_texture = ExtResource("4_4w3kr")
 [node name="sound" parent="Squashable" instance=ExtResource("8_wv3xw")]
 
 [node name="Pop" parent="Squashable/sound" instance=ExtResource("9_jgak8")]
+
+[node name="on_paddle_entered_slime" type="Node2D" parent="."]
+script = ExtResource("9_o40e2")
 
 [connection signal="body_entered" from="squash_area" to="squash_area" method="_on_body_entered"]
 [connection signal="body_exited" from="squash_area" to="squash_area" method="_on_body_entered"]

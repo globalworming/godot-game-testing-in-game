@@ -49,6 +49,13 @@ Event.new(
 		table.add_child(_spawner3)
 		_spawner3.start()
 		to_clean_up.push_back(_spawner3)
+		var _spawner4 = spawner.instantiate()
+		_spawner4.creature = paddle_slower
+		_spawner4.secs = 3
+		_spawner4.global_position = table.get_node("spawn_point4").global_position
+		table.add_child(_spawner4)
+		_spawner4.start()
+		to_clean_up.push_back(_spawner4)
 		pass,
 	func (_table: Node2D):
 		clean_up()
@@ -92,4 +99,5 @@ Event.new(
 func clean_up():
 	for node in to_clean_up:
 		if (node != null):
+			if (node.get_parent()): node.get_parent().remove_child(node)
 			if (!node.is_queued_for_deletion()): node.queue_free()

@@ -1,10 +1,14 @@
 class_name Spawner extends Node2D
 
 @export var creature: Resource = preload("res://components/creatures/small_creature.tscn")
-var secs = 0.5
+var secs = 1
 var offset
 @export var autostart = false
 var started = false
+
+## number of creatures to spawn before stopping, 0 meaning infinite
+@export var max_spawns = 0
+var spawns = 0
 
 func _ready() -> void:
 	$Timer.timeout.connect(spawn)
@@ -22,7 +26,9 @@ func _process(_delta: float) -> void:
 	pass
 
 func spawn():
+	if max_spawns > 0 && spawns >= max_spawns: return
 	var to_spawn = creature.instantiate() as Node2D
 	to_spawn.position = position
 	get_parent().add_child(to_spawn)
+	spawns += 1
 	

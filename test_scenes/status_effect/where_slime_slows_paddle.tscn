@@ -4,45 +4,79 @@
 [ext_resource type="PackedScene" uid="uid://dgwsl3tvuq55l" path="res://components/table/flipper/flipper_left.tscn" id="2_nsnhx"]
 [ext_resource type="PackedScene" uid="uid://cy6drw7rhi4gn" path="res://components/ball/ball.tscn" id="3_as7kw"]
 [ext_resource type="PhysicsMaterial" uid="uid://dxf5cx15n75hb" path="res://materials/no_bounce_no_friction.tres" id="4_7ril1"]
-[ext_resource type="PackedScene" uid="uid://bwyqjm6xsud0c" path="res://components/creatures/spawner.tscn" id="5_65j3w"]
 [ext_resource type="PackedScene" uid="uid://g1g4wymaj3" path="res://components/creatures/slimer.tscn" id="6_qrfx6"]
+[ext_resource type="PackedScene" uid="uid://djgboj0jar52m" path="res://components/test/success_triggers/on_hit_test_success_block.tscn" id="7_o8542"]
 
 [sub_resource type="Curve2D" id="Curve2D_r43ov"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -864, -384, 0, 0, 0, 0, -904, -200, 0, 0, 0, 0, -976, -24, 0, 0, 0, 0, -952, 128, 0, 0, 0, 0, -888, 240, 0, 0, 0, 0, -784, 296, 0, 0, 0, 0, -696, 336, 0, 0, 0, 0, -400, 368)
+"points": PackedVector2Array(0, 0, 0, 0, 256, 40, 0, 0, 0, 0, 840, -192)
 }
-point_count = 8
+point_count = 2
 
 [node name="WhereSlimeSlowsPaddle" type="Node2D"]
 
 [node name="flipper" parent="." instance=ExtResource("2_nsnhx")]
-position = Vector2(760, 1728)
-rotation = 1.5708
+position = Vector2(776, 934.345)
+rotation = 1.309
 
 [node name="ball" parent="." instance=ExtResource("3_as7kw")]
-position = Vector2(816, 1936)
+position = Vector2(984, 1190.35)
+rotation = -0.261799
 
 [node name="on_ball_enter_press_input2" parent="." instance=ExtResource("1_mb6wy")]
-position = Vector2(792, 2032)
+position = Vector2(920, 1222.35)
+rotation = -0.261799
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(656, 768)
+position = Vector2(448, 38.3455)
+rotation = -0.261799
 physics_material_override = ExtResource("4_7ril1")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 position = Vector2(1, -15)
-polygon = PackedVector2Array(80, 1312, 152, 1312, 399, 1311, 647, 1303, 871, 1287, 1159, 1255, 1311, 1231, 1479, 1199, 1607, 1167, 1695, 1143, 1791, 1103, 1783, 1199, 1879, 1183, 1919, 1071, 2023, 1015, 2119, 959, 2223, 887, 2311, 799, 2367, 727, 2399, 663, 2423, 591, 2431, 519, 2431, 495, 2423, 447, 2415, 415, 2399, 367, 2367, 303, 2327, 247, 2263, 183, 2215, 143, 2111, 79, 2015, 39, 1935, 15, 1791, -9, 1615, -9, 1543, -1, 1455, 15, 1343, 47, 1151, 135, 1047, 199, 239, 1015, 111, 919, 352, -80, 2488, -72, 2464, 1464, 40, 1456)
+polygon = PackedVector2Array(80, 1312, 152, 1312, 399, 1311, 647, 1303, 871, 1287, 1026.77, 1269.69, 997.123, 1359.13, 1094.55, 1335.54, 1299.75, 1249.73, 1479, 1199, 1607, 1167, 1695, 1143, 1919, 1071, 2023, 1015, 2119, 959, 2223, 887, 2263.39, 837.077, 2275.81, 790.713, 2270.71, 747.935, 2253.74, 718.541, 2198.13, 678.794, 2130.66, 652.432, 1995.15, 632.688, 1827.62, 670.621, 1257.97, 849.273, 1318.98, 683.411, 1739.03, 630.32, 2423, 591, 2431, 519, 2431, 495, 2423, 447, 2415, 415, 2399, 367, 2367, 303, 2327, 247, 2263, 183, 2215, 143, 2111, 79, 2015, 39, 1935, 15, 1791, -9, 1615, -9, 1418.51, 188.302, 1339.43, 390.73, 1240.45, 852.859, 111, 919, 352, -80, 2488, -72, 2464, 1464, 40, 1456)
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
-position = Vector2(656, 768)
+position = Vector2(448, 38.3455)
+rotation = -0.261799
 color = Color(0.0588235, 0.0588235, 0.0588235, 1)
-polygon = PackedVector2Array(80, 1296, 464, 1296, 960, 1264, 1232, 1232, 1672, 1136, 1792, 1088, 1784, 1184, 1880, 1168, 1920, 1056, 1992, 1016, 2256, 848, 2400, 656, 2432, 536, 2416, 392, 2368, 280, 2248, 152, 2072, 48, 1936, 0, 1784, -24, 1568, -24, 1280, 56, 1072, 168, 240, 1000, 136, 904, 0, 904, 0, -352, 2760, -264, 2760, 1584, 0, 1592)
-
-[node name="spawner" parent="." instance=ExtResource("5_65j3w")]
-position = Vector2(456, 1128)
-creature = ExtResource("6_qrfx6")
-autostart = true
+polygon = PackedVector2Array(80, 1296, 464, 1296, 712.866, 1279.94, 960, 1264, 1025.87, 1256.25, 998.123, 1344.13, 1113.07, 1316.96, 1290.95, 1240.39, 1672, 1136, 1920, 1056, 1992, 1016, 2256, 848, 2277.72, 819.036, 2283.58, 719.551, 2195.54, 646.269, 2011.6, 621.829, 1727.06, 694.664, 1235.79, 828.061, 136, 904, 0, 904, 0, -352, 2760, -264, 2760, 1584, 0, 1592)
 
 [node name="path" type="Path2D" parent="."]
-position = Vector2(1392, 1624)
+position = Vector2(432, 1112)
 curve = SubResource("Curve2D_r43ov")
+
+[node name="on hit test success block" parent="." instance=ExtResource("7_o8542")]
+position = Vector2(1792, 1014.35)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(1400, 776)
+scale = Vector2(0.586626, 0.586626)
+zoom = Vector2(1.375, 1.375)
+
+[node name="slimer" parent="." instance=ExtResource("6_qrfx6")]
+position = Vector2(320, 1224)
+
+[node name="slimer2" parent="." instance=ExtResource("6_qrfx6")]
+position = Vector2(320, 1224)
+
+[node name="slimer3" parent="." instance=ExtResource("6_qrfx6")]
+position = Vector2(320, 1224)
+
+[node name="slimer4" parent="." instance=ExtResource("6_qrfx6")]
+position = Vector2(320, 1224)
+
+[node name="slimer5" parent="." instance=ExtResource("6_qrfx6")]
+position = Vector2(320, 1224)
+
+[node name="slimer6" parent="." instance=ExtResource("6_qrfx6")]
+position = Vector2(320, 1224)
+
+[node name="slimer7" parent="." instance=ExtResource("6_qrfx6")]
+position = Vector2(320, 1224)
+
+[node name="slimer8" parent="." instance=ExtResource("6_qrfx6")]
+position = Vector2(320, 1224)
+
+[node name="slimer9" parent="." instance=ExtResource("6_qrfx6")]
+position = Vector2(320, 1224)
